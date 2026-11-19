@@ -1,0 +1,56 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "app.htfu"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "app.htfu"
+        minSdk 24
+        // Kept at 34 on purpose: the app is tested at this level, and 35 changes how Android 15 lays out the WebView.
+        targetSdk 34
+        // versionCode = major * 1000 + minor * 10 + patch (1.0 -> 1000, 1.1 -> 1010, 1.0.1 -> 1001)
+        versionCode 1000
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            vcsInfo.include false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // F-Droid: no Google-encrypted dependency metadata blob in the APK signing block,
+    // and no build-machine version-control info, so builds are reproducible.
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
+    lint {
+        // targetSdk 34 is deliberate (see above); do not fail release builds over it.
+        disable "ExpiredTargetSdkVersion", "OldTargetApi"
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    // The APK is named HTFU-<versionName>.apk, for example HTFU-1.0.apk.
+    applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach {
+            outputFileName = "HTFU-${variant.versionName}${variant.buildType.name == 'release' ? '' : '-' + variant.buildType.name}.apk"
+        }
+    }
+}
+
+// No dependencies: HTFU uses only the Android framework.
+dependencies {
+}

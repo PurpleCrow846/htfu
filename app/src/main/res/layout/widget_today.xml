@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:orientation="vertical"
+    android:background="#14120e"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/widget_plan"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#f4efe6"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HTFU"/>
+    <TextView
+        android:id="@+id/widget_detail"
+        android:textSize="13sp"
+        android:textColor="#d7d0c4"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Rest day"/>
+    <TextView
+        android:id="@+id/widget_list"
+        android:textSize="12sp"
+        android:textColor="#d7d0c4"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text=""/>
+    <TextView
+        android:id="@+id/widget_streak"
+        android:textSize="12sp"
+        android:textColor="#e07a3d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Streak 0"/>
+    <Button
+        android:id="@+id/widget_start"
+        android:textSize="14sp"
+        android:minHeight="48dp"
+        android:background="#e85d04"
+        android:textColor="#1a0e05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Start workout"/>
+</LinearLayout>

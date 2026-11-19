@@ -1,0 +1,36 @@
+HTFU is a no-nonsense workout tracker. It runs completely offline: it has no internet permission, no ads, no trackers and no account. Everything you log stays on your phone.
+
+Programs
+Follow a ready-made program or build your own. Built in:
+- Bodyweight: 100 Pushups, 20 Pullups, 100 Squats, Recommended Routine, Bodyweight Routine, Murph, Workout of the Day
+- Barbell: Stronglifts 5x5, Starting Strength, 5/3/1, nSuns, GZCLP, Greyskull LP, Phrak Greyskull, Texas Method, Madcow 5x5, Push Pull Legs, Upper Lower, Full Body 3x, YOLO
+- Kettlebell: Simple & Sinister, Swing Ladder
+- Running: Couch to 5K, Bridge to 10K, Half Marathon Novice 1, Beep Test
+- Fitness tests: Army AFT, Marine PFT, Navy PRT, Air Force PFRA, CF EXPRES, IDF Combat Test, Bar-Or, police and firefighter tests (Ontario PREP, PIN and more)
+- Mobility and cooldown routines
+- Custom plans with your own exercises, sets, reps, weights, times and distances
+
+Training
+- Automatic progression: weights go up after a full session and deload after repeated misses
+- Big tap targets for logging sets, a rest timer that keeps running in a notification, and optional voice cues
+- Hands-free rep counter that uses the phone's proximity or motion sensor
+- Plate calculator and % of 1RM calculator
+- Exercise how-to guides with form cues
+- Imperial (lb, ft/in) or metric units
+- Six themes, including high-contrast colours
+
+Progress
+- Charts for every lift, personal bests, streaks and a calendar
+- Body weight and measurements with optional progress photos (stored only on your phone)
+- Milestones
+
+Reminders and widget
+- Workout-day reminders at the time you choose, re-armed after a reboot
+- A home-screen widget that shows today's workout
+
+Your data
+- Back up everything (plans, logs, settings and progress photos) to one file and restore it on any phone
+- Export your log as an Excel or CSV file
+- Share a plan or a session with a friend as a file and compare on the leaderboard
+
+Permissions: vibrate (rest timer and rep feedback), notifications (reminders and rest timer), run at startup (re-arm reminders after a reboot), and exact alarms (reminders and the rest timer go off on time). Nothing else.
