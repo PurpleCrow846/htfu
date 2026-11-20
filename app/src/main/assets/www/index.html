@@ -3398,7 +3398,7 @@ window.onNotifyPermission = function (ok) {
 document.addEventListener("focusin", (e) => {
   const t = e.target;
   if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA") && t.type !== "checkbox" && t.type !== "radio" && t.type !== "button") {
-    setTimeout(() => t.select(), 10);
+    setTimeout(() => { if (document.activeElement === t) t.select(); }, 10); // 1.03: never pull focus back
   }
 });
 function $(html) {
@@ -9544,9 +9544,9 @@ function palette216(t, dark, scheme) {
   p.muted = fit216(p.muted, [p.bg, p.bg2, p.card, p.nav, p.pill], 4.5);
   p.accent2 = fit216(p.accent2, [p.bg, p.bg2, p.card], 4.5);
   p.accent2 = fit216(p.accent2, [p.bg, p.bg2, p.card, p.navpill], 3) === p.accent2 ? p.accent2 : fit216(p.accent2, [p.bg, p.bg2, p.card, p.navpill], 4.5);
-  p.goodtext = fit216(p.goodtext, [p.bg, p.card, p.donebg], 4.5);
-  p.bad = fit216(p.bad, [p.bg, p.card], 4.5);
-  p.warn = fit216(p.warn, [p.bg, p.card], 4.5);
+  p.goodtext = fit216(p.goodtext, [p.bg, p.bg2, p.card, p.donebg], 4.5);
+  p.bad = fit216(p.bad, [p.bg, p.bg2, p.card], 4.5); // 1.03: bg2 too (missed days in the streak calendar)
+  p.warn = fit216(p.warn, [p.bg, p.bg2, p.card], 4.5);
   p.edge = edge;
   return p;
 }

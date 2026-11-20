@@ -47,13 +47,13 @@ echo "sdk.dir=/path/to/Android/Sdk" > local.properties   # or set ANDROID_HOME
 ./gradlew assembleRelease
 ```
 
-The unsigned APK is written to `app/build/outputs/apk/release/HTFU-1.02.apk`. Sign it with your own key:
+The unsigned APK is written to `app/build/outputs/apk/release/HTFU-1.03.apk`. Sign it with your own key:
 
 ```sh
-apksigner sign --ks my.jks --out HTFU-1.02-signed.apk app/build/outputs/apk/release/HTFU-1.02.apk
+apksigner sign --ks my.jks --out HTFU-1.03-signed.apk app/build/outputs/apk/release/HTFU-1.03.apk
 ```
 
-`./gradlew assembleDebug` builds a debug-signed `HTFU-1.02-debug.apk` you can install directly.
+`./gradlew assembleDebug` builds a debug-signed `HTFU-1.03-debug.apk` you can install directly.
 
 ## License
 
