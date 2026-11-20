@@ -1,0 +1,4 @@
+Custom workouts:
+- Reverse hyperextension can now be bodyweight (reps only) as well as weighted. Weighted stays the default; existing plans are unchanged.
+- Back extension can be weighted (lb; +5 lb progression works like other weighted accessories) or bodyweight. The exercise list shows "bodyweight or weighted" where both are possible.
+- Weighted and bodyweight versions of one exercise in the same plan each get their own starting number and history line.

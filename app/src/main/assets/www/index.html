@@ -851,10 +851,10 @@ function metricNew224(name, stored) {
   return METRIC_BY_NAME[key] || stored || metricOf(name);
 }
 /* 2.25: library exercises keep a choice only when it fits the exercise, otherwise their main measurement */
-function metricNew(name, stored) {
+function metricNew(name, stored, kind) {
   const r = typeof allow225 === "function" ? allow225(name) : null;
   if (!r) return metricNew224(name, stored);
-  if (r.mets.includes("weight")) return "weight";
+  if (r.mets.includes("weight")) return kind === "bw" && stored === "reps" && r.loads.includes("bw") ? "reps" : "weight"; /* 1.04 */
   return stored && metOk225(r, stored) ? (stored === "weight" && !FREEMET219[String(name).trim().toLowerCase()] ? "reps" : stored) : r.met;
 }
 function metricLabel(kind, n) {
@@ -1533,7 +1533,7 @@ function items207(c, day) {
   const eng = eng207(c);
   const st = st207(c);
   const items = [];
-  const push = (ex, o) => items.push(Object.assign({ name: ex.name, kind: ex.kind, metric: metricNew(ex.name, ex.metric), w: 0, wTarget: 0, target: ex.reps }, o));
+  const push = (ex, o) => items.push(Object.assign({ name: ex.name, kind: ex.kind, metric: metricNew(ex.name, ex.metric, ex.kind), w: 0, wTarget: 0, target: ex.reps }, o));
   (dayExercises(c, day) || []).forEach(ex => {
     if (eng === "gz" && ex.tier) {
       const key = ex.tier + "|" + ex.name;
@@ -5896,7 +5896,7 @@ const STRENGTH225 = ["CH", "BK", "SH", "AR", "LG", "GL", "CO"];
 const BWONLY225 = { "assisted pullup": 1, "assisted dip": 1, "band pull-apart": 1, "core endurance": 1 };
 const REPSTIME225 = { "mountain climber": 1, "burpee": 1, "jumping jacks": 1, "high knees": 0 };
 const TIMEDIST225 = { "sprint": 1, "assault bike": 1, "stationary bike": 1, "elliptical": 1, "incline walk": 1, "treadmill incline run": 1, "bear crawl": 1 };
-const LOADOPT225 = { "back extension": 1, "sledgehammer strike": 1 };
+const LOADOPT225 = { "back extension": 1, "sledgehammer strike": 1, "reverse hyperextension": 1 }; // 1.04: reverse hyper can be bodyweight too
 function rule225(e) {
   const name = e[0], k = name.toLowerCase(), cats = e[1], w = !!e[2], m = e[3];
   const free = typeof FREEMET219 !== "undefined" && FREEMET219[k];
@@ -5969,7 +5969,8 @@ let cat219 = "";
 function metLbl219(m) { return m === "time" ? "time" : m === "dist" ? "distance" : m === "flex" ? "reach" : "reps"; }
 function pickItem219(m, attr) {
   const e = EX219_BY[m.n.toLowerCase()];
-  const bits = [CUSTOM_WEIGHTED[m.n] ? "weighted" : "bodyweight", metLbl219(exMetric219(m.n))];
+  const r104 = typeof allow225 === "function" ? allow225(m.n) : null, both104 = !!(r104 && r104.loads.includes("weight") && r104.loads.includes("bw"));
+  const bits = [both104 ? (r104.loads[0] === "weight" ? "weighted or bodyweight" : "bodyweight or weighted") : CUSTOM_WEIGHTED[m.n] ? "weighted" : "bodyweight", metLbl219(exMetric219(m.n))];
   if (e && e[4]) bits.push("each side");
   return `<button class="menu-item pick219" ${attr}="${esc(m.n)}" style="margin-top:8px">${esc(m.n)} · ${bits.join(" · ")}${m.via ? `<span class="via219">matches “${esc(m.via)}”</span>` : ""}</button>`;
 }
@@ -6098,6 +6099,7 @@ function renderCustom() {
     const reps = Number.isFinite(d.reps) ? d.reps : 0;
     const next = { name, kind: d.kind === "weight" ? "weight" : "bw", metric, sets: Math.max(1, Number(d.sets) || 1), reps, weight: d.kind === "weight" ? (Number(d.weight) || 0) : 0 };
     fitEx225(next, true);
+    if (next.kind === "bw" && next.metric === "weight") next.metric = "reps"; /* 1.04: bodyweight = reps only */
     if (d.editEx == null) day.exercises.push(next);
     else day.exercises[d.editEx] = next;
     d.adding = false; d.query = ""; d.editEx = null; d.reps = null; d.sets = 1; d.weight = 0;
@@ -6412,7 +6414,7 @@ function buildCustomItems0(c, day) {
     }
     const k = liftKey(ex.name);
     for (let i = 0; i < ex.sets; i++) {
-      const it = { name: ex.name, kind: ex.kind, metric: metricNew(ex.name, ex.metric), w: ex.weight || 0, wTarget: ex.weight || 0, target: ex.reps };
+      const it = { name: ex.name, kind: ex.kind, metric: metricNew(ex.name, ex.metric, ex.kind), w: ex.weight || 0, wTarget: ex.weight || 0, target: ex.reps };
       if (eng === "gsl" && ((ex.kind === "weight" && k) || /^chin-?up$/i.test(String(ex.name).trim())) && i === ex.sets - 1) it.amrap = true;
       items.push(it);
     }
@@ -6492,10 +6494,11 @@ function customProgress0(c, ev) {
   if (c.progress === "add5") {
     const made = {};
     const used = {};
+    const wk104 = x => x.kind === "bw" ? x.name + "|bw" : x.name; // 1.04: bodyweight sets of the same exercise don't count for the weighted one
     log.forEach(x => {
       if (handled[x.name]) return;
-      made[x.name] = made[x.name] === false ? false : x.reps >= x.target;
-      if (x.w != null && x.w !== "" && Number.isFinite(Number(x.w))) used[x.name] = Number(x.w);
+      made[wk104(x)] = made[wk104(x)] === false ? false : x.reps >= x.target;
+      if (x.w != null && x.w !== "" && Number.isFinite(Number(x.w))) used[wk104(x)] = Number(x.w);
     });
     (day.exercises || []).forEach(ex => {
       if (ex.kind !== "weight" || handled[ex.name] || !made[ex.name]) return;
@@ -6619,12 +6622,19 @@ function recomputeAfterDelete(key) {
   state.journal = J.filter(e => e !== hit);
   return true;
 }
+/* 1.04: one entry per exercise and load (weighted / bodyweight), so both versions of an exercise get a starting number */
+function startKey104(c, name, kind) {
+  if (kind === "weight") return name;
+  const twin = (c.days || []).some(d => (d.exercises || []).some(o => o && o.name === name && o.kind === "weight"));
+  return twin ? name + " (bodyweight)" : name;
+}
 function customExercises(c) {
   const seen = {};
   const list = [];
   (c.days || []).forEach(day => (day.exercises || []).forEach(ex => {
-    if (!ex || seen[ex.name]) return;
-    seen[ex.name] = true;
+    const key104 = ex ? ex.name + "|" + (ex.kind === "weight" ? "weight" : "bw") : "";
+    if (!ex || seen[key104]) return;
+    seen[key104] = true;
     list.push({ name: ex.name, kind: ex.kind === "weight" ? "weight" : "bw", sets: ex.sets, reps: ex.reps });
   }));
   return list;
@@ -6666,11 +6676,11 @@ function renderCustomIntake0() {
       const raw = String(document.getElementById("start-" + i).value).trim();
       const n = Number(raw);
       if (raw === "" || !Number.isFinite(n) || n < 0 || n > (ex.kind === "weight" ? 1500 : 100000)) { ok = false; return; }
-      starts[ex.name] = ex.kind === "weight" ? readWeight(raw, 0) : n;
+      starts[startKey104(c, ex.name, ex.kind)] = ex.kind === "weight" ? readWeight(raw, 0) : n;
       if (mainKeys[ex.name]) {
         const r = document.getElementById("reps-" + i);
         const reps = r && r.value !== "" ? Math.max(1, Math.min(12, Number(r.value) || 1)) : 1;
-        tm[mainKeys[ex.name]] = tmFrom1rm(starts[ex.name], reps);
+        tm[mainKeys[ex.name]] = tmFrom1rm(starts[startKey104(c, ex.name, ex.kind)], reps);
       }
     });
     if (!ok) {
@@ -6679,7 +6689,7 @@ function renderCustomIntake0() {
       return;
     }
     (c.days || []).forEach(day => (day.exercises || []).forEach(ex => {
-      const n = starts[ex.name];
+      const n = starts[startKey104(c, ex.name, ex.kind === "weight" ? "weight" : "bw")];
       if (n === undefined) return;
       if (ex.kind === "weight") ex.weight = mainKeys[ex.name] ? tm[mainKeys[ex.name]] : n;
       else ex.reps = Math.max(1, Math.round(n));
@@ -6957,7 +6967,7 @@ function renderCustomToday0() {
     if (!dayExercises(c, day).length) return;
     const items = buildCustomItems(c, day);
     const first = items[0];
-    const firstMetric = first ? metricNew(first.name, first.metric) : "reps";
+    const firstMetric = first ? metricNew(first.name, first.metric, first.kind) : "reps";
     screen = "cset";
     beginSession({ kind: "custom", dayName: day.name, dayIdx: c.days.indexOf(day), items, i: 0, reps: first ? (firstMetric === "time" && isMil(c) ? 0 : first.target) : 0, log: [] });
     render();
@@ -7121,7 +7131,7 @@ function completeCustom0() {
   finished.log.forEach(x => {
     const last = c && c.id === "yolo" ? groups.find(g => g.name === x.name) : groups[groups.length - 1];
     const isW = x.kind === "weight" || x.metric === "weight";
-    if (last && last.name === x.name) {
+    if (last && last.name === x.name && (c && c.id === "yolo" || (last.unit === "lb") === isW)) { /* 1.04: same load type only */
       last.reps.push(x.reps);
       if (last.targets) last.targets.push(x.target);
       if (isW && x.w != null && x.w !== "") last.w = x.w;
