@@ -11,9 +11,9 @@ android {
         minSdk 24
         // Kept at 34 on purpose: the app is tested at this level, and 35 changes how Android 15 lays out the WebView.
         targetSdk 34
-        // versionCode = major * 1000 + minor * 10 + patch (1.0 -> 1000, 1.1 -> 1010, 1.0.1 -> 1001)
+        // Versions go up by .01. versionCode = major * 1000 + hundredths * 10 (1.0 -> 1000, 1.01 -> 1010, 1.02 -> 1020)
         versionCode 1010
-        versionName "1.1"
+        versionName "1.01"
     }
 
     buildTypes {
@@ -43,7 +43,7 @@ android {
         checkReleaseBuilds false
     }
 
-    // The APK is named HTFU-<versionName>.apk, for example HTFU-1.0.apk.
+    // The APK is named HTFU-<versionName>.apk, for example HTFU-1.01.apk.
     applicationVariants.configureEach { variant ->
         variant.outputs.configureEach {
             outputFileName = "HTFU-${variant.versionName}${variant.buildType.name == 'release' ? '' : '-' + variant.buildType.name}.apk"
