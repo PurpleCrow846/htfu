@@ -358,6 +358,22 @@
 .ms217>div{min-width:0;overflow-wrap:anywhere}
 .ms217.off b{color:var(--muted)}
 .msic217{font-size:1.3rem;line-height:1.2}
+/* 1.05 achievements + celebration */
+.acprog105{margin-top:6px}
+.acbar105{display:block;height:8px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:4px}
+.acbar105>i{display:block;height:100%;background:var(--accent)}
+.acbar105.sm{height:6px;margin-top:8px;width:100%}
+.celebov105{z-index:120}
+.celebov105 .ov-box{margin:auto 0}
+.celebcard105{text-align:center}
+.celebbadge105{color:var(--onaccent);position:relative;width:96px;height:96px;margin:8px auto 12px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:52px;line-height:1;box-shadow:0 0 0 6px var(--navpill)}
+.celebbadge105 i{color:var(--ink);position:absolute;right:-8px;bottom:-8px;font-style:normal;font-size:24px;background:var(--card);border-radius:50%;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:2px solid var(--line)}
+.celebh105{margin:6px 0;font-size:24px;line-height:1.2;overflow-wrap:anywhere;color:var(--ink)}
+.celebmsg105{font-weight:700;color:var(--ink);margin-top:10px;font-size:16px}
+.celeblist105{list-style:none;padding:0;margin:12px 0 0;text-align:left;display:flex;flex-direction:column;gap:6px;color:var(--ink)}
+.celebbtns105{flex-wrap:wrap}
+.celebbtns105 .btn{min-width:140px}
+@media (prefers-reduced-motion:no-preference){.celebbadge105{animation:celebpop105 .5s ease-out}@keyframes celebpop105{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.08);opacity:1}100%{transform:scale(1)}}}
 table.pct217{width:100%;border-collapse:collapse;margin-top:8px;color:var(--ink)}
 table.pct217 th,table.pct217 td{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left;overflow-wrap:anywhere}
 #pctOv217 .ov-box{max-height:92vh;overflow:auto}
@@ -10222,7 +10238,7 @@ function bindMuscleCard217() {
   if (n) n.onclick = () => { if (mgOff217 < 0) { mgOff217++; redraw("mgNext217"); } };
 }
 
-/* ---------- 3. Milestones ---------- */
+/* ---------- 3. Milestones (shown as "Achievements" since 1.05) ---------- */
 const MS_LIFTS217 = [["squat", "Squat", n => n === "Barbell squat" || n === "Squat"], ["bench", "Bench press", n => n === "Bench press"], ["deadlift", "Deadlift", n => n === "Deadlift" || n === "Sumo deadlift"], ["ohp", "Overhead press", n => n === "Overhead press"]];
 const MS_PLATES217 = [[1, 135, 60], [2, 225, 100], [3, 315, 140], [4, 405, 180]];
 const MS_BW217 = { squat: [1, 1.5, 2], bench: [1, 1.5], deadlift: [1.5, 2, 2.5] };
@@ -10320,7 +10336,7 @@ function msCheck217(silent) {
   if (fresh.length && !silent && !first) {
     const recent = Date.now() - 36 * 3600e3; // only toast for things earned just now, not for old or imported history
     const defs = msDefs217(), f = defs.filter(d => fresh.includes(d.id) && got[d.id] >= recent);
-    if (f.length) try { toast215(`🏅 Milestone: <b>${esc(f[f.length - 1].title)}</b>${f.length > 1 ? " and " + (f.length - 1) + " more" : ""}`, 4500); } catch (e) {}
+    if (f.length) try { celebQueue105(f); } catch (e) {} /* 1.05: celebration overlay instead of a toast */
   }
   return fresh;
 }
@@ -10331,7 +10347,7 @@ function renderMilestones217() {
   const groups = [];
   defs.forEach(d => { if (!groups.includes(d.group)) groups.push(d.group); });
   const item = d => { const on = !!seen[d.id]; return `<li class="ms217 ${on ? "on" : "off"}"><span class="msic217" aria-hidden="true">${on ? "🏅" : "🔒"}</span><div><b>${esc(d.title)}</b><div class="note">${on ? "Earned " + esc(fmtDate(seen[d.id])) : "Locked · " + esc(d.sub)}</div></div><span class="sr-only">${on ? "earned" : "locked"}</span></li>`; };
-  $(`<div class="top"><button class="iconbtn" id="msBack217" aria-label="Back to Progress">←</button><div class="hd"><div class="kicker">Progress</div><h1 class="title">Milestones</h1></div></div>
+  $(`<div class="top"><button class="iconbtn" id="msBack217" aria-label="Back to Progress">←</button><div class="hd"><div class="kicker">Progress</div><h1 class="title">Achievements</h1></div></div>
     <div class="card"><div class="row"><div class="stat"><b>${n}</b><span>earned</span></div><div class="stat"><b>${defs.length - n}</b><span>to go</span></div></div><p class="note">Worked out from your log. Plates count in ${isMetric() ? "kg (20 kg plates)" : "lb (45 lb plates)"}.</p></div>
     ${prHtml223()}
     ${groups.map(g => `<div class="card"><div class="tag">${esc(g)}</div><ul class="mslist217">${defs.filter(d => d.group === g).sort((a, b) => (seen[b.id] ? 1 : 0) - (seen[a.id] ? 1 : 0)).map(item).join("")}</ul></div>`).join("")}`);
@@ -10341,10 +10357,10 @@ function msCard217() {
   if (!state.ms217) msCheck217(true);
   const seen = (state.ms217 && state.ms217.seen) || {}, defs = msDefs217();
   const earned = defs.filter(d => seen[d.id]).sort((a, b) => String(seen[b.id]).localeCompare(String(seen[a.id])));
-  return `<div class="card" id="msCard217"><div class="tag">Milestones</div><p class="note" style="margin-top:6px">${earned.length} of ${defs.length} earned${earned.length ? " · latest: " + esc(earned[0].title) : ""}</p><button class="btn ghost" id="msOpen217">See milestones</button></div>`;
+  return `<div class="card" id="msCard217"><div class="tag">Achievements</div><p class="note" style="margin-top:6px">${earned.length} of ${defs.length} earned${earned.length ? " · latest: " + esc(earned[0].title) : ""}</p><button class="btn ghost" id="msOpen217">See achievements</button></div>`;
 }
 
-/* ---------- 2.23: Personal records (inside Milestones) ----------
+/* ---------- 2.23: Personal records (inside Achievements) ----------
    Volume = weight x reps of every set with at least 1 rep on a weighted exercise (time and distance sets are not volume).
    A failed set counts for the reps actually done (the app stores reps achieved); a 0-rep set counts for nothing.
    Day = local calendar day of the workout. Week = Monday to Sunday (same as the app's streaks and weekly views).
@@ -10534,6 +10550,286 @@ function undoDo217(snap) {
   }, true);
 })();
 
+/* ===== HTFU 1.05: Achievements (the 2.17 "Milestones", renamed), in sections, with a celebration overlay =====
+   Internal ids and state stay as they were (screen "ms217", state.ms217.seen {id: first-earned day}), so everything
+   already earned carries over. New achievements are worked out from the same logs, earned silently for old history
+   (the 1.05 first-load check is silent, and only things earned in the last 36 hours are celebrated). search "105" */
+// more tiers on the 2.17 families; ids follow the 2.17 pattern
+[["squat", [2.5]], ["bench", [0.75, 1.25, 2]], ["deadlift", [1, 3]]].forEach(([k, xs]) => { xs.forEach(x => { if (!MS_BW217[k].includes(x)) MS_BW217[k].push(x); }); MS_BW217[k].sort((a, b) => a - b); });
+[[MS_COUNTS217, [1000]], [MS_WEEKS217, [104]], [MS_DAYS217, [14, 60, 100]]].forEach(([a, xs]) => { xs.forEach(x => { if (!a.includes(x)) a.push(x); }); a.sort((p, q) => p - q); });
+const AC_SECS105 = [["pl", "Powerlifting", "🏋️"], ["fw", "Dumbbell & free weights", "💪"], ["bw", "Bodyweight", "🤸"], ["co", "Consistency", "📅"], ["vo", "Volume", "📈"], ["ru", "Running", "🏃"], ["pr", "Programs & tests", "🎯"]];
+function acSecName105(k) { const s = AC_SECS105.find(x => x[0] === k); return s ? s[1] : ""; }
+function acSecIcon105(k) { const s = AC_SECS105.find(x => x[0] === k); return s ? s[2] : "🏅"; }
+const acIs105 = names => { const set = {}; names.forEach(n => { set[n] = 1; }); return n => !!set[n]; };
+const acMs105 = k => MS_LIFTS217.find(x => x[0] === k)[2];
+/* weight families: heaviest set (at least 1 rep) on any of these names. Dumbbell weights are per dumbbell, as logged. */
+const AC_WFAM105 = [
+  { k: "squat", sec: "pl", name: "Squat", is: acMs105("squat"), thr: [135, 185, 225, 315, 405, 495], old: { 135: "pl_squat1", 225: "pl_squat2", 315: "pl_squat3", 405: "pl_squat4" } },
+  { k: "bench", sec: "pl", name: "Bench press", is: acMs105("bench"), thr: [135, 185, 225, 315, 405, 495], old: { 135: "pl_bench1", 225: "pl_bench2", 315: "pl_bench3", 405: "pl_bench4" } },
+  { k: "deadlift", sec: "pl", name: "Deadlift", is: acMs105("deadlift"), thr: [135, 185, 225, 315, 405, 495], old: { 135: "pl_deadlift1", 225: "pl_deadlift2", 315: "pl_deadlift3", 405: "pl_deadlift4" } },
+  { k: "ohp", sec: "fw", name: "Overhead press", is: acMs105("ohp"), thr: [95, 115, 135, 185, 225, 315, 405], old: { 135: "pl_ohp1", 225: "pl_ohp2", 315: "pl_ohp3", 405: "pl_ohp4" } },
+  { k: "dbb", sec: "fw", name: "Dumbbell bench press", is: acIs105(["Dumbbell bench press"]), thr: [50, 70, 90, 110], db: 1 },
+  { k: "dbsp", sec: "fw", name: "Dumbbell shoulder press", is: acIs105(["Dumbbell shoulder press", "Arnold press"]), thr: [35, 50, 70, 90], db: 1 },
+  { k: "dbc", sec: "fw", name: "Dumbbell curl", is: acIs105(["Dumbbell curl", "Hammer curl"]), thr: [25, 35, 50, 65], db: 1 },
+  { k: "bbc", sec: "fw", name: "Barbell curl", is: acIs105(["Barbell curl"]), thr: [65, 95, 115, 135] },
+  { k: "dbr", sec: "fw", name: "Dumbbell row", is: acIs105(["Dumbbell row", "Kroc row"]), thr: [50, 75, 100, 120], db: 1 },
+  { k: "bbr", sec: "fw", name: "Barbell row", is: acIs105(["Barbell row", "Pendlay row"]), thr: [95, 135, 185, 225, 275] },
+  { k: "dbl", sec: "fw", name: "Dumbbell lunge", is: acIs105(["Dumbbell lunge", "Dumbbell walking lunge", "Dumbbell Bulgarian split squat"]), thr: [25, 40, 60, 80], db: 1 },
+  { k: "rdl", sec: "fw", name: "Romanian deadlift", is: acIs105(["Romanian deadlift"]), thr: [135, 185, 225, 315] },
+  { k: "fsq", sec: "fw", name: "Front squat", is: acIs105(["Front squat"]), thr: [135, 185, 225, 315] },
+  { k: "ht", sec: "fw", name: "Hip thrust", is: acIs105(["Hip thrust"]), thr: [135, 225, 315, 405] }
+];
+const AC_TOTAL105 = [500, 750, 1000, 1200, 1500];
+/* bodyweight families: most reps in one set, and lifetime reps (plank: seconds) */
+const AC_PUSH105 = ["Pushup", "Diamond pushup", "Decline pushup", "Close-grip pushup", "Hand-release pushup", "Archer pushup", "Clap pushup", "Pseudo planche pushup", "Pike pushup", "Handstand pushup"];
+const AC_BWFAM105 = [
+  { k: "push", name: "Push-ups", one: "push-up", is: acIs105(AC_PUSH105), max: [10, 25, 50, 75, 100], tot: [100, 1000, 5000, 10000] },
+  { k: "pull", name: "Pull-ups", one: "pull-up", is: acIs105(["Pullup", "Neutral grip pullup", "Weighted pullup"]), max: [1, 5, 10, 15, 20, 25], tot: [100, 500, 1000, 5000] },
+  { k: "chin", name: "Chin-ups", one: "chin-up", is: acIs105(["Chinup", "Weighted chinup"]), max: [1, 5, 10, 15, 20], tot: [100, 500, 1000] },
+  { k: "dip", name: "Dips", one: "dip", is: acIs105(["Dip", "Ring dip", "Weighted dip"]), max: [5, 10, 20, 30], tot: [100, 500, 1000, 5000] },
+  { k: "bsq", name: "Bodyweight squats", one: "squat", is: acIs105(["Bodyweight squat"]), max: [25, 50, 100, 150], tot: [1000, 5000, 10000] },
+  { k: "sit", name: "Sit-ups", one: "sit-up", is: acIs105(["Situp", "Wide-leg sit-up"]), max: [25, 50], tot: [1000, 5000] },
+  { k: "mu", name: "Muscle-ups", one: "muscle-up", is: acIs105(["Muscle-up"]), max: [1, 5, 10], tot: [] },
+  { k: "plank", name: "Plank", is: acIs105(["Plank"]), time: 1, max: [60, 120, 180, 300], tot: [1800, 3600] }
+];
+const AC_ARX105 = [1, 10, 25, 50];
+const AC_VOL105 = [100000, 500000, 1000000, 5000000], AC_DVOL105 = [10000, 20000, 40000], AC_REPS105 = [1000, 10000, 50000];
+const AC_DIST105 = [50, 100, 500], AC_SL105 = [10, 50, 100], AC_TESTS105 = [1, 10], AC_PLANS105 = [3, 5], AC_EARLY105 = [10, 50], AC_LATE105 = [10, 50];
+function acKg105(lb) { return Math.round(lb * LB_KG / 2.5) * 2.5; }
+function acMin105(lb) { return Math.min(lb, acKg105(lb) / LB_KG); }            // a kg user loading the round kg number counts
+function acW105(lb) { return isMetric() ? acKg105(lb) + " kg" : lb + " lb"; }
+function acBig105(lb) { const n = isMetric() ? Math.round(lb * LB_KG) : lb; return n.toLocaleString("en-US") + " " + weightUnit(); }
+function acSec105(s) { return s % 60 ? formatTime(s) : (s >= 3600 ? s / 3600 + " hour" + (s > 3600 ? "s" : "") : s / 60 + " minute" + (s > 60 ? "s" : "")); }
+let acStats105 = {};
+const acBaseDefs105 = msDefs217;
+msDefs217 = function () {
+  const base = acBaseDefs105(), by = {};
+  base.forEach(d => { by[d.id] = d; });
+  const out = [], used = {};
+  const add = (d, sec, fam, goal, unit) => { used[d.id] = 1; out.push(Object.assign({}, d, { sec, group: acSecName105(sec), fam: fam || "", goal: goal || 0, unit: unit || "" })); };
+  AC_WFAM105.forEach(f => f.thr.forEach(lb => {
+    const oid = f.old && f.old[lb];
+    if (oid && by[oid]) add(by[oid], f.sec, "w_" + f.k, lb, "lb");
+    else add({ id: "aw_" + f.k + lb, title: f.name + ": " + acW105(lb) + (f.db ? " dumbbells" : "") + (lb >= 495 && f.sec === "pl" ? " (5 plates)" : ""), sub: "One set of at least 1 rep at " + acW105(lb) + (f.db ? " per dumbbell" : " or more") }, f.sec, "w_" + f.k, lb, "lb");
+    if (f.k === "deadlift" && lb === 495) AC_TOTAL105.forEach(t => add({ id: "at_" + t, title: acBig105(t) + " club", sub: "Squat + bench press + deadlift best sets add up to " + acBig105(t) }, "pl", "total", t, "lb"));
+  }));
+  base.filter(d => /^bw_/.test(d.id)).forEach(d => { const m = d.id.match(/^bw_(squat|bench|deadlift)(.*)$/); add(d, "pl", m ? "bwr_" + m[1] : "", m ? Number(m[2].replace("_", ".")) : 0, "x"); });
+  AC_BWFAM105.forEach(f => {
+    f.max.forEach(n => add({ id: "ab_" + f.k + n, title: f.time ? "Plank: " + acSec105(n) : f.name + ": " + n + " in one set", sub: f.time ? "Hold a plank for " + acSec105(n) : (n === 1 ? "Do your first " + f.one : n + " " + f.one + "s in a row, in one set") }, "bw", "max_" + f.k, n, f.time ? "sec" : "reps"));
+    f.tot.forEach(n => add({ id: "abt_" + f.k + n, title: f.time ? "Plank: " + acSec105(n) + " in total" : n.toLocaleString("en-US") + " " + f.name.toLowerCase(), sub: f.time ? "All your plank holds add up to " + acSec105(n) : "Lifetime total of " + n.toLocaleString("en-US") + " " + f.one + "s" }, "bw", "tot_" + f.k, n, f.time ? "sec" : "reps"));
+  });
+  AC_ARX105.forEach(n => add({ id: "arx_" + n, title: n === 1 ? "Ab Ripper X: first full round" : "Ab Ripper X: " + n + " rounds", sub: "All 12 Ab Ripper X moves in one workout" + (n > 1 ? ", " + n + " times" : "") }, "bw", "arx", n, "n"));
+  base.filter(d => /^(wk|ws|ds)_/.test(d.id)).forEach(d => add(d, "co", /^wk_/.test(d.id) ? "wk" : "", Number(d.id.split("_")[1]), "n"));
+  add({ id: "ac_week5", title: "Five-day week", sub: "Train on 5 different days in one Monday–Sunday week" }, "co");
+  add({ id: "ac_month12", title: "Twelve-day month", sub: "Train on 12 different days in one calendar month" }, "co");
+  AC_EARLY105.forEach(n => add({ id: "ac_early" + n, title: "Early bird: " + n + " workouts", sub: "Finish " + n + " workouts before 7 am" }, "co", "early", n, "n"));
+  AC_LATE105.forEach(n => add({ id: "ac_late" + n, title: "Night owl: " + n + " workouts", sub: "Finish " + n + " workouts after 9 pm" }, "co", "late", n, "n"));
+  AC_VOL105.forEach(n => add({ id: "av_" + n, title: acBig105(n) + " lifted", sub: "Lifetime weight × reps on weighted sets" }, "vo", "vol", n, "lb"));
+  AC_DVOL105.forEach(n => add({ id: "avd_" + n, title: acBig105(n) + " in one workout", sub: "Weight × reps in a single workout" }, "vo", "dvol", n, "lb"));
+  AC_REPS105.forEach(n => add({ id: "avr_" + n, title: n.toLocaleString("en-US") + " reps", sub: "Lifetime reps on every exercise counted in reps" }, "vo", "reps", n, "reps"));
+  if (by.fivek) add(by.fivek, "ru");
+  add({ id: "ar_10k", title: "First 10K", sub: "Log a run of 10 km (6.2 mi) or more" }, "ru");
+  add({ id: "ar_half", title: "First half marathon", sub: "Log a run of 21.1 km (13.1 mi) or more" }, "ru");
+  AC_DIST105.forEach(n => add({ id: "ard_" + n, title: (isMetric() ? Math.round(n * MI_KM) + " km" : n + " miles") + " run", sub: "Lifetime running distance" }, "ru", "dist", n, "mi"));
+  if (by.c25k) add(by.c25k, "pr");
+  add({ id: "ap_b210k", title: "Bridge to 10K done", sub: "Finish the last Bridge to 10K run" }, "pr");
+  add({ id: "ap_halfnov", title: "Half marathon plan done", sub: "Finish the last run of the half marathon plan" }, "pr");
+  AC_SL105.forEach(n => add({ id: "ap_sl" + n, title: "Stronglifts 5×5: " + n + " workouts", sub: "Log " + n + " Stronglifts A or B workouts" }, "pr", "sl", n, "n"));
+  AC_PLANS105.forEach(n => add({ id: "ap_plans" + n, title: n + " different programs", sub: "Log workouts in " + n + " different programs" }, "pr", "plans", n, "n"));
+  AC_TESTS105.forEach(n => add({ id: "ap_test" + n, title: n === 1 ? "First fitness test" : n + " fitness tests", sub: n === 1 ? "Log a fitness test or max test" : "Log " + n + " fitness tests" }, "pr", "tests", n, "n"));
+  add({ id: "ap_pass", title: "Test passed", sub: "Pass a scored fitness test" }, "pr");
+  base.forEach(d => { if (!used[d.id]) add(d, "co"); });   // nothing from 2.17 is ever dropped
+  return out;
+};
+const acBaseCompute105 = msCompute217;
+msCompute217 = function () {
+  const got = acBaseCompute105();
+  const hit = (id, t) => { if (t && (!got[id] || t < got[id])) got[id] = t; };
+  const st = {}, mx = (k, v) => { if (v > (st[k] || 0)) st[k] = v; };
+  const up = (k, v, tiers, pre, t) => { const b = st[k] || 0; st[k] = b + v; tiers.forEach(n => { if (b < n && st[k] >= n) hit(pre + n, t); }); };
+  const best = {}, plans = {}, wkDays = {}, moDays = {}, dayKeys = {};
+  L105: for (const { l, id } of logsWithPlan217()) {
+    if (!l || !l.t) continue L105;
+    const t = l.t, dt = new Date(t), ymd = localYmd(dt);
+    let sets = []; try { sets = exSets217(l, id); } catch (e) { sets = []; }
+    let dvol = 0;
+    const arx = {};
+    sets.forEach(s => {
+      const r = Number(s.reps) || 0; if (!(r > 0) || !s.name) return;
+      const w = Number(s.w) || 0, repLike = s.m === "reps" || s.m === "weight" || !s.m;
+      if (repLike) { up("reps", r, AC_REPS105, "avr_", t); if (w > 0) dvol += w * r; }
+      if (repLike && w > 0) {
+        AC_WFAM105.forEach(f => { if (!f.is(s.name)) return; mx("w_" + f.k, w); f.thr.forEach(lb => { if (w + 0.01 >= acMin105(lb)) hit(f.old && f.old[lb] ? f.old[lb] : "aw_" + f.k + lb, t); }); });
+        ["squat", "bench", "deadlift"].forEach(k => { if (!acMs105(k)(s.name)) return; best[k] = Math.max(best[k] || 0, w); const bw = bwAt217(t); if (bw > 0) mx("bwr_" + k, w / bw); });
+      }
+      AC_BWFAM105.forEach(f => {
+        if (!f.is(s.name) || (f.time ? s.m !== "time" : !repLike)) return;
+        mx("max_" + f.k, r); f.max.forEach(n => { if (r >= n) hit("ab_" + f.k + n, t); });
+        up("tot_" + f.k, r, f.tot, "abt_" + f.k, t);
+      });
+      if (repLike && YOLO_AB.includes(s.name)) arx[s.name] = 1;
+      if (s.m === "dist" && /run|jog|race/i.test(s.name)) { up("dist", r, AC_DIST105, "ard_", t); if (r >= 6.2) hit("ar_10k", t); if (r >= 13.1) hit("ar_half", t); }
+    });
+    if (best.squat && best.bench && best.deadlift) { const tot = best.squat + best.bench + best.deadlift; mx("total", tot); AC_TOTAL105.forEach(n => { if (tot + 0.01 >= acMin105(n)) hit("at_" + n, t); }); }
+    mx("dvol", dvol); AC_DVOL105.forEach(n => { if (dvol >= n) hit("avd_" + n, t); });
+    up("vol", dvol, AC_VOL105, "av_", t);
+    if (Object.keys(arx).length === YOLO_AB.length) up("arx", 1, AC_ARX105, "arx_", t);
+    if (/^Stronglifts [AB]$/.test(String(l.label || ""))) up("sl", 1, AC_SL105, "ap_sl", t);
+    const pk = String(id || "");
+    if (pk && !plans[pk]) { plans[pk] = 1; up("plans", 1, AC_PLANS105, "ap_plans", t); }
+    if (l.test || /^Max test/.test(String(l.label || ""))) up("tests", 1, AC_TESTS105, "ap_test", t);
+    if (l.test && l.pass === true) hit("ap_pass", t);
+    const h = dt.getHours();
+    if (h < 7) up("early", 1, AC_EARLY105, "ac_early", t);
+    if (h >= 21) up("late", 1, AC_LATE105, "ac_late", t);
+    if (!dayKeys[ymd]) {
+      dayKeys[ymd] = 1;
+      const m = new Date(dt); m.setHours(0, 0, 0, 0); m.setDate(m.getDate() - ((m.getDay() + 6) % 7));
+      const wk = localYmd(m), mo = ymd.slice(0, 7);
+      wkDays[wk] = (wkDays[wk] || 0) + 1; if (wkDays[wk] >= 5) hit("ac_week5", t);
+      moDays[mo] = (moDays[mo] || 0) + 1; if (moDays[mo] >= 12) hit("ac_month12", t);
+    }
+  }
+  st.wk = logsWithPlan217().length;
+  try {
+    (state.customs || []).forEach(c => {
+      if (!c || !c.finished) return;
+      if (c.id === "b210k") hit("ap_b210k", Number(c.finished));
+      if (c.id === "halfnov") hit("ap_halfnov", Number(c.finished));
+      if (c.id === "c25k") { hit("c25k", Number(c.finished)); hit("fivek", Number(c.finished)); }
+    });
+  } catch (e) {}
+  acStats105 = st;
+  return got;
+};
+/* ---------- screen ---------- */
+let acOpen105 = null;   // which sections are open on the Achievements screen (this app run only)
+function acVal105(unit, v) {
+  if (unit === "lb") return acBig105(v);
+  if (unit === "x") return (Math.floor(v * 100) / 100) + "× bodyweight";
+  if (unit === "sec") return acSec105(Math.round(v));
+  if (unit === "mi") return showDist(v) + " " + distUnit();
+  return Math.round(v).toLocaleString("en-US") + (unit === "reps" ? " reps" : "");
+}
+function acProg105(d) {
+  const st = acStats105 || {};
+  if (!d.fam || !d.goal || st[d.fam] == null) return "";
+  const have = st[d.fam], pct = Math.max(0, Math.min(99, Math.floor(have / d.goal * 100)));
+  const goalTxt = d.unit === "x" ? d.goal + "× bodyweight" : d.unit === "lb" && /^w_/.test(d.fam) ? acW105(d.goal) : acVal105(d.unit, d.goal);
+  const haveTxt = d.unit === "lb" && /^w_/.test(d.fam) ? showWeight(have) + " " + weightUnit() : acVal105(d.unit, have);
+  const label = /^(max_)/.test(d.fam) ? "Best set" : /^w_/.test(d.fam) ? "Heaviest" : d.fam === "total" ? "Your total" : /^bwr_/.test(d.fam) ? "Best" : d.fam === "dvol" ? "Best workout" : "So far";
+  return `<div class="acprog105"><div class="acbar105" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="${esc(d.title)}: ${pct}%"><i style="width:${pct}%"></i></div><div class="note">${esc(label)}: <b class="acnow105">${esc(haveTxt)}</b> of ${esc(goalTxt)}</div></div>`;
+}
+renderMilestones217 = function () {
+  msCheck217(true);
+  const seen = state.ms217.seen, defs = msDefs217();
+  const n = defs.filter(d => seen[d.id]).length;
+  if (!acOpen105) acOpen105 = {};
+  const item = (d, prog) => { const on = !!seen[d.id]; return `<li class="ms217 ${on ? "on" : "off"}" data-ac="${esc(d.id)}"><span class="msic217" aria-hidden="true">${on ? "🏅" : "🔒"}</span><div><b>${esc(d.title)}</b><div class="note">${on ? "Earned " + esc(fmtDate(seen[d.id])) : "Locked · " + esc(d.sub)}</div>${!on && prog ? prog : ""}</div><span class="sr-only">${on ? "earned" : "locked"}</span></li>`; };
+  const secHtml = ([k, name, ic]) => {
+    const list = defs.filter(d => d.sec === k);
+    if (!list.length) return "";
+    const got = list.filter(d => seen[d.id]).sort((a, b) => String(seen[b.id]).localeCompare(String(seen[a.id])));
+    const fams = {}, locked = list.filter(d => !seen[d.id]);
+    const lockedHtml = locked.map(d => { let prog = ""; if (d.fam && !fams[d.fam]) { fams[d.fam] = 1; prog = acProg105(d); } return item(d, prog); });
+    const next = locked.find(d => d.fam && acProg105(d));
+    const pct = Math.round(got.length / list.length * 100);
+    return `<details class="sect acsec105" id="acSec105_${k}" data-sec="${k}"${acOpen105[k] ? " open" : ""}><summary><b><span aria-hidden="true">${ic}</span> ${esc(name)}</b><span class="note">${got.length} of ${list.length} earned${next ? " · next: " + esc(next.title) : ""}</span><span class="acbar105 sm" aria-hidden="true"><i style="width:${pct}%"></i></span></summary><div class="sect-body"><ul class="mslist217">${got.map(d => item(d)).join("")}${lockedHtml.join("")}</ul></div></details>`;
+  };
+  $(`<div class="top"><button class="iconbtn" id="msBack217" aria-label="Back to Progress">←</button><div class="hd"><div class="kicker">Progress</div><h1 class="title">Achievements</h1></div></div>
+    <div class="card"><div class="row"><div class="stat"><b>${n}</b><span>earned</span></div><div class="stat"><b>${defs.length - n}</b><span>to go</span></div></div><p class="note">Worked out from your log. Plates count in ${isMetric() ? "kg (20 kg plates)" : "lb (45 lb plates)"}; dumbbell weights are per dumbbell.</p></div>
+    ${prHtml223()}
+    ${AC_SECS105.map(secHtml).join("")}`);
+  document.querySelectorAll("details.acsec105").forEach(el => el.addEventListener("toggle", () => { acOpen105[el.getAttribute("data-sec")] = el.open; }));
+  const b = document.getElementById("msBack217"); if (b) { b.onclick = () => { screen = "progress"; render(); }; b.focus(); }
+};
+msCard217 = function () {
+  if (!state.ms217) msCheck217(true);
+  const seen = (state.ms217 && state.ms217.seen) || {}, defs = msDefs217();
+  const earned = defs.filter(d => seen[d.id]).sort((a, b) => String(seen[b.id]).localeCompare(String(seen[a.id])));
+  return `<div class="card" id="msCard217"><div class="tag">Achievements</div><p class="note" style="margin-top:6px">${earned.length} of ${defs.length} earned${earned.length ? " · latest: " + esc(earned[0].title) : ""}</p><button class="btn ghost" id="msOpen217">See achievements</button></div>`;
+};
+/* ---------- celebration ----------
+   msCheck217 queues what was earned in the last 36 hours. Logs are only written when a workout is finished, so the
+   overlay comes up after the workout is saved (on the summary / Today screen). It never covers a set or rest screen,
+   the guided tour, the splash or another dialog: it waits until they are gone. Up to 3 are shown one after another;
+   4 or more at once get one combined card with the list. Back, Escape or "Nice!" moves on; nothing is lost, as
+   everything stays on the Achievements screen. */
+const celebQ105 = [];
+let celeb105 = null;
+const CELEB_MSG105 = ["Congratulations! The work is paying off.", "Well earned. Keep it going.", "Congratulations! That one took real effort.", "Nice work. On to the next one."];
+function celebQueue105(defs) { (defs || []).forEach(d => { if (d && !celebQ105.some(x => x.id === d.id) && !(celeb105 && celeb105.list.some(x => x.id === d.id))) celebQ105.push(d); }); celebKick105(); }
+function celebBlocked105() {
+  if (!state || !hasProfile()) return true;
+  if (session && SESSION_SCREENS.includes(screen)) return true;
+  try { if (tour221) return true; } catch (e) {}
+  const sp = document.getElementById("splash"); if (sp && !sp.classList.contains("hide")) return true;
+  return !!document.querySelector(".ov:not(#celebOv105)");
+}
+function celebKick105(ms) {
+  if (!celebQ105.length || document.getElementById("celebOv105")) return;
+  if (celebKick105.h) return;   // one pending check at a time (re-renders must not keep pushing it back)
+  celebKick105.h = setTimeout(() => {
+    celebKick105.h = 0;
+    if (!celebQ105.length || document.getElementById("celebOv105")) return;
+    if (celebBlocked105()) { celebKick105(1500); return; }
+    celebShow105();
+  }, ms == null ? 400 : ms);
+}
+function celebShow105() {
+  const list = celebQ105.splice(0, celebQ105.length);
+  const ae = document.activeElement;
+  celeb105 = { list, i: 0, many: list.length >= 4, back: ae && ae !== document.body ? ae : null };
+  try { buzz([70, 50, 70, 50, 180]); } catch (e) {}
+  celebDraw105();
+}
+function celebDraw105() {
+  const c = celeb105; if (!c) return;
+  let ov = document.getElementById("celebOv105");
+  if (!ov) {
+    ov = document.createElement("div"); ov.className = "ov celebov105"; ov.id = "celebOv105";
+    document.body.appendChild(ov);
+    ov.addEventListener("keydown", e => {
+      if (e.key === "Escape") { e.preventDefault(); celebNext105(); return; }
+      if (e.key !== "Tab") return;
+      const f = [...ov.querySelectorAll("button")]; if (!f.length) return;
+      const i = f.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
+    });
+  }
+  const msg = CELEB_MSG105[(c.list.length + c.i) % CELEB_MSG105.length];
+  let body;
+  if (c.many) {
+    const secs = {}; c.list.forEach(d => { secs[d.sec] = (secs[d.sec] || 0) + 1; });
+    body = `<div class="celebbadge105" aria-hidden="true">🏆</div><div class="tag" id="celebSec105">Achievements</div><h2 id="celebT105" class="celebh105">${c.list.length} achievements earned!</h2><p class="note" id="celebMsg105">${esc(msg)}</p><ul class="celeblist105">${c.list.map(d => `<li><b>${esc(d.title)}</b> <span class="note">· ${esc(acSecName105(d.sec) || d.group || "")}</span></li>`).join("")}</ul>`;
+  } else {
+    const d = c.list[c.i];
+    body = `<div class="celebbadge105" aria-hidden="true"><span>🏅</span><i>${acSecIcon105(d.sec)}</i></div><div class="tag" id="celebSec105">Achievement unlocked · ${esc(acSecName105(d.sec) || d.group || "")}</div><h2 id="celebT105" class="celebh105">${esc(d.title)}</h2><p class="note">${esc(d.sub || "")}</p><p class="celebmsg105" id="celebMsg105">${esc(msg)}</p>${c.list.length > 1 ? `<p class="note" id="celebN105">${c.i + 1} of ${c.list.length}</p>` : ""}`;
+  }
+  const last = c.many || c.i >= c.list.length - 1;
+  ov.innerHTML = `<div class="ov-box" role="dialog" aria-modal="true" aria-labelledby="celebT105" aria-describedby="celebMsg105"><div class="card celebcard105">${body}<div class="btn-row celebbtns105"><button class="btn ghost" id="celebView105">View achievements</button><button class="btn primary" id="celebOk105">${last ? "Nice!" : "Nice! Next"}</button></div></div></div>`;
+  document.getElementById("celebOk105").onclick = celebNext105;
+  document.getElementById("celebView105").onclick = () => { celebClose105(); screen = "ms217"; render(); };
+  document.getElementById("celebOk105").focus();
+}
+function celebNext105() {
+  const c = celeb105; if (!c) { celebClose105(); return; }
+  if (!c.many && c.i < c.list.length - 1) { c.i++; celebDraw105(); return; }
+  celebClose105(true);
+}
+function celebClose105(restore) {
+  const c = celeb105; celeb105 = null;
+  const ov = document.getElementById("celebOv105"); if (ov) ov.remove();
+  if (restore && c && c.back && document.contains(c.back)) { try { c.back.focus(); } catch (e) {} }
+  if (celebQ105.length) celebKick105();
+}
+(function () {
+  const hb = window.handleBack;
+  window.handleBack = function () { if (document.getElementById("celebOv105")) { celebNext105(); return true; } return typeof hb === "function" ? hb.apply(this, arguments) : false; };
+  const r0 = render;
+  render = function () { const r = r0.apply(this, arguments); if (celebQ105.length) celebKick105(); return r; };
+})();
+
 /* ---------- wiring ---------- */
 (function () {
   const save0 = save;
@@ -10606,14 +10902,13 @@ function undoDo217(snap) {
     } catch (e) {}
     return r;
   };
-  // back button: milestones goes back to Progress
+  // back button: achievements goes back to Progress
   const osf = window.onSharedFile;
   if (typeof osf === "function") window.onSharedFile = function () { msCheck217.quiet = true; try { return osf.apply(this, arguments); } finally { msCheck217.quiet = false; } };
   const hb = window.handleBack;
   if (typeof hb === "function") window.handleBack = function () { if (screen === "ms217" && !document.querySelector(".ov")) { screen = "progress"; render(); return true; } return hb.apply(this, arguments); };
   // first run of 2.17: mark what's already earned, silently
-  try { if (!state.ms217 || state.ms217.v !== 1) { msCheck217(true); save0(); } else msCheck217(true); } catch (e) {}
-  try { if (state.ms217) { const before = JSON.stringify(state.ms217); msCheck217(true); if (JSON.stringify(state.ms217) !== before) save0(); } } catch (e) {}
+  try { if (!state.ms217 || state.ms217.v !== 1) { msCheck217(true); save0(); } else { const before = JSON.stringify(state.ms217); msCheck217(true); if (JSON.stringify(state.ms217) !== before) save0(); } } catch (e) {}
   try { notifSync217(); } catch (e) {}
   setTimeout(() => { try { notifDrain217(); } catch (e) {} }, 400);
 })();
@@ -10634,7 +10929,7 @@ const TOUR_STEPS221 = [
     alt102: { sel: "#exportHint102", b: "Once you have logged sessions, you can export your whole history here as a CSV or Excel file to keep it or open it in a spreadsheet." } },
   { s: "progress", t: ["#app .card"], h: "Progress", b: "Charts of your best sets over time, your streak and your personal bests. Tap a chart to see that session." },
   { s: "progress", t: ["#muscleCard217"], h: "Muscles", b: "Sets per muscle group each week on a body map, so you can see what you have trained and what you have missed." },
-  { s: "progress", t: ["#msCard217"], h: "Milestones", b: "Records and milestones you have earned, from your first session onwards." },
+  { s: "progress", t: ["#msCard217"], h: "Achievements", b: "Records and achievements you have earned, from your first session onwards." },
   { s: "settings", t: ['details[data-sect="work"]'], h: "Rest timer and workout options", b: "Between sets a rest timer counts down, with a notification and vibration when it ends. Set the rest length, warm-ups and voice cues here." },
   { s: "settings", t: ['details[data-sect="rem"]'], h: "Reminders", b: "Turn on a phone notification for your workout days and choose the time." },
   { s: "settings", t: ['details[data-sect="look"]'], h: "Themes", b: "Pick a theme and Light, Dark or System mode. The home-screen widget follows your theme." },

@@ -13,7 +13,7 @@ HTFU is an offline workout tracker for Android. Pick a program (Stronglifts 5x5,
 - Automatic progression and deloads, a rest timer that keeps running in a notification, and optional voice cues
 - Hands-free rep counter using the proximity or motion sensor
 - Plate calculator and % of 1RM calculator, exercise how-to guides
-- Charts, personal bests, streaks, a calendar and milestones
+- Charts, personal bests, streaks, a calendar and achievements
 - Body weight, measurements and optional progress photos
 - Workout-day reminders (re-armed after a reboot) and a home-screen widget
 - Backup and restore to a single file; Excel and CSV export; share plans and sessions with friends as files
@@ -47,13 +47,13 @@ echo "sdk.dir=/path/to/Android/Sdk" > local.properties   # or set ANDROID_HOME
 ./gradlew assembleRelease
 ```
 
-The unsigned APK is written to `app/build/outputs/apk/release/HTFU-1.04.apk`. Sign it with your own key:
+The unsigned APK is written to `app/build/outputs/apk/release/HTFU-1.05.apk`. Sign it with your own key:
 
 ```sh
-apksigner sign --ks my.jks --out HTFU-1.04-signed.apk app/build/outputs/apk/release/HTFU-1.04.apk
+apksigner sign --ks my.jks --out HTFU-1.05-signed.apk app/build/outputs/apk/release/HTFU-1.05.apk
 ```
 
-`./gradlew assembleDebug` builds a debug-signed `HTFU-1.04-debug.apk` you can install directly.
+`./gradlew assembleDebug` builds a debug-signed `HTFU-1.05-debug.apk` you can install directly.
 
 ## License
 

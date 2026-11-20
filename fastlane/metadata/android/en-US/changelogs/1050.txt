@@ -1,0 +1,3 @@
+- Milestones are now Achievements: 194 in 7 sections (powerlifting, dumbbell & free weights, bodyweight, consistency, volume, running, programs & tests). Everything you earned carries over; new ones are worked out from your history.
+- The Achievements screen shows earned and locked ones and your progress toward the next tier.
+- A celebration (badge and a short buzz) when you earn one, after the workout is saved, never during a set.
