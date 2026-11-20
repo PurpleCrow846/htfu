@@ -7922,7 +7922,7 @@ function renderLog() {
     ${orderPanel}
     <div class="seg" role="group" aria-label="Which plans" style="margin-top:12px"><button id="scopePlan" aria-pressed="${state.logScope !== "all" ? "true" : "false"}">This plan</button><button id="scopeAll" aria-pressed="${state.logScope === "all" ? "true" : "false"}">All plans</button></div>
     <div class="card">${state.logView === "graph" ? logGraph() : state.logView === "board" ? leaderboard() : rows}</div>
-    ${source.length ? `<div class="btn-row"><button class="btn ghost" id="export">Export Excel</button><button class="btn ghost" id="shareAll">Share all</button></div>` : ""}
+    ${source.length ? `<div class="btn-row"><button class="btn ghost" id="export">Export Excel</button><button class="btn ghost" id="shareAll">Share all</button></div>` : `<p class="note" id="exportHint102" style="margin-top:12px">Export Excel, Export CSV and Share all appear here once this list has sessions.</p>`}
     <p class="note center" style="margin-top:10px">History stays on this phone.</p>
   `);
   bindMenu();
@@ -10620,7 +10620,8 @@ const TOUR_STEPS221 = [
   { s: "plans", t: ["#openPicker"], h: "Add a program or build your own", b: "Tap + to browse every program, or choose Create custom workout to build your own from a searchable list of exercises." },
   { s: "plan", t: ["#here", "#app .card"], h: "Your plan", b: "Every week and day of the current program, with where you are now. Some programs let you edit days here." },
   { s: "log", t: ["#app .logitem", "#app .card", "#scopePlan"], h: "History", b: "Every session you finish is logged here. Tap one to see the details, edit it or share it." },
-  { s: "log", t: ["#exportCsv", "#export"], h: "Export", b: "Export your whole history as a CSV or Excel file to keep it or open it in a spreadsheet." },
+  { s: "log", t: ["#exportCsv", "#export", "#exportHint102"], h: "Export", b: "Export your whole history as a CSV or Excel file to keep it or open it in a spreadsheet.",
+    alt102: { sel: "#exportHint102", b: "Once you have logged sessions, you can export your whole history here as a CSV or Excel file to keep it or open it in a spreadsheet." } },
   { s: "progress", t: ["#app .card"], h: "Progress", b: "Charts of your best sets over time, your streak and your personal bests. Tap a chart to see that session." },
   { s: "progress", t: ["#muscleCard217"], h: "Muscles", b: "Sets per muscle group each week on a body map, so you can see what you have trained and what you have missed." },
   { s: "progress", t: ["#msCard217"], h: "Milestones", b: "Records and milestones you have earned, from your first session onwards." },
@@ -10660,6 +10661,13 @@ function startTour221(replay) {
   const steps = TOUR_STEPS221.slice();
   tourPending221 = false; tourArmed221 = false;
   tour221 = { i: 0, steps, from, prevFocus: document.activeElement, replay: !!replay, snap: JSON.stringify(state) };
+  tour221.steps = tourApplies102(steps);
+  // opening the screens to check them can set view defaults; put state back exactly as it was before the tour
+  try {
+    const o = JSON.parse(tour221.snap);
+    Object.keys(state).forEach(k => { if (!(k in o)) delete state[k]; });
+    Object.keys(o).forEach(k => { if (JSON.stringify(state[k]) !== JSON.stringify(o[k])) state[k] = o[k]; });
+  } catch (e) {}
   const ov = document.createElement("div");
   ov.id = "tour221";
   ov.innerHTML = `<div class="tour221-catch" aria-hidden="true"></div><div class="tour221-hole" aria-hidden="true"></div>
@@ -10714,24 +10722,36 @@ function tourTabPlace226() {
   const r = tb.getBoundingClientRect();
   Object.assign(c.style, { top: r.top + "px", left: r.left + "px", width: r.width + "px", height: r.height + "px" });
 }
+/* 1.02: "Step N of M" never skips a number. Before the tour starts, each step's screen is opened (the tour
+   opens them anyway; state is put back when it ends) and steps with nothing to point at are left out, so M
+   is the number of steps that will really show. If a step's element still goes missing while the tour runs,
+   it is taken out of the list instead of being jumped over, and the numbering closes up. */
+function tourApplies102(steps) {
+  const keep = [];
+  steps.forEach(st => { try { tourGo221(st.s); if (tourFind221(st)) keep.push(st); } catch (e) { keep.push(st); } });
+  return keep.length ? keep : steps;
+}
 function tourStep221(i, dir) {
   if (!tour221) return;
   const steps = tour221.steps;
-  // find the next step whose element exists on this plan (some screens differ by program)
-  let el = null;
+  // find the step's element; a step with nothing to point at is removed so the numbers stay 1..N
+  let el = null, below = 0;
   while (i >= 0 && i < steps.length) {
     tourGo221(steps[i].s);
     el = tourFind221(steps[i]);
     if (el) break;
-    i += dir || 1;
+    if (steps.length <= 1) break;
+    if (i < tour221.i) below++;
+    steps.splice(i, 1);
+    if (dir < 0) i -= 1;
   }
-  if (!el) { if (dir < 0) return tourStep221(tour221.i, 1); return endTour221("done"); }
+  if (!el) { if (dir < 0) return tourStep221(Math.max(0, Math.min(tour221.i - below, steps.length - 1)), 1); return endTour221("done"); }
   tour221.i = i; tour221.el = el;
   const st = steps[i];
   const tabId226 = tourTab226(st);
   document.getElementById("tour221n").textContent = `Step ${i + 1} of ${steps.length}` + (tabId226 ? ` · ${TOUR_TABNAME226[tabId226]} tab` : "");
   document.getElementById("tour221h").textContent = st.h;
-  document.getElementById("tour221b").textContent = st.b;
+  document.getElementById("tour221b").textContent = st.alt102 && el.matches(st.alt102.sel) ? st.alt102.b : st.b;
   const back = document.getElementById("tour221Back"), next = document.getElementById("tour221Next"), skip = document.getElementById("tour221Skip");
   back.hidden = i === 0;
   const last = i === steps.length - 1;

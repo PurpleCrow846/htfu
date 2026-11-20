@@ -1,0 +1,4 @@
+Fixed: the welcome tour skipped step 7 (Export) for anyone with no workouts logged yet, so it jumped from step 6 to step 8.
+- All 15 steps now show, in order, numbered 1 to 15.
+- With an empty log, step 7 points to a new note on the Log screen that says where Export appears once you have sessions.
+- If a step ever has nothing to show, it is left out and the numbering closes up, so there are never gaps.
