@@ -1,0 +1,6 @@
+New: a guided start for new users.
+- After you enter your numbers, HTFU asks if you're a beginner or experienced.
+- Experienced, or not sure: go straight to the full plan list.
+- Beginner: pick one or more goals (get stronger, build muscle, lose fat, start running, train at home, move better) and get 2 to 4 suggested plans, each with a one-line reason. Start one, read its overview, or see all plans.
+- Every step has a Back button.
+If you're already set up, nothing changes.

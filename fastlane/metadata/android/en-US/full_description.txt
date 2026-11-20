@@ -1,7 +1,7 @@
 HTFU is a no-nonsense workout tracker. It runs completely offline: it has no internet permission, no ads, no trackers and no account. Everything you log stays on your phone.
 
 Programs
-Follow a ready-made program or build your own. Built in:
+New to training? Tell HTFU your goals and it suggests plans to start with. Or follow any ready-made program or build your own. Built in:
 - Bodyweight: 100 Pushups, 20 Pullups, 100 Squats, Recommended Routine, Bodyweight Routine, Murph, Workout of the Day
 - Barbell: Stronglifts 5x5, Starting Strength, 5/3/1, nSuns, GZCLP, Greyskull LP, Phrak Greyskull, Texas Method, Madcow 5x5, Push Pull Legs, Upper Lower, Full Body 3x, YOLO
 - Kettlebell: Simple & Sinister, Swing Ladder

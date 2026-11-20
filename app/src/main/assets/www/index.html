@@ -385,6 +385,14 @@ table.pct217 th,table.pct217 td{padding:6px 4px;border-bottom:1px solid var(--li
   .phd228 { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 4px; }
   .phd228 .phb228 { order: 2; flex: none; width: auto; margin: 0; max-width: 45%; white-space: normal; }
   .phd228 .phd228t { order: 1; flex: 1 1 auto; min-width: 0; margin: 0; overflow-wrap: anywhere; align-self: center; }
+  /* 1.1: first-run guide (experience, goals, suggested plans) */
+  .menu-item.g110 { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .menu-item.g110 .g110t { flex: 1; min-width: 0; }
+  .menu-item.g110 .note { display: block; font-weight: 500; margin-top: 2px; }
+  .menu-item.g110[aria-pressed="true"] { border: 2px solid var(--accent); padding: 11px 13px; }
+  .g110box { width: 26px; height: 26px; min-width: 26px; border-radius: 8px; border: 2px solid var(--line); display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: var(--onaccent); }
+  .menu-item.g110[aria-pressed="true"] .g110box { background: var(--accent); border-color: var(--accent); }
+  .g110tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 </style>
 <style id="theme216">
 @font-face{font-family:"HT Oswald";src:url(data:font/woff2;base64,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) format("woff2");font-weight:600;font-style:normal;font-display:swap}
@@ -2626,9 +2634,12 @@ function handleBack208() {
   if (screen === "plans" && state.pickerOverview) { state.pickerOverview = ""; render(); return true; }
   if (screen === "plans" && state.planPicker) { state.planPicker = false; render(); return true; }
   if (screen === "plan" && state.planOverview) { state.planOverview = false; render(); return true; }
+  if (screen === "guide") { guideBack110(); return true; }
+  if (guideCanBack110()) { guideBackFromPlans110(); return true; }
   if (screen === "plans") return false;
   if (screen === "form") { screen = formBackTarget(); render(); return true; }
   if (screen === "tests" || screen === "body") { screen = "progress"; render(); return true; }
+  if (screen === "profile" && guideOn110()) { screen = "guide"; render(); return true; }
   if (session && screen === "today") { screen = "today"; } // a paused session stays saved; Today is its home
   if (!MAIN_TABS208.includes(screen)) { screen = lastMain208 && lastMain208 !== screen ? lastMain208 : "today"; render(); return true; }
   screen = "plans";
@@ -3463,7 +3474,7 @@ function stepperHtml(n) {
 }
 function navHidden() {
   if (SESSION_SCREENS.includes(screen)) return "insession";
-  if (screen === "profile" || !hasProfile()) return "nonav";
+  if (screen === "profile" || screen === "guide" || !hasProfile()) return "nonav";
   if (screen === "plans" && !homePlans().length && onboardingStep() === 2) return "nonav";
   if (screen === "today" && onboardingStep() === 3) return "nonav";
   return "";
@@ -3630,6 +3641,9 @@ window.handleBack = handleBack208;
 function hasProfile() { return Number(state.age) >= 17 && (state.sex === "m" || state.sex === "f") && Number(state.height) > 0 && Number(state.weight) > 0 && String(state.nickname || "").trim(); }
 function render() {
   if (!hasProfile() && screen !== "profile") { screen = "profile"; }
+  if (state.guide110 !== "done" && hasProfile() && (homePlans().length || allLogs().length || state.onboarded)) state.guide110 = "done";
+  if (screen === "plans" && guideOn110()) screen = "guide";
+  if (screen === "guide" && !guideOn110()) screen = "plans";
   if (screen !== "plans") { planMenu = -1; planMore = ""; state.planPicker = false; state.pickerOverview = ""; }
   if (screen !== "plan") state.planOverview = false;
   if (screen === "plan" && lastScreen !== "plan") planScrollPending = true;
@@ -3653,6 +3667,7 @@ function render() {
   if (screen === "test") renderTest();
   if (screen === "settings") renderSettings();
   if (screen === "plans") renderPlans();
+  if (screen === "guide") renderGuide110();
   if (screen === "overview") renderOverview();
   if (screen === "intake") renderIntake();
   if (screen === "profile") renderProfile();
@@ -3705,6 +3720,176 @@ function renderToday() {
   document.getElementById("start").onclick = startSession;
   document.getElementById("cog").onclick = () => { formFrom = screen; screen = "form"; render(); };
   document.getElementById("menu").onclick = () => { screen = "plans"; render(); };
+}
+
+/* ===== 1.1 (versionCode 1010): first-run guide.
+   After "Your numbers", a new user is asked Beginner / Experienced / Not sure.
+   - Experienced or Not sure: the normal plan-choosing screen.
+   - Beginner: pick one or more goals (or "I'm not sure", which goes to the normal plan screen),
+     then see 2 to 4 suggested plans that ship with HTFU, each with a one-line reason.
+   Every step has a Back button and Android Back works the same way.
+   Only shown while there is no plan on the home list and no log; anyone who already has a plan
+   or a log never sees it. Stored: state.guide110 ("done" when finished), state.guideStep110,
+   state.guideGoals110, state.guideFrom110. Nothing else changes. ===== */
+const GOALS110 = [
+  { id: "strength", label: "Get stronger", sub: "Lift heavier with a barbell", plans: ["sl", "c:ss", "c:gzclp"] },
+  { id: "muscle", label: "Build muscle", sub: "Add size with gym lifts", plans: ["c:full", "c:ul", "sl"] },
+  { id: "fat", label: "Lose fat and get fit", sub: "Burn calories and build stamina", plans: ["c:wod", "c:c25k", "c:mix"] },
+  { id: "run", label: "Start running", sub: "From the couch to 5K and on to 10K", plans: ["c:c25k", "c:b210k"] },
+  { id: "home", label: "Train at home, no gym", sub: "Bodyweight only, little or no equipment", plans: ["push", "squat", "c:rrbwf"] },
+  { id: "health", label: "Move better and stay healthy", sub: "Mobility and everyday fitness", plans: ["c:mobility", "push", "c:c25k"] }
+];
+function why110(id) {
+  const inc = state.units === "metric" ? "2.5 kg" : "5 lb";
+  const W = {
+    "sl": `Two short barbell workouts of 5×5, three days a week. Add ${inc} each time you finish all the reps.`,
+    "c:ss": "The classic first barbell plan: squat every workout, 3 sets of 5, three days a week.",
+    "c:gzclp": "A heavy, a medium and a light lift each day, with set steps for when the weight gets hard.",
+    "c:full": "Three full-body gym days a week: a squat, a press and a pull each time.",
+    "c:ul": `Four days a week, upper body then lower body, so each muscle gets more work. Add ${inc} when you hit your sets.`,
+    "c:wod": "Short circuits grouped Beginner, Intermediate and Pro. You start with the bodyweight beginner rounds.",
+    "c:c25k": "Nine weeks of run and walk, three runs a week, until you can run for 30 minutes.",
+    "c:mix": "A five-day rotation of strength, intervals, upper, lower and conditioning.",
+    "c:b210k": "Six weeks, three runs a week. The next step once you can run for 30 minutes.",
+    "push": "From your max to 100 pushups in a row. Three days a week, no equipment.",
+    "squat": "From your max to 100 bodyweight squats. No equipment.",
+    "c:rrbwf": "Full body, three times a week, with easier and harder versions of every move. Needs a pullup bar.",
+    "c:mobility": "A 10 minute daily flow for hips, spine and shoulders."
+  };
+  return W[id] || "";
+}
+function guideOn110() {
+  return hasProfile() && state.guide110 !== "done" && !homePlans().length && !allLogs().length && !state.onboarded;
+}
+function guideRecs110(goals) {
+  const known = allPlanIds();
+  const sel = GOALS110.filter(g => (goals || []).indexOf(g.id) >= 0);
+  const out = [];
+  for (let r = 0; r < 3 && out.length < 4; r++) {
+    sel.forEach(g => { const id = g.plans[r]; if (id && out.length < 4 && known.indexOf(id) >= 0 && !out.some(o => o.id === id)) out.push({ id }); });
+  }
+  out.forEach(o => { o.goals = sel.filter(g => g.plans.indexOf(o.id) >= 0).map(g => g.label); });
+  return out;
+}
+function guideGo110(step) { state.guideStep110 = step; save(); screen = "guide"; render(); window.scrollTo(0, 0); }
+function guideToPlans110(from, picker) {
+  state.guide110 = "done";
+  state.guideFrom110 = from;
+  state.planPicker = !!picker;
+  state.pickerOverview = "";
+  save();
+  screen = "plans";
+  render();
+  window.scrollTo(0, 0);
+}
+function guideCanBack110() { return screen === "plans" && state.guide110 === "done" && !!state.guideFrom110 && !homePlans().length && !allLogs().length && !state.onboarded; }
+function guideBackFromPlans110() { state.guide110 = ""; state.planPicker = false; state.pickerOverview = ""; guideGo110(state.guideFrom110 || "level"); }
+function guideBack110() {
+  const st = state.guideStep110;
+  if (document.getElementById("g110Ov")) { document.getElementById("g110Ov").remove(); return; }
+  if (st === "recs") return guideGo110("goals");
+  if (st === "goals") return guideGo110("level");
+  state.guideStep110 = "level"; save(); screen = "profile"; render(); window.scrollTo(0, 0);
+}
+function renderGuide110() {
+  const st = ["level", "goals", "recs"].indexOf(state.guideStep110) >= 0 ? state.guideStep110 : "level";
+  const goals = (Array.isArray(state.guideGoals110) ? state.guideGoals110 : []).filter(id => GOALS110.some(g => g.id === id));
+  if (st === "recs" && !guideRecs110(goals).length) { state.guideStep110 = "goals"; return renderGuide110(); }
+  const back = `<button class="iconbtn" id="g110Back" aria-label="Back">‹</button>`;
+  const head = (kicker, title) => `${stepperHtml(2)}<div class="top">${back}<div class="hd" style="flex:1"><div class="kicker">${kicker}</div><h1 class="title">${title}</h1></div></div>`;
+  const opt = (id, title, sub, pressed) => `<button class="menu-item g110" id="${id}"${pressed == null ? "" : ` aria-pressed="${pressed ? "true" : "false"}"`}>${pressed == null ? "" : `<span class="g110box" aria-hidden="true">${pressed ? "✓" : ""}</span>`}<span class="g110t">${title}<span class="note">${sub}</span></span></button>`;
+  if (st === "level") {
+    $(`
+      ${head("Before you pick a plan", "Your experience")}
+      <div class="card">
+        <h2 style="margin:0 0 4px">Are you a beginner or experienced?</h2>
+        <p class="note">This only changes how you pick your first plan. Every plan stays open to you.</p>
+        ${opt("g110Beg", "Beginner", "New to training, or back after a long break. Tell us your goals and we'll suggest plans.")}
+        ${opt("g110Exp", "Experienced", "You know what you want. Go straight to all plans.")}
+        ${opt("g110Unsure", "Not sure", "See all plans and choose for yourself.")}
+      </div>
+    `);
+    document.getElementById("g110Beg").onclick = () => { state.guideLevel110 = "beginner"; guideGo110("goals"); };
+    document.getElementById("g110Exp").onclick = () => { state.guideLevel110 = "experienced"; guideToPlans110("level"); };
+    document.getElementById("g110Unsure").onclick = () => { state.guideLevel110 = "unsure"; guideToPlans110("level"); };
+  } else if (st === "goals") {
+    $(`
+      ${head("Beginner", "Your goals")}
+      <div class="card">
+        <h2 style="margin:0 0 4px">What do you want from training?</h2>
+        <p class="note">Pick one or more.</p>
+        <div role="group" aria-label="Goals">${GOALS110.map(g => opt("g110G-" + g.id, esc(g.label), esc(g.sub), goals.indexOf(g.id) >= 0)).join("")}</div>
+        <p class="note err" id="g110Err" role="alert" style="margin-top:8px"></p>
+        <div class="btn-row"><button class="btn primary" id="g110Show">Show my plans</button></div>
+        <div class="btn-row"><button class="btn ghost" id="g110NotSure">I'm not sure. Show all plans</button></div>
+      </div>
+    `);
+    GOALS110.forEach(g => {
+      document.getElementById("g110G-" + g.id).onclick = (e) => {
+        const cur = (Array.isArray(state.guideGoals110) ? state.guideGoals110 : []).filter(id => GOALS110.some(x => x.id === id));
+        const i = cur.indexOf(g.id);
+        if (i >= 0) cur.splice(i, 1); else cur.push(g.id);
+        state.guideGoals110 = GOALS110.map(x => x.id).filter(id => cur.indexOf(id) >= 0);
+        save();
+        const on = state.guideGoals110.indexOf(g.id) >= 0;
+        const b = e.currentTarget;
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        const box = b.querySelector(".g110box");
+        if (box) box.textContent = on ? "✓" : "";
+        const err = document.getElementById("g110Err");
+        if (err && state.guideGoals110.length) err.textContent = "";
+      };
+    });
+    document.getElementById("g110Show").onclick = () => {
+      const cur = (Array.isArray(state.guideGoals110) ? state.guideGoals110 : []).filter(id => GOALS110.some(g => g.id === id));
+      if (!cur.length) { const err = document.getElementById("g110Err"); if (err) err.textContent = "Pick at least one goal, or tap I'm not sure."; return; }
+      guideGo110("recs");
+    };
+    document.getElementById("g110NotSure").onclick = () => guideToPlans110("goals");
+  } else {
+    const recs = guideRecs110(goals);
+    $(`
+      ${head("Suggested for you", "Plans for you")}
+      <p class="sub">Based on your goals. Start one now. You can add or switch plans any time with +.</p>
+      ${recs.map(r => `<div class="card">
+        <div class="g110tags">${r.goals.map(g => `<span class="pill">${esc(g)}</span>`).join("")}</div>
+        <h2 style="margin:8px 0 4px">${esc(planLabel(r.id))}</h2>
+        <p class="note">${esc(why110(r.id))}</p>
+        <div class="btn-row"><button class="btn primary" data-g110-start="${esc(r.id)}">Start ${esc(planLabel(r.id))}</button></div>
+        <div class="btn-row"><button class="btn ghost" data-g110-ov="${esc(r.id)}">Overview</button></div>
+      </div>`).join("")}
+      <div class="card">
+        <p class="note">Want something else?</p>
+        <div class="btn-row"><button class="btn ghost" id="g110All">See all plans</button></div>
+      </div>
+    `);
+    document.querySelectorAll("[data-g110-start]").forEach(btn => btn.onclick = () => {
+      const id = btn.getAttribute("data-g110-start");
+      if (allPlanIds().indexOf(id) < 0) return;
+      state.guide110 = "done";
+      state.guideFrom110 = "";
+      if (homePlans().indexOf(id) < 0) state.homePlans = homePlans().concat(id);
+      save();
+      usePlan(id);
+      state.planPicker = false;
+      screen = "today";
+      render();
+      window.scrollTo(0, 0);
+    });
+    document.querySelectorAll("[data-g110-ov]").forEach(btn => btn.onclick = () => {
+      const id = btn.getAttribute("data-g110-ov");
+      const ov = document.createElement("div");
+      ov.className = "ov"; ov.id = "g110Ov";
+      ov.innerHTML = `<div class="ov-box" role="dialog" aria-modal="true" aria-label="Overview of ${esc(planLabel(id))}"><div class="top"><div style="flex:1"><div class="kicker">Overview</div><h1 class="title">${esc(planLabel(id))}</h1></div><button class="iconbtn" id="g110OvX" data-close aria-label="Close">×</button></div>${overviewBody(id)}</div>`;
+      document.getElementById("app").appendChild(ov);
+      const close = () => { ov.remove(); btn.focus(); };
+      document.getElementById("g110OvX").onclick = close;
+      ov.onclick = (e) => { if (e.target === ov) close(); };
+      document.getElementById("g110OvX").focus();
+    });
+    document.getElementById("g110All").onclick = () => guideToPlans110("recs", true);
+  }
+  document.getElementById("g110Back").onclick = guideBack110;
 }
 
 function renderProfile() {
@@ -3982,7 +4167,7 @@ function renderPlans() {
   $(`
     ${step === 2 ? stepperHtml(2) : ""}
     <div class="top">
-      ${step === 2 ? "" : `<button class="iconbtn" id="closePlans" aria-label="Close">×</button>`}
+      ${step === 2 ? (guideCanBack110() ? `<button class="iconbtn" id="g110PlansBack" aria-label="Back">‹</button>` : "") : `<button class="iconbtn" id="closePlans" aria-label="Close">×</button>`}
       <div style="flex:1"><div class="kicker">Choose a plan</div><h1 class="title">Plans</h1></div>
       <button class="iconbtn" id="openPicker" aria-label="${state.planPicker ? "Close list" : "Add program"}" aria-expanded="${state.planPicker ? "true" : "false"}">${state.planPicker ? "−" : "+"}</button>
     </div>
@@ -3994,6 +4179,8 @@ function renderPlans() {
     </div>` : (state.planPicker ? "" : starter)}
     ${modal}
   `);
+  const g110PlansBack = document.getElementById("g110PlansBack");
+  if (g110PlansBack) g110PlansBack.onclick = guideBackFromPlans110;
   const closePlans = document.getElementById("closePlans");
   if (closePlans) closePlans.onclick = () => { state.planPicker = false; state.pickerOverview = ""; screen = "today"; render(); };
   document.getElementById("openPicker").onclick = () => { state.planPicker = !state.planPicker; state.pickerOverview = ""; renderPlans(); };
