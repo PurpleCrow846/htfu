@@ -1,0 +1,4 @@
+- 15 new programs: Strong Curves-style Glutes, EMOM and AMRAP workouts, bodyweight and dumbbell circuits, 5 specialization blocks, Dumbbell Full Body and Upper/Lower, 5K Improver, 5K Speed, 10K Improver.
+- 23 new exercises.
+- Optional: rest per exercise, circuits in custom plans, warm-ups saved separately, RIR, your equipment.
+- Shared plans leave your progress out, and built-in programs open as the program.
