@@ -409,6 +409,11 @@ table.pct217 th,table.pct217 td{padding:6px 4px;border-bottom:1px solid var(--li
   .g101box { width: 26px; height: 26px; min-width: 26px; border-radius: 8px; border: 2px solid var(--line); display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: var(--onaccent); }
   .menu-item.g101[aria-pressed="true"] .g101box { background: var(--accent); border-color: var(--accent); }
   .g101tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+details.p7grp > summary { list-style: none; }
+details.p7grp > summary::-webkit-details-marker { display: none; }
+details.p7grp > summary::before { content: "▸"; display: inline-block; width: 1em; transition: transform .15s; }
+details.p7grp[open] > summary::before { transform: rotate(90deg); }
+#p7q { width: 100%; margin-top: 4px; }
 </style>
 <style id="theme216">
 @font-face{font-family:"HT Oswald";src:url(data:font/woff2;base64,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) format("woff2");font-weight:600;font-style:normal;font-display:swap}
@@ -1060,7 +1065,7 @@ function isBarbell(name) {
   const n = String(name || "").toLowerCase();
   if (/dumbbell|kettlebell|cable|machine|leg press|hex|trap bar|smith|band|bodyweight|goblet|split squat|shrimp|single-leg|single leg|jump|pistol|wall|air squat|pulldown|pushdown|landmine|\bdb\b|sled|sandbag|ez-bar/.test(n)) return false;
   if (liftKey(n)) return true;
-  return /barbell|bench press|incline bench|decline bench|close-grip bench|front squat|back squat|^squat$|deadlift|overhead press|military press|push press|power clean|power snatch|pendlay|good morning|hip thrust|^press$|\bclean\b|snatch|jerk|overhead squat/.test(n); /* 1.06: all barbell Olympic lifts */
+  return /barbell|bench press|incline bench|decline bench|close-grip bench|front squat|back squat|^squat$|deadlift|overhead press|military press|push press|power clean|power snatch|pendlay|good morning|hip thrust|^press$|\bclean\b|snatch|jerk|overhead squat|pin press|spoto press/.test(n); /* 1.06: all barbell Olympic lifts; 1.07 pin/Spoto press */
 }
 function warmupSets(work, u) {
   u = plateUnit(u);
@@ -2624,7 +2629,7 @@ function backMenu208() {
 function backExpanded208() {
   const app = document.getElementById("app");
   if (!app) return false;
-  const det = [...app.querySelectorAll("details[open]")];
+  const det = [...app.querySelectorAll("details[open]:not(.p7grp)")]; /* 1.07: program groups are part of the list */
   const tog = [...app.querySelectorAll("button[aria-expanded=\"true\"]")];
   const all = det.concat(tog).sort((a, b) => a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
   const el = all[all.length - 1];
@@ -4177,7 +4182,7 @@ function renderPlans() {
   const step = onboardingStep();
   const home = planOrder();
   const modal = state.pickerOverview ? `<div class="ov" id="ovBack"><div class="ov-box"><div class="top"><div style="flex:1"><div class="kicker">Overview</div><h1 class="title">${esc(planLabel(state.pickerOverview))}</h1></div><button class="iconbtn" id="closeOv" aria-label="Close">×</button></div>${overviewBody(state.pickerOverview)}</div></div>` : "";
-  const picker = state.planPicker ? `<div class="card" style="margin-top:12px"><div class="tag">Add a program</div>${allPlanIds().slice().sort((a, b) => planLabel(a).localeCompare(planLabel(b))).map(id => `<div class="top" style="gap:8px;margin-top:10px;align-items:center"><button class="menu-item" data-pick="${id}">${esc(planLabel(id))}</button><button class="iconbtn" data-ov="${id}" aria-label="Overview of ${esc(planLabel(id))}">ⓘ</button><button class="btn ${homePlans().indexOf(id) >= 0 ? "primary" : "ghost"}" data-pin="${id}" style="width:auto;margin:0">${homePlans().indexOf(id) >= 0 ? "Added" : "Add"}</button></div>`).join("")}<button class="menu-item" id="addCustom" style="margin-top:14px">Create custom workout</button></div>` : "";
+  const picker = state.planPicker ? `<div class="card" style="margin-top:12px"><div class="tag">Add a program</div>${p7Picker()}<button class="menu-item" id="addCustom" style="margin-top:14px">Create custom workout</button></div>` : "";
   const blurb = { push: "From your max to 100 in a row. 3 days a week.", pull: "From your max to 20 in a row. 3 days a week.", squat: "From your max to 100 bodyweight squats.", sl: "Barbell 5×5. Add weight each session." };
   const starter = `<div class="card empty"><div class="em-ico">${ICON_PLANS}</div><h2>Pick your first plan</h2><p class="note">Each plan keeps its own log. You can add more later with +.</p></div>
     <div class="card"><div class="tag">Popular</div>${["push", "pull", "squat", "sl"].map(id => `<button class="menu-item" data-pick="${id}" style="margin-top:8px">${esc(planLabel(id))}<span class="note" style="display:block;font-weight:500;margin-top:2px">${blurb[id]}</span></button>`).join("")}
@@ -5877,7 +5882,7 @@ function renderForm() {
 /* ===== HTFU 2.20 (versionCode 238): 11 Ab Ripper X core exercises added to the 2.19 catalogue; search "ab ripper" ===== */
 /* 2.19 exercise catalogue: name, categories, weighted, log type, one side at a time, search aliases. Names already in 2.18 are unchanged. */
 const CAT219 = [["CH", "Chest"], ["BK", "Back"], ["SH", "Shoulders"], ["AR", "Arms"], ["LG", "Legs"], ["GL", "Glutes"], ["CO", "Core"], ["FB", "Full body / Olympic"], ["KB", "Kettlebell"], ["SM", "Strongman"], ["CA", "Cardio / Conditioning"], ["PL", "Plyometric"], ["MO", "Mobility"]];
-const EX219 = [["Run", ["CA"], 0, "dist", 0, ["jog", "jogging", "running", "treadmill run"]], ["Sprint", ["CA"], 0, "time", 0, ["sprints", "dash"]], ["2-mile run", ["CA"], 0, "time", 0, ["2 mile run", "3.2 km run"]], ["1.5-mile run", ["CA"], 0, "time", 0, ["1.5 mile run", "1.5 mile test"]], ["3-mile run", ["CA"], 0, "time", 0, ["3 mile run", "3 mile test"]], ["2.4 km run", ["CA"], 0, "time", 0, ["2.4km run", "2.4 km test"]], ["2000m run", ["CA"], 0, "time", 0, ["2 km run", "2k run"]], ["3000m run", ["CA"], 0, "time", 0, ["3 km run", "3k run"]], ["300m sprint", ["CA"], 0, "time", 0, ["300 m sprint"]], ["Sprint-drag-carry", ["CA"], 0, "time", 0, ["sdc", "sprint drag carry"]], ["Shuttle run", ["CA"], 0, "time", 0, ["suicides", "line drill", "shuttles"]], ["Sit and reach", ["MO"], 0, "flex", 0, ["sit-and-reach", "flexibility test"]], ["Core endurance", ["CO"], 0, "time", 0, ["core endurance test", "plank test"]], ["Pushup", ["CH"], 0, "reps", 0, ["push-up", "press-up", "push up"]], ["Diamond pushup", ["CH", "AR"], 0, "reps", 0, ["diamond push-up", "triangle pushup"]], ["Pike pushup", ["SH"], 0, "reps", 0, ["pike push-up"]], ["Decline pushup", ["CH"], 0, "reps", 0, ["feet elevated pushup", "decline push-up"]], ["Pullup", ["BK"], 0, "reps", 0, ["pull-up", "pull up", "wide grip pullup"]], ["Chinup", ["BK", "AR"], 0, "reps", 0, ["chin-up", "chin up"]], ["Neutral grip pullup", ["BK"], 0, "reps", 0, ["hammer grip pullup", "parallel grip pullup"]], ["Dip", ["CH", "AR"], 0, "reps", 0, ["parallel bar dip", "bar dip", "chest dip"]], ["Bench dip", ["AR"], 0, "reps", 0, ["chair dip", "triceps dip"]], ["Inverted row", ["BK"], 0, "reps", 0, ["australian pullup", "bodyweight row", "ring row", "table row"]], ["Bodyweight squat", ["LG"], 0, "reps", 0, ["air squat"]], ["Jump squat", ["PL", "LG"], 0, "reps", 0, ["squat jump"]], ["Lunge", ["LG"], 0, "reps", 1, ["forward lunge"]], ["Reverse lunge", ["LG", "GL"], 0, "reps", 1, ["backward lunge", "step back lunge"]], ["Walking lunge", ["LG"], 0, "reps", 0, ["walking lunges"]], ["Bulgarian split squat", ["LG", "GL"], 0, "reps", 1, ["rear foot elevated split squat", "rfess", "bss"]], ["Step up", ["LG", "GL"], 0, "reps", 1, ["step-up", "box step-up"]], ["Glute bridge", ["GL"], 0, "reps", 0, ["bridge", "hip bridge"]], ["Single leg glute bridge", ["GL"], 0, "reps", 1, ["single-leg glute bridge", "one leg bridge"]], ["Calf raise", ["LG"], 0, "reps", 0, ["standing calf raise", "heel raise"]], ["Plank", ["CO"], 0, "time", 0, ["front plank", "forearm plank"]], ["Side plank", ["CO"], 0, "time", 1, ["side bridge"]], ["Leg raise", ["CO"], 0, "reps", 0, ["lying leg raise"]], ["Hanging knee raise", ["CO"], 0, "reps", 0, ["hanging knee tuck"]], ["Hanging leg raise", ["CO"], 0, "reps", 0, ["hanging straight leg raise"]], ["Situp", ["CO"], 0, "reps", 0, ["sit-up", "sit up"]], ["Crunch", ["CO"], 0, "reps", 0, ["ab crunch", "crunches"]], ["Bicycle crunch", ["CO"], 0, "reps", 0, ["bicycle", "bicycles"]], ["Mountain climber", ["CA", "CO"], 0, "reps", 0, ["mountain climbers"]], ["Burpee", ["CA", "FB"], 0, "reps", 0, ["burpees", "squat thrust"]], ["Superman", ["BK"], 0, "reps", 0, ["prone back extension"]], ["Bird dog", ["CO"], 0, "reps", 0, ["bird-dog"]], ["Dead bug", ["CO"], 0, "reps", 0, ["deadbug"]], ["Wall sit", ["LG"], 0, "time", 0, ["wall squat"]], ["Barbell squat", ["LG"], 1, "weight", 0, ["back squat", "squat", "high bar squat", "low bar squat"]], ["Front squat", ["LG"], 1, "weight", 0, ["barbell front squat"]], ["Goblet squat", ["LG", "KB"], 1, "weight", 0, ["kettlebell goblet squat", "dumbbell goblet squat", "kb goblet"]], ["Bench press", ["CH"], 1, "weight", 0, ["flat bench", "barbell bench press", "bench"]], ["Incline bench", ["CH"], 1, "weight", 0, ["incline bench press", "incline barbell press"]], ["Decline bench", ["CH"], 1, "weight", 0, ["decline bench press", "decline barbell press"]], ["Dumbbell bench press", ["CH"], 1, "weight", 0, ["db bench", "dumbbell press", "flat dumbbell press"]], ["Overhead press", ["SH"], 1, "weight", 0, ["ohp", "military press", "strict press", "standing press", "barbell shoulder press"]], ["Dumbbell shoulder press", ["SH"], 1, "weight", 0, ["db shoulder press", "seated dumbbell press", "dumbbell overhead press"]], ["Push press", ["SH", "FB"], 1, "weight", 0, ["barbell push press"]], ["Barbell row", ["BK"], 1, "weight", 0, ["bent-over row", "bent over row", "bb row"]], ["Pendlay row", ["BK"], 1, "weight", 0, ["dead stop row"]], ["Dumbbell row", ["BK"], 1, "weight", 1, ["one-arm row", "single-arm dumbbell row", "db row"]], ["Deadlift", ["BK", "LG"], 1, "weight", 0, ["conventional deadlift", "barbell deadlift"]], ["Romanian deadlift", ["LG", "GL"], 1, "weight", 0, ["rdl", "dumbbell romanian deadlift", "db rdl"]], ["Sumo deadlift", ["LG", "GL"], 1, "weight", 0, ["sumo pull"]], ["Hip thrust", ["GL"], 1, "weight", 0, ["barbell hip thrust"]], ["Lat pulldown", ["BK"], 1, "weight", 0, ["pulldown", "wide grip pulldown", "close grip pulldown", "lat pull-down"]], ["Seated row", ["BK"], 1, "weight", 0, ["machine row", "seated machine row"]], ["Cable row", ["BK"], 1, "weight", 0, ["seated cable row", "low row"]], ["Dumbbell curl", ["AR"], 1, "weight", 0, ["bicep curl", "biceps curl", "db curl"]], ["Barbell curl", ["AR"], 1, "weight", 0, ["ez-bar curl", "ez curl", "straight bar curl", "bb curl"]], ["Hammer curl", ["AR"], 1, "weight", 0, ["neutral grip curl", "rope hammer curl"]], ["Preacher curl", ["AR"], 1, "weight", 0, ["scott curl"]], ["Triceps extension", ["AR"], 1, "weight", 0, ["overhead triceps extension", "overhead extension", "cable overhead extension"]], ["Triceps pushdown", ["AR"], 1, "weight", 0, ["pushdown", "rope pushdown", "cable pushdown", "tricep pushdown"]], ["Skull crusher", ["AR"], 1, "weight", 0, ["lying triceps extension", "french press", "skullcrusher"]], ["Lateral raise", ["SH"], 1, "weight", 0, ["side raise", "dumbbell lateral raise", "lat raise"]], ["Front raise", ["SH"], 1, "weight", 0, ["dumbbell front raise", "plate front raise"]], ["Rear delt fly", ["SH"], 1, "weight", 0, ["reverse fly", "bent-over reverse fly", "rear delt raise"]], ["Face pull", ["SH", "BK"], 1, "weight", 0, ["cable face pull", "rope face pull"]], ["Shrug", ["BK"], 1, "weight", 0, ["barbell shrug", "dumbbell shrug", "trap shrug"]], ["Leg press", ["LG"], 1, "weight", 0, ["machine leg press", "45 degree leg press"]], ["Leg curl", ["LG"], 1, "weight", 0, ["hamstring curl", "lying leg curl", "seated leg curl"]], ["Leg extension", ["LG"], 1, "weight", 0, ["quad extension", "knee extension"]], ["Hip abduction", ["GL"], 1, "weight", 0, ["abductor machine", "hip abductor"]], ["Hip adduction", ["LG"], 1, "weight", 0, ["adductor machine", "hip adductor"]], ["Farmer carry", ["SM"], 1, "time", 0, ["farmer walk", "farmers walk", "farmer's carry", "farmers carry"]], ["Kettlebell swing", ["KB"], 1, "weight", 0, ["kb swing", "russian swing", "two-hand swing", "single-arm swing", "one-arm swing"]], ["Chest fly", ["CH"], 1, "weight", 0, ["dumbbell fly", "db fly", "flye", "flat fly"]], ["Cable crossover", ["CH"], 1, "weight", 0, ["cable fly", "cable chest fly", "high cable fly"]], ["Good morning", ["LG", "BK"], 1, "weight", 0, ["barbell good morning"]], ["Back extension", ["BK"], 0, "reps", 0, ["hyperextension", "45 degree back extension", "roman chair"]], ["Calf raise machine", ["LG"], 1, "weight", 0, ["standing calf raise machine", "smith calf raise"]], ["Arnold press", ["SH"], 1, "weight", 0, ["arnold dumbbell press"]], ["Close-grip bench press", ["AR", "CH"], 1, "weight", 0, ["close grip bench", "cgbp", "narrow grip bench"]], ["T-bar row", ["BK"], 1, "weight", 0, ["tbar row", "landmine row", "t bar row"]], ["Dumbbell pullover", ["CH", "BK"], 1, "weight", 0, ["pullover", "db pullover"]], ["Incline dumbbell press", ["CH"], 1, "weight", 0, ["incline db press", "incline dumbbell bench"]], ["Hex bar deadlift", ["LG", "BK"], 1, "weight", 0, ["trap bar deadlift", "hex deadlift"]], ["Hand-release pushup", ["CH"], 0, "reps", 0, ["hand release pushup", "hand-release push-up"]], ["Weighted pullup", ["BK"], 1, "weight", 0, ["weighted pull-up"]], ["Weighted dip", ["CH", "AR"], 1, "weight", 0, ["weighted dips"]], ["Power clean", ["FB"], 1, "weight", 0, ["clean", "barbell clean"]], ["Turkish get-up", ["KB", "CO"], 1, "weight", 1, ["tgu", "get-up", "turkish getup"]], ["Cat-cow", ["MO"], 0, "reps", 0, ["cat cow", "cat camel"]], ["World's greatest stretch", ["MO"], 0, "reps", 1, ["worlds greatest stretch", "wgs"]], ["90/90 hip switch", ["MO"], 0, "reps", 0, ["90 90", "hip switch", "90-90"]], ["Deep squat hold", ["MO"], 0, "time", 0, ["deep squat", "squat hold", "asian squat"]], ["Thoracic open book", ["MO"], 0, "reps", 1, ["open book", "t-spine rotation"]], ["Couch stretch", ["MO"], 0, "time", 1, ["rear foot elevated hip flexor stretch"]], ["Dead hang", ["BK", "AR"], 0, "time", 0, ["bar hang", "passive hang"]], ["Child's pose", ["MO"], 0, "time", 0, ["childs pose", "child pose"]], ["Standing quad stretch", ["MO"], 0, "time", 1, ["quad stretch"]], ["Seated hamstring stretch", ["MO"], 0, "time", 0, ["hamstring stretch", "seated forward fold"]], ["Kneeling hip flexor stretch", ["MO"], 0, "time", 1, ["hip flexor stretch", "half kneeling hip flexor stretch"]], ["Figure-4 glute stretch", ["MO"], 0, "time", 1, ["figure 4 stretch", "figure four", "glute stretch"]], ["Doorway chest stretch", ["MO"], 0, "time", 0, ["chest stretch", "pec stretch"]], ["Box breathing", ["MO"], 0, "time", 0, ["breathing", "square breathing"]], ["Bear crawl", ["CA", "CO"], 0, "time", 0, ["bear crawls"]], ["Sledgehammer strike", ["SM"], 1, "weight", 0, ["sledgehammer", "tire slam", "hammer slam"]], ["Scapular pull", ["BK"], 0, "reps", 0, ["scap pull", "scapular pullup", "scap pull-up"]], ["Pullup negative", ["BK"], 0, "reps", 0, ["negative pullup", "eccentric pullup"]], ["Split squat", ["LG"], 0, "reps", 1, ["static lunge", "stationary lunge"]], ["Parallel bar support hold", ["AR", "CH"], 0, "time", 0, ["dip support hold", "support hold", "top dip hold"]], ["Negative dip", ["CH", "AR"], 0, "reps", 0, ["eccentric dip", "dip negative"]], ["Single-leg Romanian deadlift", ["LG", "GL"], 1, "weight", 1, ["single leg rdl", "sl rdl", "single-leg rdl"]], ["Nordic curl", ["LG"], 0, "reps", 0, ["nordic hamstring curl", "nordics", "banded nordic curl"]], ["Wall pushup", ["CH"], 0, "reps", 0, ["wall push-up"]], ["Incline pushup", ["CH"], 0, "reps", 0, ["incline push-up", "hands elevated pushup"]], ["Pseudo planche pushup", ["CH", "SH"], 0, "reps", 0, ["planche pushup", "pppu"]], ["Ab wheel rollout", ["CO"], 0, "reps", 0, ["ab roller", "standing ab rollout", "rollout from toes"]], ["Reverse hyperextension", ["GL", "BK"], 1, "weight", 0, ["reverse hyper"]], ["Stair sprints", ["CA"], 0, "time", 0, ["stair sprint", "stadium stairs"]], ["Kneeling ab rollout", ["CO"], 0, "reps", 0, ["ab rollout", "kneeling rollout", "barbell rollout"]], ["Trap bar squat", ["LG"], 1, "weight", 0, ["hex bar squat"]], ["Weighted hyperextension", ["BK", "GL"], 1, "weight", 0, ["weighted back extension"]], ["Floor press", ["CH", "AR"], 1, "weight", 0, ["barbell floor press", "dumbbell floor press"]], ["Machine chest press", ["CH"], 1, "weight", 0, ["chest press machine", "seated chest press", "chest press"]], ["Pec deck", ["CH"], 1, "weight", 0, ["pec fly machine", "machine fly", "butterfly machine", "pec dec"]], ["Incline dumbbell fly", ["CH"], 1, "weight", 0, ["incline fly", "incline db fly"]], ["Low-to-high cable fly", ["CH"], 1, "weight", 0, ["low cable fly", "upward cable fly", "low to high fly"]], ["Svend press", ["CH"], 1, "weight", 0, ["plate press", "plate squeeze press"]], ["Close-grip pushup", ["CH", "AR"], 0, "reps", 0, ["narrow pushup", "close grip push-up", "triceps pushup"]], ["Archer pushup", ["CH"], 0, "reps", 0, ["archer push-up"]], ["Clap pushup", ["CH", "PL"], 0, "reps", 0, ["plyo pushup", "explosive pushup", "plyometric pushup"]], ["Ring dip", ["CH", "AR"], 0, "reps", 0, ["ring dips"]], ["Chest-supported row", ["BK"], 1, "weight", 0, ["incline dumbbell row", "chest supported row", "incline bench row"]], ["Seal row", ["BK"], 1, "weight", 0, ["bench row"]], ["Meadows row", ["BK"], 1, "weight", 1, ["meadow row"]], ["Kroc row", ["BK"], 1, "weight", 1, ["kroc rows"]], ["Straight-arm pulldown", ["BK"], 1, "weight", 0, ["straight arm pulldown", "lat prayer", "straight-arm pushdown"]], ["Single-arm cable row", ["BK"], 1, "weight", 1, ["one-arm cable row", "single arm cable row"]], ["Rack pull", ["BK"], 1, "weight", 0, ["block pull", "pin pull", "rack pulls"]], ["Deficit deadlift", ["BK", "LG"], 1, "weight", 0, ["deficit pull"]], ["Muscle-up", ["BK", "CH"], 0, "reps", 0, ["bar muscle-up", "muscle up", "ring muscle-up"]], ["Renegade row", ["BK", "CO"], 1, "weight", 0, ["plank row"]], ["Neck curl", ["BK"], 1, "weight", 0, ["neck flexion", "lying neck curl"]], ["Neck extension", ["BK"], 1, "weight", 0, ["lying neck extension", "neck harness extension"]], ["Landmine press", ["SH", "CH"], 1, "weight", 1, ["landmine shoulder press", "single-arm landmine press"]], ["Band pull-apart", ["SH", "BK"], 0, "reps", 0, ["pull-apart", "band pull apart"]], ["Reverse pec deck", ["SH"], 1, "weight", 0, ["reverse fly machine", "rear delt machine", "reverse pec dec"]], ["Upright row", ["SH", "BK"], 1, "weight", 0, ["barbell upright row", "cable upright row"]], ["Z press", ["SH"], 1, "weight", 0, ["z-press", "seated floor press overhead"]], ["Bradford press", ["SH"], 1, "weight", 0, ["rocking press", "front-to-back press"]], ["Cable lateral raise", ["SH"], 1, "weight", 1, ["cable side raise", "single-arm cable lateral raise"]], ["Machine shoulder press", ["SH"], 1, "weight", 0, ["shoulder press machine", "seated machine press"]], ["Y raise", ["SH", "BK"], 1, "weight", 0, ["incline y raise", "prone y raise", "y-raise"]], ["Handstand pushup", ["SH"], 0, "reps", 0, ["hspu", "wall handstand pushup", "handstand push-up"]], ["Handstand hold", ["SH"], 0, "time", 0, ["wall handstand", "handstand"]], ["Cable curl", ["AR"], 1, "weight", 0, ["cable biceps curl", "cable bar curl"]], ["Incline dumbbell curl", ["AR"], 1, "weight", 0, ["incline curl", "incline db curl"]], ["Concentration curl", ["AR"], 1, "weight", 1, ["seated concentration curl"]], ["Spider curl", ["AR"], 1, "weight", 0, ["prone incline curl"]], ["Zottman curl", ["AR"], 1, "weight", 0, ["zottman"]], ["Reverse curl", ["AR"], 1, "weight", 0, ["reverse grip curl", "overhand curl", "ez-bar reverse curl"]], ["Wrist curl", ["AR"], 1, "weight", 0, ["wrist flexion", "forearm curl"]], ["Reverse wrist curl", ["AR"], 1, "weight", 0, ["wrist extension", "reverse forearm curl"]], ["Wrist roller", ["AR"], 1, "weight", 0, ["forearm roller"]], ["Plate pinch", ["AR"], 1, "time", 0, ["plate pinch hold", "pinch grip hold"]], ["Dumbbell kickback", ["AR"], 1, "weight", 0, ["triceps kickback", "tricep kickback"]], ["JM press", ["AR"], 1, "weight", 0, ["j.m. press"]], ["Tate press", ["AR"], 1, "weight", 0, ["elbows-out extension"]], ["Hack squat", ["LG"], 1, "weight", 0, ["hack squat machine", "machine hack squat"]], ["Box squat", ["LG"], 1, "weight", 0, ["barbell box squat"]], ["Pause squat", ["LG"], 1, "weight", 0, ["paused squat", "paused back squat"]], ["Zercher squat", ["LG"], 1, "weight", 0, ["zercher"]], ["Safety bar squat", ["LG"], 1, "weight", 0, ["ssb squat", "safety squat bar squat", "ssb"]], ["Belt squat", ["LG"], 1, "weight", 0, ["belt squat machine"]], ["Landmine squat", ["LG"], 1, "weight", 0, ["landmine goblet squat"]], ["Sissy squat", ["LG"], 0, "reps", 0, ["sissy squats"]], ["Pistol squat", ["LG"], 0, "reps", 1, ["pistol", "single-leg squat", "one-leg squat"]], ["Shrimp squat", ["LG"], 0, "reps", 1, ["shrimp", "skater squat"]], ["Cossack squat", ["LG", "MO"], 0, "reps", 0, ["cossack", "side-to-side squat"]], ["Lateral lunge", ["LG"], 0, "reps", 1, ["side lunge"]], ["Seated calf raise", ["LG"], 1, "weight", 0, ["seated calf raise machine"]], ["Single-leg calf raise", ["LG"], 0, "reps", 1, ["one-leg calf raise", "single leg calf raise"]], ["Tibialis raise", ["LG"], 0, "reps", 0, ["tib raise", "tibialis anterior raise"]], ["Glute-ham raise", ["LG"], 0, "reps", 0, ["ghr", "glute ham raise", "glute ham developer"]], ["Stability ball leg curl", ["LG"], 0, "reps", 0, ["swiss ball hamstring curl", "ball leg curl", "stability ball hamstring curl"]], ["Reverse Nordic", ["LG"], 0, "reps", 0, ["reverse nordic curl"]], ["Barbell glute bridge", ["GL"], 1, "weight", 0, ["weighted glute bridge", "barbell bridge"]], ["Single-leg hip thrust", ["GL"], 0, "reps", 1, ["single leg hip thrust", "one-leg hip thrust"]], ["Cable kickback", ["GL"], 1, "weight", 1, ["glute kickback", "cable glute kickback"]], ["Cable pull-through", ["GL"], 1, "weight", 0, ["pull-through", "pull through"]], ["Frog pump", ["GL"], 0, "reps", 0, ["frog pumps"]], ["Clamshell", ["GL"], 0, "reps", 1, ["clamshells", "clam"]], ["Fire hydrant", ["GL"], 0, "reps", 1, ["fire hydrants"]], ["Donkey kick", ["GL"], 0, "reps", 1, ["donkey kicks", "quadruped kickback"]], ["Monster walk", ["GL"], 0, "reps", 0, ["band walk", "lateral band walk", "banded side step"]], ["Curtsy lunge", ["GL", "LG"], 0, "reps", 1, ["curtsy", "crossover lunge"]], ["L-sit", ["CO"], 0, "time", 0, ["l sit", "l-sit hold"]], ["Dragon flag", ["CO"], 0, "reps", 0, ["dragon flags"]], ["Toes-to-bar", ["CO"], 0, "reps", 0, ["toes to bar", "t2b", "ttb"]], ["Hollow hold", ["CO"], 0, "time", 0, ["hollow body hold", "hollow body"]], ["Copenhagen plank", ["CO", "LG"], 0, "time", 1, ["copenhagen", "copenhagen adductor plank", "adductor plank"]], ["Pallof press", ["CO"], 1, "weight", 1, ["anti-rotation press", "banded pallof press", "cable pallof press"]], ["Cable woodchop", ["CO"], 1, "weight", 1, ["woodchop", "wood chop", "cable chop"]], ["Russian twist", ["CO"], 0, "reps", 0, ["russian twists", "seated twist"]], ["V-up", ["CO"], 0, "reps", 0, ["v-ups", "v up", "jackknife"]], ["Flutter kicks", ["CO"], 0, "time", 0, ["flutter kick", "flutters"]], ["Reverse crunch", ["CO"], 0, "reps", 0, ["reverse crunches"]], ["Cable crunch", ["CO"], 1, "weight", 0, ["kneeling cable crunch", "rope crunch"]], ["Dumbbell side bend", ["CO"], 1, "weight", 1, ["side bend", "oblique side bend"]], ["Suitcase carry", ["CO", "SM"], 1, "time", 1, ["suitcase walk", "one-arm carry", "single-arm farmer carry"]], ["Plank shoulder taps", ["CO"], 0, "reps", 0, ["shoulder taps", "plank taps"]], ["Landmine rotation", ["CO"], 1, "weight", 0, ["landmine twist", "landmine 180", "landmine rainbow"]], ["Hang clean", ["FB"], 1, "weight", 0, ["hang squat clean"]], ["Clean and jerk", ["FB"], 1, "weight", 0, ["c&j", "clean & jerk"]], ["Snatch", ["FB"], 1, "weight", 0, ["barbell snatch", "squat snatch", "full snatch"]], ["Push jerk", ["FB", "SH"], 1, "weight", 0, ["jerk", "power jerk"]], ["Thruster", ["FB"], 1, "weight", 0, ["barbell thruster", "dumbbell thruster", "kettlebell thruster", "squat to press"]], ["Overhead squat", ["FB", "LG"], 1, "weight", 0, ["ohs", "overhead barbell squat"]], ["Dumbbell snatch", ["FB"], 1, "weight", 1, ["db snatch", "single-arm dumbbell snatch"]], ["Wall ball", ["FB", "CA"], 1, "weight", 0, ["wall ball shot", "wall balls", "wallball"]], ["Medicine ball slam", ["FB", "PL"], 1, "weight", 0, ["ball slam", "med ball slam", "slam ball"]], ["Kettlebell clean", ["KB"], 1, "weight", 1, ["kb clean"]], ["Kettlebell snatch", ["KB"], 1, "weight", 1, ["kb snatch"]], ["Kettlebell press", ["KB", "SH"], 1, "weight", 1, ["kb press", "kettlebell overhead press", "kb military press"]], ["Kettlebell windmill", ["KB", "CO"], 1, "weight", 1, ["windmill", "kb windmill"]], ["Kettlebell halo", ["KB", "MO"], 1, "weight", 0, ["halo", "kb halo"]], ["Kettlebell deadlift", ["KB"], 1, "weight", 0, ["kb deadlift"]], ["Sled push", ["SM", "CA"], 1, "time", 0, ["prowler push", "prowler", "sled drive"]], ["Yoke carry", ["SM"], 1, "time", 0, ["yoke", "yoke walk"]], ["Atlas stone", ["SM"], 1, "weight", 0, ["stone load", "stone lift", "atlas stones"]], ["Log press", ["SM", "SH"], 1, "weight", 0, ["log clean and press", "log"]], ["Tire flip", ["SM"], 1, "weight", 0, ["tyre flip", "tire flips"]], ["Sandbag carry", ["SM"], 1, "time", 0, ["sandbag bear hug carry", "bear hug carry"]], ["Sandbag over shoulder", ["SM"], 1, "weight", 0, ["sandbag to shoulder", "sandbag shouldering"]], ["Rowing machine", ["CA"], 0, "dist", 0, ["rower", "row erg", "erg", "concept2", "indoor row", "rowing"]], ["Assault bike", ["CA"], 0, "time", 0, ["air bike", "fan bike", "echo bike", "airdyne"]], ["Ski erg", ["CA"], 0, "dist", 0, ["skierg", "ski machine"]], ["Jump rope", ["CA"], 0, "time", 0, ["skipping", "skip rope", "skipping rope", "double-unders"]], ["Stair climber", ["CA"], 0, "time", 0, ["stairmaster", "step mill", "stair machine"]], ["Stair climb", ["CA"], 0, "time", 0, ["stairs", "stair walk", "stair climbing"]], ["Swimming", ["CA"], 0, "dist", 0, ["swim", "laps", "lap swimming", "freestyle"]], ["Cycling", ["CA"], 0, "dist", 0, ["bike ride", "road bike", "biking", "outdoor cycling"]], ["Stationary bike", ["CA"], 0, "time", 0, ["exercise bike", "spin bike", "indoor cycling", "spin"]], ["Elliptical", ["CA"], 0, "time", 0, ["cross trainer", "elliptical trainer"]], ["Walk", ["CA"], 0, "dist", 0, ["walking", "brisk walk"]], ["Incline walk", ["CA"], 0, "time", 0, ["incline treadmill walk", "treadmill incline walk", "hill walk"]], ["Ruck", ["CA"], 1, "dist", 0, ["rucking", "weighted walk", "ruck march"]], ["Battle ropes", ["CA"], 0, "time", 0, ["battle rope", "rope waves", "battling ropes"]], ["Jumping jacks", ["CA"], 0, "reps", 0, ["jumping jack", "star jumps"]], ["High knees", ["CA"], 0, "time", 0, ["high knee", "running in place"]], ["Shadowboxing", ["CA"], 0, "time", 0, ["shadow boxing", "shadowbox"]], ["Box jump", ["PL"], 0, "reps", 0, ["box jumps"]], ["Broad jump", ["PL"], 0, "reps", 0, ["standing long jump", "standing broad jump"]], ["Depth jump", ["PL"], 0, "reps", 0, ["drop jump", "depth jumps"]], ["Tuck jump", ["PL"], 0, "reps", 0, ["tuck jumps", "knee tuck jump"]], ["Lateral bound", ["PL"], 0, "reps", 0, ["skater jump", "skaters", "lateral bounds"]], ["Jumping lunge", ["PL", "LG"], 0, "reps", 0, ["lunge jump", "split jump", "jump lunge"]], ["Pogo hops", ["PL"], 0, "reps", 0, ["pogo jumps", "ankle hops", "pogos"]], ["Pigeon stretch", ["MO"], 0, "time", 1, ["pigeon pose", "pigeon"]], ["Downward dog", ["MO"], 0, "time", 0, ["down dog", "downward facing dog"]], ["Cobra stretch", ["MO"], 0, "time", 0, ["cobra", "cobra pose"]], ["Shoulder dislocates", ["MO"], 0, "reps", 0, ["band dislocates", "pass-throughs", "shoulder pass-through"]], ["Ankle mobility", ["MO"], 0, "reps", 1, ["knee to wall", "ankle rocks", "ankle dorsiflexion drill"]], ["Foam rolling", ["MO"], 0, "time", 0, ["foam roller", "foam roll", "self-massage"]], ["Wall slides", ["MO", "SH"], 0, "reps", 0, ["wall angels", "wall slide"]], ["Calf stretch", ["MO"], 0, "time", 1, ["wall calf stretch"]], ["Butterfly stretch", ["MO"], 0, "time", 0, ["butterfly", "seated groin stretch"]], ["Cross-body shoulder stretch", ["MO"], 0, "time", 1, ["cross body stretch", "shoulder stretch", "posterior shoulder stretch"]], ["Supine spinal twist", ["MO"], 0, "time", 1, ["spinal twist", "lying twist", "supine twist"]], ["Sled rope pull", ["SM", "BK"], 1, "time", 0, ["sled pull", "weighted sled pull", "rope sled pull", "hand over hand sled pull"]], ["Backward sled drag", ["SM", "LG"], 1, "time", 0, ["reverse sled drag", "backwards sled drag", "sled drag"]], ["Split jerk", ["FB", "SH"], 1, "weight", 0, ["barbell split jerk"]], ["Squat clean", ["FB"], 1, "weight", 0, ["full clean", "full squat clean"]], ["Stiff-leg deadlift", ["LG", "GL", "BK"], 1, "weight", 0, ["stiff leg deadlift", "sldl", "straight leg deadlift"]], ["Yates row", ["BK"], 1, "weight", 0, ["underhand barbell row", "reverse grip barbell row"]], ["Weighted chinup", ["BK", "AR"], 1, "weight", 0, ["weighted chin-up"]], ["Hollow rock", ["CO"], 0, "reps", 0, ["hollow body rock"]], ["Superman hold", ["BK", "CO"], 0, "time", 0, ["superman isometric"]], ["Sphinx stretch", ["MO"], 0, "time", 0, ["sphinx pose", "sphinx"]], ["Assisted pullup", ["BK"], 0, "reps", 0, ["assisted pull-up", "assisted pullup machine", "band assisted pullup"]], ["Assisted dip", ["CH", "AR"], 0, "reps", 0, ["assisted dip machine", "band assisted dip"]], ["Smith machine squat", ["LG"], 1, "weight", 0, ["smith squat"]], ["Smith machine bench press", ["CH"], 1, "weight", 0, ["smith bench", "smith machine bench"]], ["Smith machine incline press", ["CH", "SH"], 1, "weight", 0, ["smith incline", "smith incline bench"]], ["Smith machine shoulder press", ["SH"], 1, "weight", 0, ["smith overhead press", "smith shoulder press"]], ["Hip thrust machine", ["GL"], 1, "weight", 0, ["glute drive", "machine hip thrust"]], ["Glute kickback machine", ["GL"], 1, "weight", 1, ["machine glute kickback", "kickback machine"]], ["Leg press calf raise", ["LG"], 1, "weight", 0, ["calf press", "leg press calf press"]], ["Dumbbell lunge", ["LG", "GL"], 1, "weight", 1, ["db lunge", "weighted lunge"]], ["Barbell lunge", ["LG", "GL"], 1, "weight", 1, ["bb lunge"]], ["Dumbbell walking lunge", ["LG", "GL"], 1, "weight", 0, ["weighted walking lunge", "db walking lunge"]], ["Goblet reverse lunge", ["LG", "GL", "KB"], 1, "weight", 1, ["kettlebell reverse lunge", "goblet lunge"]], ["Dumbbell Bulgarian split squat", ["LG", "GL"], 1, "weight", 1, ["weighted bulgarian split squat", "db bulgarian split squat"]], ["Rope climb", ["BK", "FB"], 0, "reps", 0, ["rope climbing", "legless rope climb"]], ["Bike erg", ["CA"], 0, "dist", 0, ["bikeerg", "concept2 bike", "bike ergometer"]], ["Treadmill incline run", ["CA"], 0, "time", 0, ["incline run", "incline treadmill run", "hill run"]], ["Single-arm dumbbell press", ["SH"], 1, "weight", 1, ["one arm dumbbell press", "single-arm overhead press", "one arm overhead press"]], ["Side-lying leg raise", ["GL"], 0, "reps", 1, ["side leg raise", "lying hip abduction"]], ["Ab crunch machine", ["CO"], 1, "weight", 0, ["crunch machine", "machine crunch"]], ["Machine preacher curl", ["AR"], 1, "weight", 0, ["preacher curl machine"]], ["In and outs", ["CO"], 0, "reps", 0, ["in and out", "in & outs", "ins and outs", "in-and-outs", "seated knee tuck", "ab ripper x", "abripperx", "arx"]], ["Reverse bicycle", ["CO"], 0, "reps", 0, ["reverse bicycles", "reverse bike", "reverse bicycle crunch", "ab ripper x", "abripperx", "arx"]], ["Crunchy frog", ["CO"], 0, "reps", 0, ["crunchy frogs", "frog crunch", "ab ripper x", "abripperx", "arx"]], ["Wide-leg sit-up", ["CO"], 0, "reps", 0, ["wide leg sit-up", "wide leg situp", "wide-leg situp", "wide leg sit up", "wide leg sit-ups", "ab ripper x", "abripperx", "arx"]], ["Fifer scissors", ["CO"], 0, "reps", 0, ["fifer scissor", "fiffer scissors", "fifer", "scissors", "scissor kicks", "ab ripper x", "abripperx", "arx"]], ["Hip rock and raise", ["CO"], 0, "reps", 0, ["hip rock n raise", "hip rock 'n raise", "hip rock & raise", "hip rock and raises", "ab ripper x", "abripperx", "arx"]], ["Pulse-up", ["CO"], 0, "reps", 0, ["pulse up", "pulse ups", "pulse-ups", "heels to heaven", "ab ripper x", "abripperx", "arx"]], ["V-up/roll-up combo", ["CO"], 0, "reps", 0, ["v-up roll-up", "v up roll up", "v-up rollup", "v-up roll up combo", "roll-up v-up combo", "v-up/roll-up", "ab ripper x", "abripperx", "arx"]], ["Oblique V-up", ["CO"], 0, "reps", 1, ["oblique v-ups", "oblique v up", "side v-up", "side v-ups", "ab ripper x", "abripperx", "arx"]], ["Leg climb", ["CO"], 0, "reps", 0, ["leg climbs", "leg climber", "leg climber crunch", "ab ripper x", "abripperx", "arx"]], ["Mason twist", ["CO"], 0, "reps", 0, ["mason twists", "ab ripper x", "abripperx", "arx"]], ["Hang power clean", ["FB"], 1, "weight", 0, ["hang power cleans", "hpc"]], ["Power snatch", ["FB"], 1, "weight", 0, ["barbell power snatch", "power snatches"]], ["Hang snatch", ["FB"], 1, "weight", 0, ["hang power snatch", "hang squat snatch"]], ["Clean pull", ["FB", "BK"], 1, "weight", 0, ["clean pulls", "clean-grip pull"]], ["Snatch pull", ["FB", "BK"], 1, "weight", 0, ["snatch pulls", "snatch-grip pull"]]];
+const EX219 = [["Run", ["CA"], 0, "dist", 0, ["jog", "jogging", "running", "treadmill run"]], ["Sprint", ["CA"], 0, "time", 0, ["sprints", "dash"]], ["2-mile run", ["CA"], 0, "time", 0, ["2 mile run", "3.2 km run"]], ["1.5-mile run", ["CA"], 0, "time", 0, ["1.5 mile run", "1.5 mile test"]], ["3-mile run", ["CA"], 0, "time", 0, ["3 mile run", "3 mile test"]], ["2.4 km run", ["CA"], 0, "time", 0, ["2.4km run", "2.4 km test"]], ["2000m run", ["CA"], 0, "time", 0, ["2 km run", "2k run"]], ["3000m run", ["CA"], 0, "time", 0, ["3 km run", "3k run"]], ["300m sprint", ["CA"], 0, "time", 0, ["300 m sprint"]], ["Sprint-drag-carry", ["CA"], 0, "time", 0, ["sdc", "sprint drag carry"]], ["Shuttle run", ["CA"], 0, "time", 0, ["suicides", "line drill", "shuttles"]], ["Sit and reach", ["MO"], 0, "flex", 0, ["sit-and-reach", "flexibility test"]], ["Core endurance", ["CO"], 0, "time", 0, ["core endurance test", "plank test"]], ["Pushup", ["CH"], 0, "reps", 0, ["push-up", "press-up", "push up"]], ["Diamond pushup", ["CH", "AR"], 0, "reps", 0, ["diamond push-up", "triangle pushup"]], ["Pike pushup", ["SH"], 0, "reps", 0, ["pike push-up"]], ["Decline pushup", ["CH"], 0, "reps", 0, ["feet elevated pushup", "decline push-up"]], ["Pullup", ["BK"], 0, "reps", 0, ["pull-up", "pull up", "wide grip pullup"]], ["Chinup", ["BK", "AR"], 0, "reps", 0, ["chin-up", "chin up"]], ["Neutral grip pullup", ["BK"], 0, "reps", 0, ["hammer grip pullup", "parallel grip pullup"]], ["Dip", ["CH", "AR"], 0, "reps", 0, ["parallel bar dip", "bar dip", "chest dip"]], ["Bench dip", ["AR"], 0, "reps", 0, ["chair dip", "triceps dip"]], ["Inverted row", ["BK"], 0, "reps", 0, ["australian pullup", "bodyweight row", "ring row", "table row"]], ["Bodyweight squat", ["LG"], 0, "reps", 0, ["air squat"]], ["Jump squat", ["PL", "LG"], 0, "reps", 0, ["squat jump"]], ["Lunge", ["LG"], 0, "reps", 1, ["forward lunge"]], ["Reverse lunge", ["LG", "GL"], 0, "reps", 1, ["backward lunge", "step back lunge"]], ["Walking lunge", ["LG"], 0, "reps", 0, ["walking lunges"]], ["Bulgarian split squat", ["LG", "GL"], 0, "reps", 1, ["rear foot elevated split squat", "rfess", "bss"]], ["Step up", ["LG", "GL"], 0, "reps", 1, ["step-up", "box step-up"]], ["Glute bridge", ["GL"], 0, "reps", 0, ["bridge", "hip bridge"]], ["Single leg glute bridge", ["GL"], 0, "reps", 1, ["single-leg glute bridge", "one leg bridge"]], ["Calf raise", ["LG"], 0, "reps", 0, ["standing calf raise", "heel raise"]], ["Plank", ["CO"], 0, "time", 0, ["front plank", "forearm plank"]], ["Side plank", ["CO"], 0, "time", 1, ["side bridge"]], ["Leg raise", ["CO"], 0, "reps", 0, ["lying leg raise"]], ["Hanging knee raise", ["CO"], 0, "reps", 0, ["hanging knee tuck"]], ["Hanging leg raise", ["CO"], 0, "reps", 0, ["hanging straight leg raise"]], ["Situp", ["CO"], 0, "reps", 0, ["sit-up", "sit up"]], ["Crunch", ["CO"], 0, "reps", 0, ["ab crunch", "crunches"]], ["Bicycle crunch", ["CO"], 0, "reps", 0, ["bicycle", "bicycles"]], ["Mountain climber", ["CA", "CO"], 0, "reps", 0, ["mountain climbers"]], ["Burpee", ["CA", "FB"], 0, "reps", 0, ["burpees", "squat thrust"]], ["Superman", ["BK"], 0, "reps", 0, ["prone back extension"]], ["Bird dog", ["CO"], 0, "reps", 0, ["bird-dog"]], ["Dead bug", ["CO"], 0, "reps", 0, ["deadbug"]], ["Wall sit", ["LG"], 0, "time", 0, ["wall squat"]], ["Barbell squat", ["LG"], 1, "weight", 0, ["back squat", "squat", "high bar squat", "low bar squat"]], ["Front squat", ["LG"], 1, "weight", 0, ["barbell front squat"]], ["Goblet squat", ["LG", "KB"], 1, "weight", 0, ["kettlebell goblet squat", "dumbbell goblet squat", "kb goblet"]], ["Bench press", ["CH"], 1, "weight", 0, ["flat bench", "barbell bench press", "bench"]], ["Incline bench", ["CH"], 1, "weight", 0, ["incline bench press", "incline barbell press"]], ["Decline bench", ["CH"], 1, "weight", 0, ["decline bench press", "decline barbell press"]], ["Dumbbell bench press", ["CH"], 1, "weight", 0, ["db bench", "dumbbell press", "flat dumbbell press"]], ["Overhead press", ["SH"], 1, "weight", 0, ["ohp", "military press", "strict press", "standing press", "barbell shoulder press"]], ["Dumbbell shoulder press", ["SH"], 1, "weight", 0, ["db shoulder press", "seated dumbbell press", "dumbbell overhead press"]], ["Push press", ["SH", "FB"], 1, "weight", 0, ["barbell push press"]], ["Barbell row", ["BK"], 1, "weight", 0, ["bent-over row", "bent over row", "bb row"]], ["Pendlay row", ["BK"], 1, "weight", 0, ["dead stop row"]], ["Dumbbell row", ["BK"], 1, "weight", 1, ["one-arm row", "single-arm dumbbell row", "db row"]], ["Deadlift", ["BK", "LG"], 1, "weight", 0, ["conventional deadlift", "barbell deadlift"]], ["Romanian deadlift", ["LG", "GL"], 1, "weight", 0, ["rdl", "dumbbell romanian deadlift", "db rdl"]], ["Sumo deadlift", ["LG", "GL"], 1, "weight", 0, ["sumo pull"]], ["Hip thrust", ["GL"], 1, "weight", 0, ["barbell hip thrust"]], ["Lat pulldown", ["BK"], 1, "weight", 0, ["pulldown", "wide grip pulldown", "close grip pulldown", "lat pull-down"]], ["Seated row", ["BK"], 1, "weight", 0, ["machine row", "seated machine row"]], ["Cable row", ["BK"], 1, "weight", 0, ["seated cable row", "low row"]], ["Dumbbell curl", ["AR"], 1, "weight", 0, ["bicep curl", "biceps curl", "db curl"]], ["Barbell curl", ["AR"], 1, "weight", 0, ["ez-bar curl", "ez curl", "straight bar curl", "bb curl"]], ["Hammer curl", ["AR"], 1, "weight", 0, ["neutral grip curl", "rope hammer curl"]], ["Preacher curl", ["AR"], 1, "weight", 0, ["scott curl"]], ["Triceps extension", ["AR"], 1, "weight", 0, ["overhead triceps extension", "overhead extension", "cable overhead extension"]], ["Triceps pushdown", ["AR"], 1, "weight", 0, ["pushdown", "rope pushdown", "cable pushdown", "tricep pushdown"]], ["Skull crusher", ["AR"], 1, "weight", 0, ["lying triceps extension", "french press", "skullcrusher"]], ["Lateral raise", ["SH"], 1, "weight", 0, ["side raise", "dumbbell lateral raise", "lat raise"]], ["Front raise", ["SH"], 1, "weight", 0, ["dumbbell front raise", "plate front raise"]], ["Rear delt fly", ["SH"], 1, "weight", 0, ["reverse fly", "bent-over reverse fly", "rear delt raise"]], ["Face pull", ["SH", "BK"], 1, "weight", 0, ["cable face pull", "rope face pull"]], ["Shrug", ["BK"], 1, "weight", 0, ["barbell shrug", "dumbbell shrug", "trap shrug"]], ["Leg press", ["LG"], 1, "weight", 0, ["machine leg press", "45 degree leg press"]], ["Leg curl", ["LG"], 1, "weight", 0, ["hamstring curl", "lying leg curl", "seated leg curl"]], ["Leg extension", ["LG"], 1, "weight", 0, ["quad extension", "knee extension"]], ["Hip abduction", ["GL"], 1, "weight", 0, ["abductor machine", "hip abductor"]], ["Hip adduction", ["LG"], 1, "weight", 0, ["adductor machine", "hip adductor"]], ["Farmer carry", ["SM"], 1, "time", 0, ["farmer walk", "farmers walk", "farmer's carry", "farmers carry"]], ["Kettlebell swing", ["KB"], 1, "weight", 0, ["kb swing", "russian swing", "two-hand swing", "single-arm swing", "one-arm swing"]], ["Chest fly", ["CH"], 1, "weight", 0, ["dumbbell fly", "db fly", "flye", "flat fly"]], ["Cable crossover", ["CH"], 1, "weight", 0, ["cable fly", "cable chest fly", "high cable fly"]], ["Good morning", ["LG", "BK"], 1, "weight", 0, ["barbell good morning"]], ["Back extension", ["BK"], 0, "reps", 0, ["hyperextension", "45 degree back extension", "roman chair"]], ["Calf raise machine", ["LG"], 1, "weight", 0, ["standing calf raise machine", "smith calf raise"]], ["Arnold press", ["SH"], 1, "weight", 0, ["arnold dumbbell press"]], ["Close-grip bench press", ["AR", "CH"], 1, "weight", 0, ["close grip bench", "cgbp", "narrow grip bench"]], ["T-bar row", ["BK"], 1, "weight", 0, ["tbar row", "landmine row", "t bar row"]], ["Dumbbell pullover", ["CH", "BK"], 1, "weight", 0, ["pullover", "db pullover"]], ["Incline dumbbell press", ["CH"], 1, "weight", 0, ["incline db press", "incline dumbbell bench"]], ["Hex bar deadlift", ["LG", "BK"], 1, "weight", 0, ["trap bar deadlift", "hex deadlift"]], ["Hand-release pushup", ["CH"], 0, "reps", 0, ["hand release pushup", "hand-release push-up"]], ["Weighted pullup", ["BK"], 1, "weight", 0, ["weighted pull-up"]], ["Weighted dip", ["CH", "AR"], 1, "weight", 0, ["weighted dips"]], ["Power clean", ["FB"], 1, "weight", 0, ["clean", "barbell clean"]], ["Turkish get-up", ["KB", "CO"], 1, "weight", 1, ["tgu", "get-up", "turkish getup"]], ["Cat-cow", ["MO"], 0, "reps", 0, ["cat cow", "cat camel"]], ["World's greatest stretch", ["MO"], 0, "reps", 1, ["worlds greatest stretch", "wgs"]], ["90/90 hip switch", ["MO"], 0, "reps", 0, ["90 90", "hip switch", "90-90"]], ["Deep squat hold", ["MO"], 0, "time", 0, ["deep squat", "squat hold", "asian squat"]], ["Thoracic open book", ["MO"], 0, "reps", 1, ["open book", "t-spine rotation"]], ["Couch stretch", ["MO"], 0, "time", 1, ["rear foot elevated hip flexor stretch"]], ["Dead hang", ["BK", "AR"], 0, "time", 0, ["bar hang", "passive hang"]], ["Child's pose", ["MO"], 0, "time", 0, ["childs pose", "child pose"]], ["Standing quad stretch", ["MO"], 0, "time", 1, ["quad stretch"]], ["Seated hamstring stretch", ["MO"], 0, "time", 0, ["hamstring stretch", "seated forward fold"]], ["Kneeling hip flexor stretch", ["MO"], 0, "time", 1, ["hip flexor stretch", "half kneeling hip flexor stretch"]], ["Figure-4 glute stretch", ["MO"], 0, "time", 1, ["figure 4 stretch", "figure four", "glute stretch"]], ["Doorway chest stretch", ["MO"], 0, "time", 0, ["chest stretch", "pec stretch"]], ["Box breathing", ["MO"], 0, "time", 0, ["breathing", "square breathing"]], ["Bear crawl", ["CA", "CO"], 0, "time", 0, ["bear crawls"]], ["Sledgehammer strike", ["SM"], 1, "weight", 0, ["sledgehammer", "tire slam", "hammer slam"]], ["Scapular pull", ["BK"], 0, "reps", 0, ["scap pull", "scapular pullup", "scap pull-up"]], ["Pullup negative", ["BK"], 0, "reps", 0, ["negative pullup", "eccentric pullup"]], ["Split squat", ["LG"], 0, "reps", 1, ["static lunge", "stationary lunge"]], ["Parallel bar support hold", ["AR", "CH"], 0, "time", 0, ["dip support hold", "support hold", "top dip hold"]], ["Negative dip", ["CH", "AR"], 0, "reps", 0, ["eccentric dip", "dip negative"]], ["Single-leg Romanian deadlift", ["LG", "GL"], 1, "weight", 1, ["single leg rdl", "sl rdl", "single-leg rdl"]], ["Nordic curl", ["LG"], 0, "reps", 0, ["nordic hamstring curl", "nordics", "banded nordic curl"]], ["Wall pushup", ["CH"], 0, "reps", 0, ["wall push-up"]], ["Incline pushup", ["CH"], 0, "reps", 0, ["incline push-up", "hands elevated pushup"]], ["Pseudo planche pushup", ["CH", "SH"], 0, "reps", 0, ["planche pushup", "pppu"]], ["Ab wheel rollout", ["CO"], 0, "reps", 0, ["ab roller", "standing ab rollout", "rollout from toes"]], ["Reverse hyperextension", ["GL", "BK"], 1, "weight", 0, ["reverse hyper"]], ["Stair sprints", ["CA"], 0, "time", 0, ["stair sprint", "stadium stairs"]], ["Kneeling ab rollout", ["CO"], 0, "reps", 0, ["ab rollout", "kneeling rollout", "barbell rollout"]], ["Trap bar squat", ["LG"], 1, "weight", 0, ["hex bar squat"]], ["Weighted hyperextension", ["BK", "GL"], 1, "weight", 0, ["weighted back extension"]], ["Floor press", ["CH", "AR"], 1, "weight", 0, ["barbell floor press", "dumbbell floor press"]], ["Machine chest press", ["CH"], 1, "weight", 0, ["chest press machine", "seated chest press", "chest press"]], ["Pec deck", ["CH"], 1, "weight", 0, ["pec fly machine", "machine fly", "butterfly machine", "pec dec"]], ["Incline dumbbell fly", ["CH"], 1, "weight", 0, ["incline fly", "incline db fly"]], ["Low-to-high cable fly", ["CH"], 1, "weight", 0, ["low cable fly", "upward cable fly", "low to high fly"]], ["Svend press", ["CH"], 1, "weight", 0, ["plate press", "plate squeeze press"]], ["Close-grip pushup", ["CH", "AR"], 0, "reps", 0, ["narrow pushup", "close grip push-up", "triceps pushup"]], ["Archer pushup", ["CH"], 0, "reps", 0, ["archer push-up"]], ["Clap pushup", ["CH", "PL"], 0, "reps", 0, ["plyo pushup", "explosive pushup", "plyometric pushup"]], ["Ring dip", ["CH", "AR"], 0, "reps", 0, ["ring dips"]], ["Chest-supported row", ["BK"], 1, "weight", 0, ["incline dumbbell row", "chest supported row", "incline bench row"]], ["Seal row", ["BK"], 1, "weight", 0, ["bench row"]], ["Meadows row", ["BK"], 1, "weight", 1, ["meadow row"]], ["Kroc row", ["BK"], 1, "weight", 1, ["kroc rows"]], ["Straight-arm pulldown", ["BK"], 1, "weight", 0, ["straight arm pulldown", "lat prayer", "straight-arm pushdown"]], ["Single-arm cable row", ["BK"], 1, "weight", 1, ["one-arm cable row", "single arm cable row"]], ["Rack pull", ["BK"], 1, "weight", 0, ["block pull", "pin pull", "rack pulls"]], ["Deficit deadlift", ["BK", "LG"], 1, "weight", 0, ["deficit pull"]], ["Muscle-up", ["BK", "CH"], 0, "reps", 0, ["bar muscle-up", "muscle up", "ring muscle-up"]], ["Renegade row", ["BK", "CO"], 1, "weight", 0, ["plank row"]], ["Neck curl", ["BK"], 1, "weight", 0, ["neck flexion", "lying neck curl"]], ["Neck extension", ["BK"], 1, "weight", 0, ["lying neck extension", "neck harness extension"]], ["Landmine press", ["SH", "CH"], 1, "weight", 1, ["landmine shoulder press", "single-arm landmine press"]], ["Band pull-apart", ["SH", "BK"], 0, "reps", 0, ["pull-apart", "band pull apart"]], ["Reverse pec deck", ["SH"], 1, "weight", 0, ["reverse fly machine", "rear delt machine", "reverse pec dec"]], ["Upright row", ["SH", "BK"], 1, "weight", 0, ["barbell upright row", "cable upright row"]], ["Z press", ["SH"], 1, "weight", 0, ["z-press", "seated floor press overhead"]], ["Bradford press", ["SH"], 1, "weight", 0, ["rocking press", "front-to-back press"]], ["Cable lateral raise", ["SH"], 1, "weight", 1, ["cable side raise", "single-arm cable lateral raise"]], ["Machine shoulder press", ["SH"], 1, "weight", 0, ["shoulder press machine", "seated machine press"]], ["Y raise", ["SH", "BK"], 1, "weight", 0, ["incline y raise", "prone y raise", "y-raise"]], ["Handstand pushup", ["SH"], 0, "reps", 0, ["hspu", "wall handstand pushup", "handstand push-up"]], ["Handstand hold", ["SH"], 0, "time", 0, ["wall handstand", "handstand"]], ["Cable curl", ["AR"], 1, "weight", 0, ["cable biceps curl", "cable bar curl"]], ["Incline dumbbell curl", ["AR"], 1, "weight", 0, ["incline curl", "incline db curl"]], ["Concentration curl", ["AR"], 1, "weight", 1, ["seated concentration curl"]], ["Spider curl", ["AR"], 1, "weight", 0, ["prone incline curl"]], ["Zottman curl", ["AR"], 1, "weight", 0, ["zottman"]], ["Reverse curl", ["AR"], 1, "weight", 0, ["reverse grip curl", "overhand curl", "ez-bar reverse curl"]], ["Wrist curl", ["AR"], 1, "weight", 0, ["wrist flexion", "forearm curl"]], ["Reverse wrist curl", ["AR"], 1, "weight", 0, ["wrist extension", "reverse forearm curl"]], ["Wrist roller", ["AR"], 1, "weight", 0, ["forearm roller"]], ["Plate pinch", ["AR"], 1, "time", 0, ["plate pinch hold", "pinch grip hold"]], ["Dumbbell kickback", ["AR"], 1, "weight", 0, ["triceps kickback", "tricep kickback"]], ["JM press", ["AR"], 1, "weight", 0, ["j.m. press"]], ["Tate press", ["AR"], 1, "weight", 0, ["elbows-out extension"]], ["Hack squat", ["LG"], 1, "weight", 0, ["hack squat machine", "machine hack squat"]], ["Box squat", ["LG"], 1, "weight", 0, ["barbell box squat"]], ["Pause squat", ["LG"], 1, "weight", 0, ["paused squat", "paused back squat"]], ["Zercher squat", ["LG"], 1, "weight", 0, ["zercher"]], ["Safety bar squat", ["LG"], 1, "weight", 0, ["ssb squat", "safety squat bar squat", "ssb"]], ["Belt squat", ["LG"], 1, "weight", 0, ["belt squat machine"]], ["Landmine squat", ["LG"], 1, "weight", 0, ["landmine goblet squat"]], ["Sissy squat", ["LG"], 0, "reps", 0, ["sissy squats"]], ["Pistol squat", ["LG"], 0, "reps", 1, ["pistol", "single-leg squat", "one-leg squat"]], ["Shrimp squat", ["LG"], 0, "reps", 1, ["shrimp", "skater squat"]], ["Cossack squat", ["LG", "MO"], 0, "reps", 0, ["cossack", "side-to-side squat"]], ["Lateral lunge", ["LG"], 0, "reps", 1, ["side lunge"]], ["Seated calf raise", ["LG"], 1, "weight", 0, ["seated calf raise machine"]], ["Single-leg calf raise", ["LG"], 0, "reps", 1, ["one-leg calf raise", "single leg calf raise"]], ["Tibialis raise", ["LG"], 0, "reps", 0, ["tib raise", "tibialis anterior raise"]], ["Glute-ham raise", ["LG"], 0, "reps", 0, ["ghr", "glute ham raise", "glute ham developer"]], ["Stability ball leg curl", ["LG"], 0, "reps", 0, ["swiss ball hamstring curl", "ball leg curl", "stability ball hamstring curl"]], ["Reverse Nordic", ["LG"], 0, "reps", 0, ["reverse nordic curl"]], ["Barbell glute bridge", ["GL"], 1, "weight", 0, ["weighted glute bridge", "barbell bridge"]], ["Single-leg hip thrust", ["GL"], 0, "reps", 1, ["single leg hip thrust", "one-leg hip thrust"]], ["Cable kickback", ["GL"], 1, "weight", 1, ["glute kickback", "cable glute kickback"]], ["Cable pull-through", ["GL"], 1, "weight", 0, ["pull-through", "pull through"]], ["Frog pump", ["GL"], 0, "reps", 0, ["frog pumps"]], ["Clamshell", ["GL"], 0, "reps", 1, ["clamshells", "clam"]], ["Fire hydrant", ["GL"], 0, "reps", 1, ["fire hydrants"]], ["Donkey kick", ["GL"], 0, "reps", 1, ["donkey kicks", "quadruped kickback"]], ["Monster walk", ["GL"], 0, "reps", 0, ["band walk", "lateral band walk", "banded side step"]], ["Curtsy lunge", ["GL", "LG"], 0, "reps", 1, ["curtsy", "crossover lunge"]], ["L-sit", ["CO"], 0, "time", 0, ["l sit", "l-sit hold"]], ["Dragon flag", ["CO"], 0, "reps", 0, ["dragon flags"]], ["Toes-to-bar", ["CO"], 0, "reps", 0, ["toes to bar", "t2b", "ttb"]], ["Hollow hold", ["CO"], 0, "time", 0, ["hollow body hold", "hollow body"]], ["Copenhagen plank", ["CO", "LG"], 0, "time", 1, ["copenhagen", "copenhagen adductor plank", "adductor plank"]], ["Pallof press", ["CO"], 1, "weight", 1, ["anti-rotation press", "banded pallof press", "cable pallof press"]], ["Cable woodchop", ["CO"], 1, "weight", 1, ["woodchop", "wood chop", "cable chop"]], ["Russian twist", ["CO"], 0, "reps", 0, ["russian twists", "seated twist"]], ["V-up", ["CO"], 0, "reps", 0, ["v-ups", "v up", "jackknife"]], ["Flutter kicks", ["CO"], 0, "time", 0, ["flutter kick", "flutters"]], ["Reverse crunch", ["CO"], 0, "reps", 0, ["reverse crunches"]], ["Cable crunch", ["CO"], 1, "weight", 0, ["kneeling cable crunch", "rope crunch"]], ["Dumbbell side bend", ["CO"], 1, "weight", 1, ["side bend", "oblique side bend"]], ["Suitcase carry", ["CO", "SM"], 1, "time", 1, ["suitcase walk", "one-arm carry", "single-arm farmer carry"]], ["Plank shoulder taps", ["CO"], 0, "reps", 0, ["shoulder taps", "plank taps"]], ["Landmine rotation", ["CO"], 1, "weight", 0, ["landmine twist", "landmine 180", "landmine rainbow"]], ["Hang clean", ["FB"], 1, "weight", 0, ["hang squat clean"]], ["Clean and jerk", ["FB"], 1, "weight", 0, ["c&j", "clean & jerk"]], ["Snatch", ["FB"], 1, "weight", 0, ["barbell snatch", "squat snatch", "full snatch"]], ["Push jerk", ["FB", "SH"], 1, "weight", 0, ["jerk", "power jerk"]], ["Thruster", ["FB"], 1, "weight", 0, ["barbell thruster", "dumbbell thruster", "kettlebell thruster", "squat to press"]], ["Overhead squat", ["FB", "LG"], 1, "weight", 0, ["ohs", "overhead barbell squat"]], ["Dumbbell snatch", ["FB"], 1, "weight", 1, ["db snatch", "single-arm dumbbell snatch"]], ["Wall ball", ["FB", "CA"], 1, "weight", 0, ["wall ball shot", "wall balls", "wallball"]], ["Medicine ball slam", ["FB", "PL"], 1, "weight", 0, ["ball slam", "med ball slam", "slam ball"]], ["Kettlebell clean", ["KB"], 1, "weight", 1, ["kb clean"]], ["Kettlebell snatch", ["KB"], 1, "weight", 1, ["kb snatch"]], ["Kettlebell press", ["KB", "SH"], 1, "weight", 1, ["kb press", "kettlebell overhead press", "kb military press"]], ["Kettlebell windmill", ["KB", "CO"], 1, "weight", 1, ["windmill", "kb windmill"]], ["Kettlebell halo", ["KB", "MO"], 1, "weight", 0, ["halo", "kb halo"]], ["Kettlebell deadlift", ["KB"], 1, "weight", 0, ["kb deadlift"]], ["Sled push", ["SM", "CA"], 1, "time", 0, ["prowler push", "prowler", "sled drive"]], ["Yoke carry", ["SM"], 1, "time", 0, ["yoke", "yoke walk"]], ["Atlas stone", ["SM"], 1, "weight", 0, ["stone load", "stone lift", "atlas stones"]], ["Log press", ["SM", "SH"], 1, "weight", 0, ["log clean and press", "log"]], ["Tire flip", ["SM"], 1, "weight", 0, ["tyre flip", "tire flips"]], ["Sandbag carry", ["SM"], 1, "time", 0, ["sandbag bear hug carry", "bear hug carry"]], ["Sandbag over shoulder", ["SM"], 1, "weight", 0, ["sandbag to shoulder", "sandbag shouldering"]], ["Rowing machine", ["CA"], 0, "dist", 0, ["rower", "row erg", "erg", "concept2", "indoor row", "rowing"]], ["Assault bike", ["CA"], 0, "time", 0, ["air bike", "fan bike", "echo bike", "airdyne"]], ["Ski erg", ["CA"], 0, "dist", 0, ["skierg", "ski machine"]], ["Jump rope", ["CA"], 0, "time", 0, ["skipping", "skip rope", "skipping rope", "double-unders"]], ["Stair climber", ["CA"], 0, "time", 0, ["stairmaster", "step mill", "stair machine"]], ["Stair climb", ["CA"], 0, "time", 0, ["stairs", "stair walk", "stair climbing"]], ["Swimming", ["CA"], 0, "dist", 0, ["swim", "laps", "lap swimming", "freestyle"]], ["Cycling", ["CA"], 0, "dist", 0, ["bike ride", "road bike", "biking", "outdoor cycling"]], ["Stationary bike", ["CA"], 0, "time", 0, ["exercise bike", "spin bike", "indoor cycling", "spin"]], ["Elliptical", ["CA"], 0, "time", 0, ["cross trainer", "elliptical trainer"]], ["Walk", ["CA"], 0, "dist", 0, ["walking", "brisk walk"]], ["Incline walk", ["CA"], 0, "time", 0, ["incline treadmill walk", "treadmill incline walk", "hill walk"]], ["Ruck", ["CA"], 1, "dist", 0, ["rucking", "weighted walk", "ruck march"]], ["Battle ropes", ["CA"], 0, "time", 0, ["battle rope", "rope waves", "battling ropes"]], ["Jumping jacks", ["CA"], 0, "reps", 0, ["jumping jack", "star jumps"]], ["High knees", ["CA"], 0, "time", 0, ["high knee", "running in place"]], ["Shadowboxing", ["CA"], 0, "time", 0, ["shadow boxing", "shadowbox"]], ["Box jump", ["PL"], 0, "reps", 0, ["box jumps"]], ["Broad jump", ["PL"], 0, "reps", 0, ["standing long jump", "standing broad jump"]], ["Depth jump", ["PL"], 0, "reps", 0, ["drop jump", "depth jumps"]], ["Tuck jump", ["PL"], 0, "reps", 0, ["tuck jumps", "knee tuck jump"]], ["Lateral bound", ["PL"], 0, "reps", 0, ["skater jump", "skaters", "lateral bounds"]], ["Jumping lunge", ["PL", "LG"], 0, "reps", 0, ["lunge jump", "split jump", "jump lunge"]], ["Pogo hops", ["PL"], 0, "reps", 0, ["pogo jumps", "ankle hops", "pogos"]], ["Pigeon stretch", ["MO"], 0, "time", 1, ["pigeon pose", "pigeon"]], ["Downward dog", ["MO"], 0, "time", 0, ["down dog", "downward facing dog"]], ["Cobra stretch", ["MO"], 0, "time", 0, ["cobra", "cobra pose"]], ["Shoulder dislocates", ["MO"], 0, "reps", 0, ["band dislocates", "pass-throughs", "shoulder pass-through"]], ["Ankle mobility", ["MO"], 0, "reps", 1, ["knee to wall", "ankle rocks", "ankle dorsiflexion drill"]], ["Foam rolling", ["MO"], 0, "time", 0, ["foam roller", "foam roll", "self-massage"]], ["Wall slides", ["MO", "SH"], 0, "reps", 0, ["wall angels", "wall slide"]], ["Calf stretch", ["MO"], 0, "time", 1, ["wall calf stretch"]], ["Butterfly stretch", ["MO"], 0, "time", 0, ["butterfly", "seated groin stretch"]], ["Cross-body shoulder stretch", ["MO"], 0, "time", 1, ["cross body stretch", "shoulder stretch", "posterior shoulder stretch"]], ["Supine spinal twist", ["MO"], 0, "time", 1, ["spinal twist", "lying twist", "supine twist"]], ["Sled rope pull", ["SM", "BK"], 1, "time", 0, ["sled pull", "weighted sled pull", "rope sled pull", "hand over hand sled pull"]], ["Backward sled drag", ["SM", "LG"], 1, "time", 0, ["reverse sled drag", "backwards sled drag", "sled drag"]], ["Split jerk", ["FB", "SH"], 1, "weight", 0, ["barbell split jerk"]], ["Squat clean", ["FB"], 1, "weight", 0, ["full clean", "full squat clean"]], ["Stiff-leg deadlift", ["LG", "GL", "BK"], 1, "weight", 0, ["stiff leg deadlift", "sldl", "straight leg deadlift"]], ["Yates row", ["BK"], 1, "weight", 0, ["underhand barbell row", "reverse grip barbell row"]], ["Weighted chinup", ["BK", "AR"], 1, "weight", 0, ["weighted chin-up"]], ["Hollow rock", ["CO"], 0, "reps", 0, ["hollow body rock"]], ["Superman hold", ["BK", "CO"], 0, "time", 0, ["superman isometric"]], ["Sphinx stretch", ["MO"], 0, "time", 0, ["sphinx pose", "sphinx"]], ["Assisted pullup", ["BK"], 0, "reps", 0, ["assisted pull-up", "assisted pullup machine", "band assisted pullup"]], ["Assisted dip", ["CH", "AR"], 0, "reps", 0, ["assisted dip machine", "band assisted dip"]], ["Smith machine squat", ["LG"], 1, "weight", 0, ["smith squat"]], ["Smith machine bench press", ["CH"], 1, "weight", 0, ["smith bench", "smith machine bench"]], ["Smith machine incline press", ["CH", "SH"], 1, "weight", 0, ["smith incline", "smith incline bench"]], ["Smith machine shoulder press", ["SH"], 1, "weight", 0, ["smith overhead press", "smith shoulder press"]], ["Hip thrust machine", ["GL"], 1, "weight", 0, ["glute drive", "machine hip thrust"]], ["Glute kickback machine", ["GL"], 1, "weight", 1, ["machine glute kickback", "kickback machine"]], ["Leg press calf raise", ["LG"], 1, "weight", 0, ["calf press", "leg press calf press"]], ["Dumbbell lunge", ["LG", "GL"], 1, "weight", 1, ["db lunge", "weighted lunge"]], ["Barbell lunge", ["LG", "GL"], 1, "weight", 1, ["bb lunge"]], ["Dumbbell walking lunge", ["LG", "GL"], 1, "weight", 0, ["weighted walking lunge", "db walking lunge"]], ["Goblet reverse lunge", ["LG", "GL", "KB"], 1, "weight", 1, ["kettlebell reverse lunge", "goblet lunge"]], ["Dumbbell Bulgarian split squat", ["LG", "GL"], 1, "weight", 1, ["weighted bulgarian split squat", "db bulgarian split squat"]], ["Rope climb", ["BK", "FB"], 0, "reps", 0, ["rope climbing", "legless rope climb"]], ["Bike erg", ["CA"], 0, "dist", 0, ["bikeerg", "concept2 bike", "bike ergometer"]], ["Treadmill incline run", ["CA"], 0, "time", 0, ["incline run", "incline treadmill run", "hill run"]], ["Single-arm dumbbell press", ["SH"], 1, "weight", 1, ["one arm dumbbell press", "single-arm overhead press", "one arm overhead press"]], ["Side-lying leg raise", ["GL"], 0, "reps", 1, ["side leg raise", "lying hip abduction"]], ["Ab crunch machine", ["CO"], 1, "weight", 0, ["crunch machine", "machine crunch"]], ["Machine preacher curl", ["AR"], 1, "weight", 0, ["preacher curl machine"]], ["In and outs", ["CO"], 0, "reps", 0, ["in and out", "in & outs", "ins and outs", "in-and-outs", "seated knee tuck", "ab ripper x", "abripperx", "arx"]], ["Reverse bicycle", ["CO"], 0, "reps", 0, ["reverse bicycles", "reverse bike", "reverse bicycle crunch", "ab ripper x", "abripperx", "arx"]], ["Crunchy frog", ["CO"], 0, "reps", 0, ["crunchy frogs", "frog crunch", "ab ripper x", "abripperx", "arx"]], ["Wide-leg sit-up", ["CO"], 0, "reps", 0, ["wide leg sit-up", "wide leg situp", "wide-leg situp", "wide leg sit up", "wide leg sit-ups", "ab ripper x", "abripperx", "arx"]], ["Fifer scissors", ["CO"], 0, "reps", 0, ["fifer scissor", "fiffer scissors", "fifer", "scissors", "scissor kicks", "ab ripper x", "abripperx", "arx"]], ["Hip rock and raise", ["CO"], 0, "reps", 0, ["hip rock n raise", "hip rock 'n raise", "hip rock & raise", "hip rock and raises", "ab ripper x", "abripperx", "arx"]], ["Pulse-up", ["CO"], 0, "reps", 0, ["pulse up", "pulse ups", "pulse-ups", "heels to heaven", "ab ripper x", "abripperx", "arx"]], ["V-up/roll-up combo", ["CO"], 0, "reps", 0, ["v-up roll-up", "v up roll up", "v-up rollup", "v-up roll up combo", "roll-up v-up combo", "v-up/roll-up", "ab ripper x", "abripperx", "arx"]], ["Oblique V-up", ["CO"], 0, "reps", 1, ["oblique v-ups", "oblique v up", "side v-up", "side v-ups", "ab ripper x", "abripperx", "arx"]], ["Leg climb", ["CO"], 0, "reps", 0, ["leg climbs", "leg climber", "leg climber crunch", "ab ripper x", "abripperx", "arx"]], ["Mason twist", ["CO"], 0, "reps", 0, ["mason twists", "ab ripper x", "abripperx", "arx"]], ["Hang power clean", ["FB"], 1, "weight", 0, ["hang power cleans", "hpc"]], ["Power snatch", ["FB"], 1, "weight", 0, ["barbell power snatch", "power snatches"]], ["Hang snatch", ["FB"], 1, "weight", 0, ["hang power snatch", "hang squat snatch"]], ["Clean pull", ["FB", "BK"], 1, "weight", 0, ["clean pulls", "clean-grip pull"]], ["Snatch pull", ["FB", "BK"], 1, "weight", 0, ["snatch pulls", "snatch-grip pull"]], ["Kettlebell clean and press", ["KB", "SH"], 1, "weight", 1, ["kettlebell clean & press", "kb clean and press", "kb clean & press"]], ["Kettlebell row", ["KB", "BK"], 1, "weight", 1, ["kb row", "one-arm kettlebell row"]], ["Tuck front lever", ["BK", "CO"], 0, "time", 0, ["front lever tuck"]], ["Advanced tuck front lever", ["BK", "CO"], 0, "time", 0, ["adv tuck front lever", "advanced front lever tuck"]], ["Front lever", ["BK", "CO"], 0, "time", 0, ["full front lever"]], ["Tuck back lever", ["BK", "CO"], 0, "time", 0, ["back lever tuck"]], ["Back lever", ["BK", "CO"], 0, "time", 0, ["full back lever"]], ["Planche lean", ["SH", "CO"], 0, "time", 0, ["pseudo planche lean"]], ["Tuck planche", ["SH", "CO"], 0, "time", 0, ["planche tuck"]], ["Ring support hold", ["AR", "CO"], 0, "time", 0, ["ring support", "rings support hold"]], ["Tuck L-sit", ["CO"], 0, "time", 0, ["l-sit tuck"]], ["Negative muscle-up", ["BK"], 0, "reps", 0, ["muscle-up negative", "slow muscle-up negative"]], ["Chest-to-bar pullup", ["BK"], 0, "reps", 0, ["chest to bar pull-up", "c2b pullup", "chest-to-bar pull-up"]], ["Straight bar dip", ["CH", "AR"], 0, "reps", 0, ["straight-bar dip"]], ["Snatch balance", ["FB"], 1, "weight", 0, ["snatch balances"]], ["Snatch high pull", ["FB", "BK"], 1, "weight", 0, ["high pull snatch", "snatch-grip high pull"]], ["Muscle snatch", ["FB", "SH"], 1, "weight", 0, ["tall muscle snatch"]], ["Snatch-grip deadlift", ["BK", "FB"], 1, "weight", 0, ["snatch grip deadlift"]], ["Clean deadlift", ["BK", "FB"], 1, "weight", 0, ["clean-grip deadlift", "clean grip deadlift"]], ["Pause bench press", ["CH"], 1, "weight", 0, ["paused bench press", "competition pause bench"]], ["Pin press", ["CH"], 1, "weight", 0, ["bench pin press", "pin bench press"]], ["Spoto press", ["CH"], 1, "weight", 0, ["spoto bench press"]], ["B-stance hip thrust", ["GL"], 1, "weight", 1, ["kickstand hip thrust", "staggered stance hip thrust"]], ["ATG split squat", ["LG", "MO"], 0, "reps", 1, ["atg split squats", "knees over toes split squat"]], ["Jefferson curl", ["MO", "BK"], 0, "reps", 0, ["jefferson curls"]], ["Elephant walk", ["MO", "LG"], 0, "reps", 0, ["elephant walks"]], ["Pancake stretch", ["MO"], 0, "time", 0, ["pancake"]], ["Thread the needle", ["MO"], 0, "time", 1, ["thread the needle stretch"]], ["Frog stretch", ["MO"], 0, "time", 0, ["frog pose"]], ["Sleeper stretch", ["MO"], 0, "time", 1, ["shoulder sleeper stretch"]], ["Sun salutation", ["MO", "FB"], 0, "reps", 0, ["sun salutations", "surya namaskar"]]];
 const CUSTOM_MOVES = EX219.map(e => e[0]);
 const CUSTOM_WEIGHTED = {}; EX219.forEach(e => { if (e[2]) CUSTOM_WEIGHTED[e[0]] = 1; });
 const ALIAS219 = {}; EX219.forEach(e => e[5].forEach(a => { ALIAS219[norm219(a)] = e[0]; }));
@@ -5886,6 +5891,7 @@ const MET219 = {"monster walk": "cal", "cable crunch": "weights", "plank shoulde
 /* log type for names new in 2.19 only; names that existed before keep their 2.18 behaviour everywhere except the picker default */
 ["Floor press", "Machine chest press", "Pec deck", "Incline dumbbell fly", "Low-to-high cable fly", "Svend press", "Close-grip pushup", "Archer pushup", "Clap pushup", "Ring dip", "Chest-supported row", "Seal row", "Meadows row", "Kroc row", "Straight-arm pulldown", "Single-arm cable row", "Rack pull", "Deficit deadlift", "Muscle-up", "Renegade row", "Neck curl", "Neck extension", "Landmine press", "Band pull-apart", "Reverse pec deck", "Upright row", "Z press", "Bradford press", "Cable lateral raise", "Machine shoulder press", "Y raise", "Handstand pushup", "Handstand hold", "Cable curl", "Incline dumbbell curl", "Concentration curl", "Spider curl", "Zottman curl", "Reverse curl", "Wrist curl", "Reverse wrist curl", "Wrist roller", "Plate pinch", "Dumbbell kickback", "JM press", "Tate press", "Hack squat", "Box squat", "Pause squat", "Zercher squat", "Safety bar squat", "Belt squat", "Landmine squat", "Sissy squat", "Pistol squat", "Shrimp squat", "Cossack squat", "Lateral lunge", "Seated calf raise", "Single-leg calf raise", "Tibialis raise", "Glute-ham raise", "Stability ball leg curl", "Reverse Nordic", "Barbell glute bridge", "Single-leg hip thrust", "Cable kickback", "Cable pull-through", "Frog pump", "Clamshell", "Fire hydrant", "Donkey kick", "Monster walk", "Curtsy lunge", "L-sit", "Dragon flag", "Toes-to-bar", "Hollow hold", "Copenhagen plank", "Pallof press", "Cable woodchop", "Russian twist", "V-up", "Flutter kicks", "Reverse crunch", "Cable crunch", "Dumbbell side bend", "Suitcase carry", "Plank shoulder taps", "Landmine rotation", "Hang clean", "Clean and jerk", "Snatch", "Push jerk", "Thruster", "Overhead squat", "Dumbbell snatch", "Wall ball", "Medicine ball slam", "Kettlebell clean", "Kettlebell snatch", "Kettlebell press", "Kettlebell windmill", "Kettlebell halo", "Kettlebell deadlift", "Sled push", "Yoke carry", "Atlas stone", "Log press", "Tire flip", "Sandbag carry", "Sandbag over shoulder", "Rowing machine", "Assault bike", "Ski erg", "Jump rope", "Stair climber", "Stair climb", "Swimming", "Cycling", "Stationary bike", "Elliptical", "Walk", "Incline walk", "Ruck", "Battle ropes", "Jumping jacks", "High knees", "Shadowboxing", "Box jump", "Broad jump", "Depth jump", "Tuck jump", "Lateral bound", "Jumping lunge", "Pogo hops", "Pigeon stretch", "Downward dog", "Cobra stretch", "Shoulder dislocates", "Ankle mobility", "Foam rolling", "Wall slides", "Calf stretch", "Butterfly stretch", "Cross-body shoulder stretch", "Supine spinal twist", "Sled rope pull", "Backward sled drag", "Split jerk", "Squat clean", "Stiff-leg deadlift", "Yates row", "Weighted chinup", "Hollow rock", "Superman hold", "Sphinx stretch", "Assisted pullup", "Assisted dip", "Smith machine squat", "Smith machine bench press", "Smith machine incline press", "Smith machine shoulder press", "Hip thrust machine", "Glute kickback machine", "Leg press calf raise", "Dumbbell lunge", "Barbell lunge", "Dumbbell walking lunge", "Goblet reverse lunge", "Dumbbell Bulgarian split squat", "Rope climb", "Bike erg", "Treadmill incline run", "Single-arm dumbbell press", "Side-lying leg raise", "Ab crunch machine", "Machine preacher curl", "In and outs", "Reverse bicycle", "Crunchy frog", "Wide-leg sit-up", "Fifer scissors", "Hip rock and raise", "Pulse-up", "V-up/roll-up combo", "Oblique V-up", "Leg climb", "Mason twist"].forEach(n => { const k = n.toLowerCase(); if (!METRIC_BY_NAME[k]) METRIC_BY_NAME[k] = EX219_BY[k][3]; });
 /* 1.06 Olympic lifts */ ["Hang power clean", "Power snatch", "Hang snatch", "Clean pull", "Snatch pull"].forEach(n => { const k = n.toLowerCase(); if (!METRIC_BY_NAME[k]) METRIC_BY_NAME[k] = EX219_BY[k][3]; if (typeof MET219 !== "undefined" && !MET219[k]) MET219[k] = "weights"; });
+/* 1.07 exercises */ (function () { const met = {"kettlebell clean and press": "weights", "kettlebell row": "weights", "tuck front lever": "hold", "advanced tuck front lever": "hold", "front lever": "hold", "tuck back lever": "hold", "back lever": "hold", "planche lean": "hold", "tuck planche": "hold", "ring support hold": "hold", "tuck l-sit": "hold", "negative muscle-up": "calvig", "chest-to-bar pullup": "calvig", "straight bar dip": "calvig", "snatch balance": "weights", "snatch high pull": "weights", "muscle snatch": "weights", "snatch-grip deadlift": "weights", "clean deadlift": "weights", "pause bench press": "weights", "pin press": "weights", "spoto press": "weights", "b-stance hip thrust": "weights", "atg split squat": "cal", "jefferson curl": "stretch", "elephant walk": "stretch", "pancake stretch": "stretch", "thread the needle": "stretch", "frog stretch": "stretch", "sleeper stretch": "stretch", "sun salutation": "stretch"}; ["Kettlebell clean and press", "Kettlebell row", "Tuck front lever", "Advanced tuck front lever", "Front lever", "Tuck back lever", "Back lever", "Planche lean", "Tuck planche", "Ring support hold", "Tuck L-sit", "Negative muscle-up", "Chest-to-bar pullup", "Straight bar dip", "Snatch balance", "Snatch high pull", "Muscle snatch", "Snatch-grip deadlift", "Clean deadlift", "Pause bench press", "Pin press", "Spoto press", "B-stance hip thrust", "ATG split squat", "Jefferson curl", "Elephant walk", "Pancake stretch", "Thread the needle", "Frog stretch", "Sleeper stretch", "Sun salutation"].forEach(n => { const k = n.toLowerCase(); if (!METRIC_BY_NAME[k]) METRIC_BY_NAME[k] = EX219_BY[k][3]; if (typeof MET219 !== "undefined" && !MET219[k]) MET219[k] = met[k]; }); })();
 function exMetric219(name) { const e = EX219_BY[String(name || "").trim().toLowerCase()]; return e ? e[3] : metricOf(name); }
 function uni219(name) { const e = EX219_BY[String(name || "").trim().toLowerCase()]; return !!(e && e[4]); }
 function norm219(x) { return String(x || "").toLowerCase().replace(/[-_'.]/g, " ").replace(/\s+/g, " ").trim(); }
@@ -7499,6 +7505,37 @@ const FORM219 = {
 "Hang snatch": "Wide grip, stand with the bar at the hips, then hinge so it slides to just above the knees. Jump explosively and pull yourself under to catch it overhead on locked arms, in a squat or partial squat. Stand up with it overhead. Learn it with a coach first.",
 "Clean pull": "Clean grip, bar over mid-foot. Lift it with a flat back like the first part of a clean, then extend the hips and knees hard and shrug at the top, staying on the heels until the bar passes the thighs. Do not bend the arms or catch the bar.",
 "Snatch pull": "Wide snatch grip, bar over mid-foot. Lift it with a flat back, then extend the hips and knees hard and shrug at the top as the bar passes the hips. Keep the arms straight and do not catch the bar. Usually heavier than your snatch.",
+"Kettlebell clean and press": "Bell between the feet. Hinge and hike it back, then drive the hips to clean it to the rack position on your forearm, wrist straight. Brace, then press it overhead until the arm is locked by your ear. Lower to the rack, then back between the legs. Reps are per arm.",
+"Kettlebell row": "Hinge with a flat back, one hand on a bench or knee. Row the bell to your hip, elbow close to the body, squeeze the shoulder blade back, then lower under control. Reps are per arm.",
+"Tuck front lever": "Hang from a bar, arms straight. Pull the shoulder blades down and lean back until your back is level with the floor, knees tucked to the chest. Hold the position with straight arms; keep the hips up.",
+"Advanced tuck front lever": "Like the tuck front lever, but with a flat back: hips open so the thighs are at a right angle to the body, knees still bent. Arms straight, back level with the floor.",
+"Front lever": "Hang with straight arms and raise your whole body to horizontal, legs together and straight, face up. Press the bar down toward your hips and squeeze glutes and abs. Build up from the tuck versions.",
+"Tuck back lever": "From a hang or skin-the-cat, lower until your back is level with the floor, face down, knees tucked. Arms straight. Go slowly the first times: it stretches the shoulders and biceps.",
+"Back lever": "From a skin-the-cat, lower to horizontal face down with the body straight and legs together, arms straight behind you. Hold. Build up from the tuck back lever; don't force the shoulder stretch.",
+"Planche lean": "Start in a push-up position with the hands turned out or back. Lean forward until the shoulders are well past the hands, arms locked, body tight and hips level. Hold.",
+"Tuck planche": "Hands on the floor or parallettes, arms locked. Lean forward and lift the feet, knees tucked to the chest, back rounded, until only the hands touch. Hold with the shoulders in front of the hands.",
+"Ring support hold": "Jump to the top of a ring dip: arms locked, rings close to the hips and turned slightly out. Keep the body straight and the rings still. Hold.",
+"Tuck L-sit": "On parallettes, dip bars or the floor, press down with straight arms to lift your hips, knees tucked to the chest and feet off the floor. Hold. When this is easy, straighten the legs for the L-sit.",
+"Negative muscle-up": "Jump or climb to the top of a muscle-up on a bar or rings, arms locked. Lower slowly through the dip and the transition to a dead hang, taking 3–5 seconds. One controlled lowering is one rep.",
+"Chest-to-bar pullup": "A strict pull-up that goes higher: pull until your chest touches the bar, elbows driving down and back, then lower to straight arms.",
+"Straight bar dip": "Support yourself on top of a straight bar, hands shoulder width, bar at the hips. Lean forward a little and lower until the bar is near your chest, then press back to straight arms.",
+"Snatch balance": "Bar on the back with a snatch grip. Dip, drive the bar up a little and push yourself straight down under it into a full overhead squat, arms locking as you land. Stand up. Learn it with an empty bar.",
+"Snatch high pull": "Snatch grip. Pull from the floor like a snatch, extend the hips and knees hard, then keep pulling the bar up close to the body with the elbows high and out, to about the chest. Lower and reset.",
+"Muscle snatch": "Snatch grip from the hips or floor. Extend the legs, then pull the bar high and turn the arms over to press it to locked arms overhead without re-bending the knees. Teaches the turnover.",
+"Snatch-grip deadlift": "Deadlift with a wide snatch grip, shoulders over the bar and back flat, keeping the bar close. Stand up fully, then lower the same way. Builds the snatch start position.",
+"Clean deadlift": "Deadlift in your clean starting position: clean grip, hips a little lower than a normal deadlift, shoulders over the bar. Push the floor away with the back flat and stand up.",
+"Pause bench press": "A bench press with a full stop: lower the bar to the chest, hold it still for about a second without sinking, then press. Use a spotter or safeties.",
+"Pin press": "Bench press from safety pins set a few inches above the chest. Start each rep from a dead stop on the pins and press to lockout. Strengthens the top half.",
+"Spoto press": "Lower the bar like a bench press but stop about an inch above the chest, hold it there for a second without touching, then press. Keep tight the whole time.",
+"B-stance hip thrust": "Hip thrust set-up with one foot forward and one back on its heel, so most of the work goes to the front leg. Drive through the front heel to full hip extension, then lower. Reps are per side.",
+"ATG split squat": "Long split stance. Drop the back knee and drive the front knee far past the toes until the hamstring covers the calf, front heel down. Stand back up. Use a support or bench at first. Reps are per side.",
+"Jefferson curl": "Stand on a step with straight legs. Tuck the chin and roll down one vertebra at a time, hands reaching to the toes, then roll back up the same way. Start with no weight and go slowly.",
+"Elephant walk": "Fold forward with your hands flat on the floor. Keeping one leg straight, bend the other knee, then switch, pedalling the hamstrings. One bend each side is one rep.",
+"Pancake stretch": "Sit with straight legs wide apart, knees and toes up. Tilt the pelvis forward and walk the hands out, keeping the back long. Breathe and relax a little deeper on each breath out.",
+"Thread the needle": "On hands and knees, slide one arm under the other along the floor until that shoulder and ear rest down. Breathe into the upper back, then switch. Time is per side.",
+"Frog stretch": "On forearms and knees, knees wide and in line with the hips, shins out to the sides. Sink the hips gently back toward the heels until you feel the inner thighs. Don't force it.",
+"Sleeper stretch": "Lie on your side with the bottom arm in front, elbow bent to a right angle. Use the top hand to ease the bottom forearm down toward the floor until you feel the back of the shoulder. Gentle. Time is per side.",
+"Sun salutation": "A yoga flow: reach up, fold forward, step back to a plank, lower down, cobra or upward dog, downward dog, step forward, fold and rise. One full round is one rep. Breathe with each move.",
 "Mason twist": "Ab Ripper X move. Sit with the knees bent and the feet off the floor, leaning back with a straight back and the hands clasped. Rotate to touch the hands to the floor beside one hip, then the other, moving quickly with control. Each touch is one rep. Like the Russian twist but with the feet raised and a floor touch on each side.",
 "Sprint": "Warm up fully first. Run as fast as you can for the set distance or time: tall posture, drive the arms and push the ground back behind you. Walk or rest fully between efforts.",
 "Shuttle run": "Run to a line, touch it with a foot or hand, turn and run back. Drop the hips into each turn and push off hard. Run the set number of lengths or for time."
@@ -10113,6 +10150,37 @@ Power snatch|gl qd hm|tp lb ub fd sd tr
 Hang snatch|gl hm qd|tp lb ub fd sd tr
 Clean pull|hm gl lb|tp qd fa ub
 Snatch pull|hm gl lb|tp qd fa ub
+Kettlebell clean and press|fd gl|tr hm ab
+Kettlebell row|lt ub|bi rd
+Tuck front lever|lt ab|ub bi
+Advanced tuck front lever|lt ab|ub bi
+Front lever|lt ab|ub bi gl
+Tuck back lever|lt ch|bi ab
+Back lever|lt ch|bi ab gl
+Planche lean|fd ch|tr ab
+Tuck planche|fd ch|tr ab
+Ring support hold|tr ch|fd ab
+Tuck L-sit|ab|qd tr
+Negative muscle-up|lt tr|bi ch
+Chest-to-bar pullup|lt ub|bi
+Straight bar dip|ch tr|fd
+Snatch balance|qd gl fd|tr ab
+Snatch high pull|tp hm gl|ub fd
+Muscle snatch|fd tp|ub hm gl
+Snatch-grip deadlift|hm gl lb|ub tp fa
+Clean deadlift|hm gl lb|qd fa
+Pause bench press|ch|tr fd
+Pin press|tr ch|fd
+Spoto press|ch|tr fd
+B-stance hip thrust|gl|hm
+ATG split squat|qd gl|hm
+Jefferson curl|hm lb|
+Elephant walk|hm|
+Pancake stretch|-|
+Thread the needle|-|
+Frog stretch|-|
+Sleeper stretch|-|
+Sun salutation|-|
 Scapular pull|lt tp|ub
 Pullup negative|lt bi|ub fa
 Split squat|qd gl|ad hm
@@ -10936,6 +11004,691 @@ msCheck217 = function (silent) {
   try { acRetier106(); } catch (e) {}
   return acCheck105.apply(this, arguments);   // it keeps .sig / .quiet on the global msCheck217 (this function)
 };
+
+/* ===== HTFU 1.07: 13 programs, coach-style Olympic programs, grouped picker ===== */
+/* ===== HTFU 1.07: new programs on one data-driven engine ("p7"). search "107" =====
+   A program is a normal plan object (same structure as every other built-in) with p107: true. Its days are one
+   training week; exercises carry a p7 spec that says how they load and progress:
+     pct  % of a 1-rep max (c.e207.p7.tm[L]) times the program's weekly intensity   max  work up to a new 1-rep max
+     lp   linear: add weight after a fully completed session, -10% after 3 misses     dp   double progression (rep range, then weight)
+     kb   kettlebell double progression (reps, then the next bell)                     rp / tp  reps / seconds +1 / +5 up to a cap
+     sk   skill ladder (next harder step after 3 sets at the top of the range)         fx   fixed (intervals, holds, cardio)
+   p7.w = [from, to] limits an exercise to those weeks (phases). Weeks advance when the last day of the week is done. */
+const P7_TMDEF = { sn: 95, cj: 125, fs: 155, bs: 205, dl: 255, bp: 155 };
+const P7_TMNAME = { sn: "Snatch", cj: "Clean and jerk", fs: "Front squat", bs: "Back squat", dl: "Deadlift", bp: "Bench press" };
+const P7_TMINC = { sn: 5, cj: 5, fs: 10, bs: 10, dl: 10, bp: 5 };
+const P7_SK = {
+  pull: { label: "Pull-up to muscle-up", steps: [["Pullup", 0, 5, 10], ["Chest-to-bar pullup", 0, 3, 8], ["Negative muscle-up", 0, 2, 5], ["Muscle-up", 0, 1, 5]] },
+  dip: { label: "Dips", steps: [["Dip", 0, 5, 12], ["Straight bar dip", 0, 4, 10], ["Ring dip", 0, 3, 10]] },
+  hs: { label: "Handstand", steps: [["Pike pushup", 0, 6, 12], ["Handstand hold", 1, 20, 60], ["Handstand pushup", 0, 1, 8]] },
+  lsit: { label: "L-sit", steps: [["Tuck L-sit", 1, 10, 30], ["L-sit", 1, 10, 30]] },
+  pl: { label: "Planche", steps: [["Planche lean", 1, 15, 30], ["Pseudo planche pushup", 0, 5, 12], ["Tuck planche", 1, 5, 20]] },
+  fl: { label: "Front lever", steps: [["Tuck front lever", 1, 5, 20], ["Advanced tuck front lever", 1, 5, 15], ["Front lever", 1, 3, 10]] },
+  bl: { label: "Back lever", steps: [["Tuck back lever", 1, 5, 20], ["Back lever", 1, 3, 10]] },
+  ring: { label: "Rings", steps: [["Ring support hold", 1, 10, 30], ["Ring dip", 0, 3, 10]] }
+};
+/* starting weights (lb) offered on the intake screen; anything else falls back on the exercise type */
+const P7_DEFW = { "Bench press": 95, "Barbell squat": 135, "Deadlift": 185, "Overhead press": 65, "Barbell row": 95, "Pendlay row": 95, "Front squat": 95, "Romanian deadlift": 95, "Sumo deadlift": 155, "Close-grip bench press": 85, "Incline bench": 85, "Barbell curl": 50, "Skull crusher": 40, "Hip thrust": 95, "B-stance hip thrust": 65, "Good morning": 65, "Leg press": 180, "Hack squat": 90, "Lat pulldown": 80, "Cable row": 80, "Chest-supported row": 50, "Face pull": 30, "Triceps pushdown": 40, "Cable curl": 30, "Cable crossover": 20, "Cable crunch": 50, "Cable pull-through": 40, "Cable kickback": 20, "Leg extension": 60, "Leg curl": 50, "Seated calf raise": 70, "Hip abduction": 70, "Machine chest press": 70, "Pec deck": 60, "Weighted pullup": 10, "Weighted dip": 10, "Shrug": 135, "Upright row": 50, "Thruster": 65, "Snatch": 45, "Power snatch": 45, "Hang snatch": 45, "Muscle snatch": 45, "Snatch balance": 45, "Overhead squat": 45, "Clean and jerk": 65, "Power clean": 65, "Squat clean": 65, "Hang clean": 65, "Hang power clean": 65, "Push press": 65, "Push jerk": 65, "Split jerk": 65, "Snatch pull": 75, "Clean pull": 95, "Snatch high pull": 65, "Snatch-grip deadlift": 115, "Clean deadlift": 135, "Deficit deadlift": 155, "Pause squat": 115, "Pause bench press": 85, "Pin press": 85, "Spoto press": 85 };
+function p7Plan(c) { return !!(c && c.p107); }
+function p7Def(c) { return c ? P7_PROG[c.id] : null; }
+function p7St(c) {
+  c.e207 = c.e207 || {};
+  const st = c.e207.p7 = c.e207.p7 || {};
+  ["tm", "lp", "f", "dp", "kb", "rp", "tp", "sk", "miss", "tested"].forEach(k => { if (!st[k] || typeof st[k] !== "object") st[k] = {}; });
+  if (!Number.isFinite(st.wk)) st.wk = 0;
+  if (!Number.isFinite(st.cyc)) st.cyc = 1;
+  return st;
+}
+function p7Weeks(c) { const d = p7Def(c); return d && d.I ? d.I.length : 1; }
+function p7Week(c) { const st = p7St(c); return Math.min(p7Weeks(c) - 1, Math.max(0, st.wk || 0)); }
+function p7Phase(c) { const d = p7Def(c); if (!d || !d.ph) return ""; const w = p7Week(c) + 1; const p = d.ph.find(x => w >= x[0] && w <= x[1]); return p ? p[2] : ""; }
+function p7In(ex, c) { const w = ex && ex.p7 && ex.p7.w; if (!w) return true; const k = p7Week(c) + 1; return k >= w[0] && k <= w[1]; }
+function p7Start(c, name, fallback) { const lg = c.p7legacy || {}; if (Number(lg[name]) > 0) return Number(lg[name]); const s = c.starts || {}; const n = Number(s[name]); if (Number.isFinite(n) && n > 0) return n; return fallback; }
+function p7DefW(name, ex) {
+  if (P7_DEFW[name] != null) return P7_DEFW[name];
+  const n = String(name).toLowerCase();
+  if (/kettlebell|turkish/.test(n)) return 35;
+  if (/dumbbell|lateral raise|rear delt|curl|fly|arnold/.test(n)) return 20;
+  if (/cable|machine|pulldown|extension|press machine/.test(n)) return 50;
+  return Number(ex && ex.weight) || 45;
+}
+function p7Lower(name) { return /squat|deadlift|leg press|hip thrust|lunge|good morning|clean pull|snatch pull|rdl|hack|pull-through/i.test(name) && !/split squat|goblet/i.test(name); }
+function p7Inc(name, p) { if (p && p.inc) return p.inc; if (/snatch|clean|jerk|press|curl|raise|fly|row|triceps|skull|face pull|kickback|abduction|pulldown|crunch/i.test(name) && !/leg press/i.test(name)) return 5; return p7Lower(name) ? 10 : 5; }
+function p7Bell(kg, up) { const i = KB207.indexOf(kg); if (i < 0) { let b = KB207[0]; KB207.forEach(k => { if (Math.abs(k - kg) < Math.abs(b - kg)) b = k; }); return b; } return KB207[Math.max(0, Math.min(KB207.length - 1, i + (up || 0)))]; }
+function p7KgFromLb(lb) { return p7Bell((Number(lb) || 0) * LB_KG, 0); }
+function p7Tm(c, L) { const st = p7St(c); if (!(st.tm[L] > 0)) st.tm[L] = p7Start(c, "1RM " + L, P7_TMDEF[L] || 95); return st.tm[L]; }
+function p7Floor(name, w) { return isBarbell(name) ? Math.max(barWeightLb(), w) : Math.max(0, w); }
+function p7PctW(c, ex) { const d = p7Def(c), p = ex.p7; const I = d && d.I ? d.I[p7Week(c)] : 1; return p7Floor(ex.name, plateRound(p7Tm(c, p.L) * I * (p.r || 1))); }
+function p7LpW(c, ex) { const st = p7St(c), k = ex.name; if (!(st.lp[k] > 0)) st.lp[k] = p7Start(c, ex.name, p7DefW(ex.name, ex)); return st.lp[k]; }
+function p7Dp(c, ex) { const st = p7St(c), k = ex.name; if (!st.dp[k] || !(st.dp[k].w >= 0)) st.dp[k] = { w: p7Start(c, ex.name, p7DefW(ex.name, ex)), r: ex.reps }; const s = st.dp[k]; if (!(s.r >= ex.reps) || s.r > (ex.p7.hi || ex.reps)) s.r = Math.min(Math.max(s.r || ex.reps, ex.reps), ex.p7.hi || ex.reps); return s; }
+function p7Kb(c, ex) { const st = p7St(c), k = ex.name; if (!st.kb[k] || !(st.kb[k].kg > 0)) st.kb[k] = { kg: p7KgFromLb(p7Start(c, ex.name, p7DefW(ex.name, ex))), r: ex.reps }; const s = st.kb[k]; if (!(s.r >= ex.reps) || s.r > (ex.p7.hi || ex.reps)) s.r = Math.min(Math.max(s.r || ex.reps, ex.reps), ex.p7.hi || ex.reps); return s; }
+function p7Rp(c, ex, kind) { const st = p7St(c), box = st[kind]; if (!(box[ex.name] > 0)) box[ex.name] = ex.reps; return Math.min(box[ex.name], ex.p7.hi || box[ex.name]); }
+function p7Sk(c, ex) { const st = p7St(c), L = P7_SK[ex.p7.k]; if (!st.sk[ex.p7.k]) st.sk[ex.p7.k] = { i: 0, t: L.steps[0][2] }; const s = st.sk[ex.p7.k]; s.i = Math.max(0, Math.min(L.steps.length - 1, s.i || 0)); return { s, step: L.steps[s.i], L }; }
+function p7Rest(ex, def) { return ex.p7 && ex.p7.rest ? ex.p7.rest : def; }
+function p7Items(c, day) {
+  const items = [];
+  const push = (ex, o) => items.push(Object.assign({ name: ex.name, kind: ex.kind, metric: metricNew(ex.name, ex.metric, ex.kind), w: 0, wTarget: 0, target: ex.reps }, o));
+  (dayExercises(c, day) || []).forEach(ex => {
+    const p = ex.p7 || { t: "fx" };
+    const n = Math.max(1, Number(ex.sets) || 1);
+    if (p.t === "pct") { const w = p7PctW(c, ex); for (let i = 0; i < n; i++) push(ex, { w, wTarget: w, target: ex.reps, k207: "p7|pct|" + p.L, rest207: p7Rest(ex, 180) }); return; }
+    if (p.t === "max") { const w = p7Floor(ex.name, plateRound(p7Tm(c, p.L))); push(ex, { w, wTarget: w, target: 1, k207: "p7|max|" + p.L, rest207: 180, note207: "Work up in singles to a new 1-rep max. Enter the heaviest weight you made." }); return; }
+    if (p.t === "lp") { const w = p7Floor(ex.name, p7LpW(c, ex)); for (let i = 0; i < n; i++) push(ex, { w, wTarget: w, target: ex.reps, amrap: !!p.amrap && i === n - 1, k207: "p7|lp|" + ex.name, rest207: p7Rest(ex, 180) }); return; }
+    if (p.t === "dp") { const s = p7Dp(c, ex); const w = p7Floor(ex.name, s.w); for (let i = 0; i < n; i++) push(ex, { w, wTarget: w, target: s.r, k207: "p7|dp|" + ex.name, rest207: p7Rest(ex, 90) }); return; }
+    if (p.t === "kb") { const s = p7Kb(c, ex); for (let i = 0; i < n; i++) push(ex, { w: kbLb(s.kg), wTarget: kbLb(s.kg), target: s.r, k207: "p7|kb|" + ex.name, rest207: p7Rest(ex, 60) }); return; }
+    if (p.t === "rp" || p.t === "tp") { const t = p7Rp(c, ex, p.t); for (let i = 0; i < n; i++) push(ex, { target: t, k207: "p7|" + p.t + "|" + ex.name, rest207: p7Rest(ex, p.t === "tp" ? 30 : 90) }); return; }
+    if (p.t === "sk") { const o = p7Sk(c, ex); for (let i = 0; i < n; i++) items.push({ name: o.step[0], kind: "bw", metric: o.step[1] ? "time" : "reps", w: 0, wTarget: 0, target: o.s.t, k207: "p7|sk|" + ex.p7.k, rest207: 90 }); return; }
+    for (let i = 0; i < n; i++) push(ex, { w: Number(ex.weight) || 0, wTarget: Number(ex.weight) || 0, target: ex.reps, rest207: p7Rest(ex, ex.metric === "time" ? 15 : 60) });
+  });
+  return items;
+}
+function p7Text(c, day, ex) {
+  const p = ex.p7 || { t: "fx" };
+  const u = weightUnit(), W = lb => showWeight(lb) + " " + u;
+  const sr = (s, r) => s + "×" + r;
+  if (p.t === "pct") { const d = p7Def(c); const I = d && d.I ? d.I[p7Week(c)] : 1; return sr(ex.sets, ex.reps) + " at " + W(p7PctW(c, ex)) + " · " + Math.round(I * (p.r || 1) * 100) + "% of your " + P7_TMNAME[p.L].toLowerCase() + " max"; }
+  if (p.t === "max") return "work up to a new 1-rep max (now " + W(p7Tm(c, p.L)) + ")";
+  if (p.t === "lp") return sr(ex.sets, ex.reps + (p.amrap ? "+" : "")) + " at " + W(p7Floor(ex.name, p7LpW(c, ex))) + " · add " + W(p7Inc(ex.name, p)) + " when every set is done";
+  if (p.t === "dp") { const s = p7Dp(c, ex); return sr(ex.sets, s.r) + " at " + W(p7Floor(ex.name, s.w)) + " · range " + ex.reps + "–" + p.hi + ", then add weight"; }
+  if (p.t === "kb") { const s = p7Kb(c, ex); return sr(ex.sets, s.r) + (/clean|press|row|snatch|get-up/i.test(ex.name) ? " each side" : "") + " at " + kbText(s.kg) + " · range " + ex.reps + "–" + p.hi + ", then the next bell"; }
+  if (p.t === "rp") { const t = p7Rp(c, ex, "rp"); return sr(ex.sets, t) + (p.hi ? " · up to " + p.hi : ""); }
+  if (p.t === "tp") { const t = p7Rp(c, ex, "tp"); return sr(ex.sets, formatTime(t)) + (p.hi ? " · up to " + formatTime(p.hi) : ""); }
+  if (p.t === "sk") { const o = p7Sk(c, ex); return "now " + esc(o.step[0]) + " · " + ex.sets + "×" + (o.step[1] ? formatTime(o.s.t) : o.s.t) + " (range " + (o.step[1] ? o.step[2] + "–" + o.step[3] + " s" : o.step[2] + "–" + o.step[3]) + ") · step " + (o.s.i + 1) + " of " + o.L.steps.length; }
+  return "";
+}
+function p7Progress(c, ev) {
+  const st = p7St(c);
+  const by = {};
+  (ev.log || []).filter(x => x && typeof x.k207 === "string" && x.k207.indexOf("p7|") === 0).forEach(x => { (by[x.k207] = by[x.k207] || []).push(x); });
+  const allOk = sets => sets.every(x => (Number(x.reps) || 0) >= (Number(x.target) || 0));
+  const usedW = (sets, d) => { const l = sets[sets.length - 1]; const n = Number(l.w); return Number.isFinite(n) && n > 0 ? n : d; };
+  Object.keys(by).forEach(key => {
+    const sets = by[key], parts = key.split("|"), t = parts[1], k = parts.slice(2).join("|");
+    if (t === "pct") { if (!allOk(sets)) st.miss[k] = (st.miss[k] || 0) + 1; return; }
+    if (t === "max") { const best = Math.max.apply(null, sets.filter(x => (Number(x.reps) || 0) >= 1).map(x => Number(x.w) || 0).concat([0])); if (best > 0) { st.tm[k] = Math.max(p7Tm(c, k), best); st.tested[k] = 1; } return; }
+    if (t === "lp") { const cur = st.lp[k] || usedW(sets, 45); const used = usedW(sets, cur); if (allOk(sets)) { st.lp[k] = bumpW(used, p7Inc(k), p7Inc(k) / 2); st.f[k] = 0; } else { st.f[k] = (st.f[k] || 0) + 1; st.lp[k] = used; if (st.f[k] >= 3) { st.lp[k] = p7Floor(k, plateRound(used * 0.9, true)); st.f[k] = 0; } } return; }
+    if (t === "dp" || t === "kb") {
+      const box = t === "dp" ? st.dp : st.kb, s = box[k]; if (!s) return;
+      const ex = p7FindEx(c, k, t); const lo = ex ? ex.reps : s.r, hi = ex && ex.p7.hi ? ex.p7.hi : s.r;
+      const vals = sets.map(x => Number(x.reps) || 0);
+      if (t === "dp" && Number(sets[sets.length - 1].w) > 0) s.w = Number(sets[sets.length - 1].w);
+      if (vals.every(v => v >= hi)) { if (t === "dp") s.w = bumpW(s.w, p7Inc(k), p7Inc(k) / 2); else s.kg = p7Bell(s.kg, 1); s.r = lo; }
+      else if (vals.every(v => v >= s.r)) s.r = Math.min(hi, s.r + 1);
+      return;
+    }
+    if (t === "rp" || t === "tp") { const ex = p7FindEx(c, k, t); const hi = ex && ex.p7.hi; const cur = st[t][k] || (ex ? ex.reps : 0); if (allOk(sets)) st[t][k] = hi ? Math.min(hi, cur + (t === "tp" ? 5 : 1)) : cur; return; }
+    if (t === "sk") {
+      const L = P7_SK[k], s = st.sk[k]; if (!L || !s) return;
+      const step = L.steps[Math.min(s.i, L.steps.length - 1)], vals = sets.map(x => Number(x.reps) || 0);
+      if (vals.length >= 2 && vals.every(v => v >= step[3])) { if (s.i < L.steps.length - 1) { s.i++; s.t = L.steps[s.i][2]; } else s.t = step[3]; }
+      else if (vals.every(v => v >= s.t)) s.t = Math.min(step[3], s.t + (step[1] ? 5 : 1));
+    }
+  });
+}
+function p7FindEx(c, name, t) { let f = null; (c.days || []).forEach(d => (d.exercises || []).forEach(ex => { if (!f && ex.name === name && ex.p7 && ex.p7.t === t && p7In(ex, c)) f = ex; })); if (!f) (c.days || []).forEach(d => (d.exercises || []).forEach(ex => { if (!f && ex.name === name && ex.p7 && ex.p7.t === t) f = ex; })); return f; }
+/* end of the week: next week; end of the cycle: raise the maxes that were not tested and had no misses */
+function p7EndWeek(c) {
+  const st = p7St(c);
+  st.wk = (st.wk || 0) + 1;
+  if (st.wk < p7Weeks(c)) return;
+  st.wk = 0; st.cyc = (st.cyc || 1) + 1;
+  p7Lifts(c).forEach(L => { if (!st.tested[L] && !(st.miss[L] > 0)) st.tm[L] = bumpW(p7Tm(c, L), P7_TMINC[L] || 5, (P7_TMINC[L] || 5) / 2); });
+  st.miss = {}; st.tested = {};
+}
+function p7Lifts(c) { const out = []; (c.days || []).forEach(d => (d.exercises || []).forEach(ex => { const p = ex.p7; if (p && (p.t === "pct" || p.t === "max") && out.indexOf(p.L) < 0) out.push(p.L); })); return out; }
+function p7Needs(c) { return (c.days || []).some(d => (d.exercises || []).some(ex => ex.p7 && ["pct", "max", "lp", "dp", "kb"].indexOf(ex.p7.t) >= 0)); }
+function p7Weighted(c) { const seen = {}, out = []; (c.days || []).forEach(d => (d.exercises || []).forEach(ex => { const p = ex.p7; if (!p || ["lp", "dp", "kb"].indexOf(p.t) < 0 || seen[ex.name]) return; seen[ex.name] = 1; out.push(ex); })); return out; }
+
+/* ---- 1.07 program definitions (each day list is one training week) ---- */
+const p7W = (e, a, b) => { e.p7.w = [a, b]; return e; };
+const P7x = {
+  PC: (n, s, r, L, rr, o) => ({ name: n, kind: "weight", metric: "weight", sets: s, reps: r, weight: 0, p7: Object.assign({ t: "pct", L, r: rr || 1 }, o) }),
+  MX: (n, L) => ({ name: n, kind: "weight", metric: "weight", sets: 1, reps: 1, weight: 0, p7: { t: "max", L } }),
+  LP: (n, s, r, o) => ({ name: n, kind: "weight", metric: "weight", sets: s, reps: r, weight: 0, p7: Object.assign({ t: "lp" }, o) }),
+  DP: (n, s, lo, hi, o) => ({ name: n, kind: "weight", metric: "weight", sets: s, reps: lo, weight: 0, p7: Object.assign({ t: "dp", hi }, o) }),
+  KB: (n, s, lo, hi, o) => ({ name: n, kind: "weight", metric: "weight", sets: s, reps: lo, weight: 0, p7: Object.assign({ t: "kb", hi }, o) }),
+  RP: (n, s, r, hi, o) => ({ name: n, kind: "bw", metric: "reps", sets: s, reps: r, weight: 0, p7: Object.assign({ t: "rp", hi }, o) }),
+  TP: (n, s, sec, hi, o) => ({ name: n, kind: "bw", metric: "time", sets: s, reps: sec, weight: 0, p7: Object.assign({ t: "tp", hi }, o) }),
+  FT: (n, s, sec, o) => ({ name: n, kind: "bw", metric: "time", sets: s, reps: sec, weight: 0, p7: Object.assign({ t: "fx" }, o) }),
+  FR: (n, s, r, o) => ({ name: n, kind: "bw", metric: "reps", sets: s, reps: r, weight: 0, p7: Object.assign({ t: "fx" }, o) }),
+  SK: (k, s) => { const f = P7_SK[k].steps[0]; return { name: f[0], kind: "bw", metric: f[1] ? "time" : "reps", sets: s, reps: f[2], weight: 0, p7: { t: "sk", k } }; }
+};
+function p7Day(name, exercises) { return { name, exercises }; }
+const P7_PROG = (function () {
+  const { PC, MX, LP, DP, KB, RP, TP, FT, FR, SK } = P7x;
+  const P = {};
+  /* ---------- Powerbuilding ---------- */
+  P.redditppl = { name: "Reddit PPL", cat: "pb", alias: ["Push Pull Legs", "PPL", "r/Fitness"], days: () => {
+    const pullA = p7Day("Pull A · deadlift", [LP("Deadlift", 1, 5, { amrap: true }), DP("Lat pulldown", 3, 8, 12), DP("Cable row", 3, 8, 12), DP("Face pull", 5, 15, 20), DP("Hammer curl", 4, 8, 12), DP("Dumbbell curl", 4, 8, 12)]);
+    const push = (main, sec, nm) => p7Day(nm, [LP(main, 5, 5, { amrap: true }), DP(sec, 3, 8, 12), DP("Incline dumbbell press", 3, 8, 12), DP("Triceps pushdown", 3, 8, 12), DP("Lateral raise", 3, 15, 20), DP("Triceps extension", 3, 8, 12)]);
+    const legs = nm => p7Day(nm, [LP("Barbell squat", 3, 5, { amrap: true }), DP("Romanian deadlift", 3, 8, 12), DP("Leg press", 3, 8, 12), DP("Leg curl", 3, 8, 12), DP("Seated calf raise", 5, 8, 12)]);
+    const pullB = p7Day("Pull B · row", [LP("Barbell row", 5, 5, { amrap: true }), DP("Lat pulldown", 3, 8, 12), DP("Cable row", 3, 8, 12), DP("Face pull", 5, 15, 20), DP("Hammer curl", 4, 8, 12), DP("Dumbbell curl", 4, 8, 12)]);
+    return [pullA, push("Bench press", "Overhead press", "Push A · bench"), legs("Legs A"), pullB, push("Overhead press", "Bench press", "Push B · press"), legs("Legs B")];
+  } };
+  P.phul = { name: "PHUL", cat: "pb", days: () => [
+    p7Day("Upper power", [LP("Bench press", 4, 5), DP("Incline dumbbell press", 4, 6, 10), LP("Barbell row", 4, 5), DP("Lat pulldown", 4, 6, 10), DP("Overhead press", 3, 5, 8), DP("Barbell curl", 3, 6, 10), DP("Skull crusher", 3, 6, 10)]),
+    p7Day("Lower power", [LP("Barbell squat", 4, 5), LP("Deadlift", 3, 5), DP("Leg press", 5, 10, 15), DP("Leg curl", 4, 6, 10), DP("Seated calf raise", 4, 6, 10)]),
+    p7Day("Upper hypertrophy", [DP("Incline bench", 4, 8, 12), DP("Chest fly", 4, 8, 12), DP("Cable row", 4, 8, 12), DP("Dumbbell row", 4, 8, 12), DP("Lateral raise", 4, 8, 12), DP("Incline dumbbell curl", 4, 8, 12), DP("Triceps pushdown", 4, 8, 12)]),
+    p7Day("Lower hypertrophy", [DP("Front squat", 4, 8, 12), DP("Dumbbell Bulgarian split squat", 3, 8, 12), DP("Leg extension", 3, 10, 15), DP("Leg curl", 3, 10, 15), DP("Seated calf raise", 4, 8, 12)])
+  ] };
+  P.phat = { name: "PHAT", cat: "pb", days: () => [
+    p7Day("Upper power", [LP("Barbell row", 3, 5), DP("Weighted pullup", 2, 6, 10), DP("Chest-supported row", 2, 6, 10), LP("Bench press", 3, 5), DP("Weighted dip", 2, 6, 10), DP("Overhead press", 3, 6, 10), DP("Barbell curl", 3, 6, 10), DP("Skull crusher", 3, 6, 10)]),
+    p7Day("Lower power", [LP("Barbell squat", 3, 5), DP("Hack squat", 2, 6, 10), DP("Leg extension", 2, 6, 10), DP("Romanian deadlift", 3, 5, 8), DP("Leg curl", 2, 6, 10), DP("Seated calf raise", 3, 6, 10)]),
+    p7Day("Back & shoulders hypertrophy", [DP("Pendlay row", 6, 3, 3, { rest: 90 }), DP("Lat pulldown", 3, 8, 12), DP("Cable row", 3, 8, 12), DP("Dumbbell row", 2, 12, 15), DP("Dumbbell shoulder press", 3, 8, 12), DP("Upright row", 2, 12, 15), DP("Lateral raise", 3, 12, 20)]),
+    p7Day("Lower hypertrophy", [DP("Pause squat", 6, 3, 3, { rest: 90 }), DP("Hack squat", 3, 8, 12), DP("Leg press", 2, 12, 15), DP("Leg extension", 3, 15, 20), DP("Romanian deadlift", 3, 8, 12), DP("Leg curl", 2, 12, 15), DP("Seated calf raise", 4, 10, 15)]),
+    p7Day("Chest & arms hypertrophy", [DP("Dumbbell bench press", 6, 3, 3, { rest: 90 }), DP("Incline dumbbell press", 3, 8, 12), DP("Machine chest press", 3, 12, 15), DP("Cable crossover", 2, 15, 20), DP("Preacher curl", 3, 8, 12), DP("Cable curl", 2, 12, 15), DP("Triceps extension", 3, 8, 12), DP("Triceps pushdown", 2, 12, 15)])
+  ] };
+  /* ---------- Bodybuilding / hypertrophy ---------- */
+  P.ppl = { name: "Simple PPL", cat: "bb", opts: [3, 6], def: 3, alias: ["Push Pull Legs", "PPL"], days: n => {
+    const pushA = p7Day("Push", [DP("Bench press", 4, 6, 10), DP("Overhead press", 3, 8, 12), DP("Incline dumbbell press", 3, 8, 12), DP("Lateral raise", 3, 12, 15), DP("Triceps pushdown", 3, 10, 15)]);
+    const pullA = p7Day("Pull", [DP("Barbell row", 4, 6, 10), DP("Lat pulldown", 3, 8, 12), DP("Cable row", 3, 10, 12), DP("Face pull", 3, 12, 15), DP("Dumbbell curl", 3, 10, 12)]);
+    const legsA = p7Day("Legs", [DP("Barbell squat", 4, 6, 10), DP("Romanian deadlift", 3, 8, 12), DP("Leg press", 3, 10, 15), DP("Leg curl", 3, 10, 15), RP("Calf raise", 3, 15, 25)]);
+    if (n !== 6) return [pushA, pullA, legsA];
+    const nm = (d, s) => Object.assign({}, d, { name: d.name + " " + s });
+    return [nm(pushA, "A"), nm(pullA, "A"), nm(legsA, "A"),
+      p7Day("Push B", [DP("Overhead press", 4, 6, 10), DP("Incline bench", 3, 8, 12), DP("Chest fly", 3, 10, 15), DP("Lateral raise", 3, 12, 15), DP("Skull crusher", 3, 10, 12)]),
+      p7Day("Pull B", [RP("Pullup", 4, 6, 12), DP("Chest-supported row", 3, 8, 12), DP("Dumbbell row", 3, 10, 12), DP("Rear delt fly", 3, 12, 15), DP("Hammer curl", 3, 10, 12)]),
+      p7Day("Legs B", [DP("Deadlift", 3, 5, 8), DP("Dumbbell Bulgarian split squat", 3, 8, 12), DP("Leg extension", 3, 12, 15), DP("Leg curl", 3, 10, 15), DP("Seated calf raise", 4, 10, 15)])];
+  } };
+  P.brosplit = { name: "Bro Split", cat: "bb", opts: [5, 6], def: 5, days: n => {
+    const d = [
+      p7Day("Chest", [DP("Bench press", 4, 6, 10), DP("Incline dumbbell press", 3, 8, 12), DP("Chest fly", 3, 10, 15), DP("Cable crossover", 3, 12, 15), RP("Dip", 3, 8, 15)]),
+      p7Day("Back", [DP("Deadlift", 3, 5, 8), RP("Pullup", 4, 6, 12), DP("Barbell row", 3, 8, 12), DP("Lat pulldown", 3, 10, 12), DP("Cable row", 3, 10, 12)]),
+      p7Day("Legs", [DP("Barbell squat", 4, 6, 10), DP("Leg press", 3, 10, 15), DP("Romanian deadlift", 3, 8, 12), DP("Leg extension", 3, 12, 15), DP("Leg curl", 3, 10, 15), DP("Seated calf raise", 4, 10, 15)]),
+      p7Day("Shoulders", [DP("Overhead press", 4, 6, 10), DP("Arnold press", 3, 8, 12), DP("Lateral raise", 4, 12, 15), DP("Rear delt fly", 3, 12, 15), DP("Shrug", 3, 10, 15)]),
+      p7Day("Arms", [DP("Barbell curl", 4, 8, 12), DP("Close-grip bench press", 4, 6, 10), DP("Hammer curl", 3, 10, 12), DP("Skull crusher", 3, 8, 12), DP("Preacher curl", 3, 10, 12), DP("Triceps pushdown", 3, 10, 15)])
+    ];
+    if (n === 6) d.push(p7Day("Abs & calves", [RP("Hanging leg raise", 3, 8, 15), DP("Cable crunch", 3, 10, 15), RP("Ab wheel rollout", 3, 6, 12), TP("Side plank", 2, 30, 60), RP("Calf raise", 4, 15, 25)]));
+    return d;
+  } };
+  P.glutes = { name: "Glute Focus", cat: "bb", opts: [3, 4], def: 3, days: n => {
+    const d = [
+      p7Day("Glutes A · thrust and hinge", [DP("Hip thrust", 3, 8, 12), DP("Romanian deadlift", 3, 8, 12), DP("Dumbbell Bulgarian split squat", 3, 8, 12), DP("Cable kickback", 3, 12, 15), RP("Monster walk", 2, 15, 25), RP("Frog pump", 2, 20, 30)]),
+      p7Day("Glutes B · squat and single leg", [DP("Barbell squat", 3, 6, 10), DP("B-stance hip thrust", 3, 8, 12), DP("Single-leg Romanian deadlift", 3, 8, 12), RP("Back extension", 3, 12, 20), DP("Hip abduction", 3, 12, 20), TP("Side plank", 2, 30, 60)]),
+      p7Day("Glutes C · pull and pump", [DP("Sumo deadlift", 3, 5, 8), RP("Step up", 3, 10, 15), DP("Cable pull-through", 3, 12, 15), RP("Single leg glute bridge", 3, 10, 15), RP("Clamshell", 2, 15, 20)])
+    ];
+    if (n === 4) d.push(p7Day("Glutes D · hinge and hips", [DP("Good morning", 3, 8, 12), RP("Reverse lunge", 3, 10, 12), KB("Kettlebell swing", 4, 15, 20), RP("Fire hydrant", 2, 15, 20), RP("Glute bridge", 2, 15, 25)]));
+    return d;
+  } };
+  /* ---------- Strength ---------- */
+  P.ppower = { name: "Periodized Powerlifting", cat: "st", opts: [3, 4], def: 4,
+    I: [0.70, 0.75, 0.80, 0.65, 0.75, 0.80, 0.85, 0.70, 0.85, 0.90, 0.93, 0.70],
+    ph: [[1, 4, "Accumulation"], [5, 8, "Intensification"], [9, 11, "Peaking"], [12, 12, "Test week"]],
+    days: n => {
+      const acc = (e) => p7W(e, 1, 8), pk = (e) => p7W(e, 9, 11), t = (e) => p7W(e, 12, 12), ld = (e) => p7W(e, 1, 11);
+      const d = [
+        p7Day("Day 1 · squat, bench, squat", [acc(PC("Barbell squat", 5, 5, "bs")), pk(PC("Barbell squat", 4, 2, "bs")), t(PC("Barbell squat", 3, 3, "bs", 1.0)), acc(PC("Bench press", 5, 4, "bp")), pk(PC("Bench press", 4, 2, "bp")), t(PC("Bench press", 3, 3, "bp")), ld(PC("Pause squat", 3, 3, "bs", 0.85)), DP("Dumbbell row", 3, 8, 12), RP("Hanging leg raise", 3, 8, 15)]),
+        p7Day("Day 2 · deadlift, bench", [acc(PC("Deadlift", 5, 3, "dl")), pk(PC("Deadlift", 3, 2, "dl")), t(PC("Deadlift", 2, 2, "dl", 0.9)), acc(PC("Bench press", 6, 3, "bp", 0.95)), pk(PC("Bench press", 4, 2, "bp", 0.95)), t(PC("Bench press", 3, 2, "bp", 0.9)), ld(PC("Deficit deadlift", 4, 3, "dl", 0.8)), RP("Pullup", 3, 6, 12), RP("Back extension", 3, 10, 15)]),
+        p7Day("Day 3 · squat, bench", [acc(PC("Barbell squat", 6, 3, "bs", 0.95)), pk(PC("Barbell squat", 3, 1, "bs", 1.04)), t(MX("Barbell squat", "bs")), acc(PC("Pause bench press", 5, 3, "bp", 0.9)), pk(PC("Bench press", 3, 1, "bp", 1.04)), t(MX("Bench press", "bp")), ld(PC("Spoto press", 3, 4, "bp", 0.8)), RP("Ab wheel rollout", 3, 6, 12)])
+      ];
+      d.push(n === 4 ? p7Day("Day 4 · deadlift, bench volume", [acc(PC("Bench press", 4, 6, "bp", 0.88)), pk(PC("Bench press", 3, 3, "bp", 0.95)), ld(PC("Pin press", 3, 4, "bp", 0.85)), acc(PC("Deadlift", 4, 4, "dl", 0.9)), pk(PC("Deadlift", 2, 1, "dl", 1.04)), t(MX("Deadlift", "dl")), DP("Leg press", 3, 8, 12)]) : null);
+      if (n === 3) { d[2].exercises.push(t(MX("Deadlift", "dl"))); d.pop(); }
+      return d;
+    } };
+  /* ---------- Olympic weightlifting ---------- */
+  P.olybeg = { name: "Olympic Beginner", cat: "ol", opts: [3, 4], def: 3,
+    I: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    ph: [[1, 4, "Positions and hang lifts"], [5, 8, "Pulls and power lifts from the floor"], [9, 12, "Full lifts"]],
+    days: n => {
+      const a = e => p7W(e, 1, 4), b = e => p7W(e, 5, 8), c3 = e => p7W(e, 9, 12);
+      const d = [
+        p7Day("Snatch day", [a(LP("Overhead squat", 3, 5)), a(LP("Hang snatch", 5, 3)), b(LP("Power snatch", 5, 2)), b(LP("Snatch pull", 3, 3)), c3(LP("Snatch", 6, 2)), c3(LP("Snatch pull", 3, 3)), LP("Barbell squat", 3, 5), RP("Back extension", 3, 10, 15)]),
+        p7Day("Clean & jerk day", [a(LP("Hang clean", 5, 3)), a(LP("Push press", 3, 5)), b(LP("Power clean", 5, 2)), b(LP("Clean pull", 3, 3)), b(LP("Split jerk", 4, 2)), c3(LP("Clean and jerk", 6, 1)), c3(LP("Clean pull", 3, 3)), LP("Front squat", 3, 5), TP("Plank", 3, 30, 60)]),
+        p7Day("Both lifts", [a(LP("Hang snatch", 4, 2)), a(LP("Hang clean", 4, 2)), b(LP("Power snatch", 4, 2)), b(LP("Power clean", 4, 2)), c3(LP("Snatch", 5, 1)), c3(LP("Clean and jerk", 5, 1)), LP("Barbell squat", 3, 5), RP("Hanging knee raise", 3, 10, 15)])
+      ];
+      if (n === 4) d.push(p7Day("Strength & positions", [LP("Overhead squat", 3, 3), LP("Push press", 3, 5), LP("Romanian deadlift", 3, 8), RP("Box jump", 3, 5, 8), RP("Pullup", 3, 5, 10)]));
+      return d;
+    } };
+  P.olyint = { name: "Olympic Intermediate", cat: "ol", opts: [3, 4, 5], def: 4,
+    I: [0.70, 0.75, 0.80, 0.65, 0.75, 0.80, 0.85, 0.70],
+    ph: [[1, 3, "Build"], [4, 4, "Deload"], [5, 7, "Heavier"], [8, 8, "Test week"]],
+    days: n => {
+      const nt = e => p7W(e, 1, 7), t = e => p7W(e, 8, 8);
+      const d = [
+        p7Day("Snatch", [PC("Snatch", 5, 2, "sn"), PC("Snatch pull", 4, 3, "sn", 1.1), PC("Barbell squat", 4, 5, "bs")]),
+        p7Day("Clean & jerk", [PC("Clean and jerk", 5, 1, "cj"), PC("Clean pull", 4, 3, "cj", 1.1), PC("Front squat", 4, 3, "fs")]),
+        p7Day("Heavy singles", [nt(PC("Snatch", 6, 1, "sn", 1.05)), nt(PC("Clean and jerk", 6, 1, "cj", 1.05)), t(MX("Snatch", "sn")), t(MX("Clean and jerk", "cj")), PC("Barbell squat", 3, 3, "bs", 1.05)])
+      ];
+      if (n >= 4) d.splice(2, 0, p7Day("Power and overhead", [PC("Power snatch", 4, 2, "sn", 0.85), PC("Power clean", 4, 2, "cj", 0.85), PC("Push jerk", 4, 2, "cj", 0.85), PC("Overhead squat", 3, 3, "sn", 1.0)]));
+      if (n >= 5) d.splice(4, 0, p7Day("Hang and pulls", [PC("Hang snatch", 4, 2, "sn", 0.9), PC("Hang clean", 4, 2, "cj", 0.9), PC("Snatch-grip deadlift", 3, 3, "sn", 1.25), PC("Front squat", 3, 2, "fs", 1.05)]));
+      return d;
+    } };
+  P.pendlay3 = { name: "Pendlay-style 3-Day Beginner", cat: "ol", perWk: 3, days: () => {
+    const cx1 = [RP("Back extension", 3, 10, 15), TP("Plank", 3, 30, 60)], cx2 = [RP("Box jump", 3, 5, 8), RP("Hanging knee raise", 3, 10, 15)];
+    return [
+      p7Day("Week A · Workout 1", [LP("Snatch", 10, 1), LP("Clean pull", 5, 2), LP("Hang clean", 5, 1), LP("Push press", 3, 5), LP("Barbell squat", 3, 5)].concat(cx1)),
+      p7Day("Week A · Workout 2", [LP("Snatch pull", 5, 2), LP("Hang snatch", 5, 1), LP("Clean and jerk", 10, 1), LP("Front squat", 3, 3)].concat(cx2)),
+      p7Day("Week A · Workout 3", [LP("Snatch", 5, 2), LP("Clean pull", 5, 1), LP("Hang clean", 5, 1), LP("Push jerk", 5, 2), LP("Barbell squat", 3, 5)].concat(cx1)),
+      p7Day("Week B · Workout 4", [LP("Snatch pull", 5, 2), LP("Hang snatch", 5, 1), LP("Clean and jerk", 5, 2), LP("Barbell squat", 3, 5)].concat(cx2)),
+      p7Day("Week B · Workout 5", [LP("Snatch", 10, 1), LP("Hang clean", 5, 2), LP("Bench press", 3, 5), LP("Front squat", 3, 3)].concat(cx1)),
+      p7Day("Week B · Workout 6", [LP("Hang snatch", 5, 2), LP("Clean and jerk", 10, 1), LP("Barbell squat", 3, 5)].concat(cx2))
+    ];
+  } };
+  P.catalystl = { name: "Catalyst-style Learn the Lifts L1–L4", cat: "ol",
+    I: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.70, 0.73, 0.76, 0.68, 0.75, 0.78, 0.82, 0.70, 0.85, 0.88, 0.92, 0.70],
+    ph: [[1, 4, "Level 1 · low volume, by feel"], [5, 12, "Level 2 · moderate volume, by feel"], [13, 20, "Level 3 · more volume, by feel"], [21, 31, "Level 4 · percentages"], [32, 32, "Level 4 · test week"]],
+    days: () => {
+      const l1 = e => p7W(e, 1, 4), l2 = e => p7W(e, 5, 12), l3 = e => p7W(e, 13, 20), l4 = e => p7W(e, 21, 31), t = e => p7W(e, 32, 32), f = e => p7W(e, 1, 20), p = e => p7W(e, 21, 32);
+      return [
+        p7Day("Day 1 · snatch", [l1(LP("Snatch", 5, 2)), l2(LP("Snatch", 6, 2)), l3(LP("Snatch", 6, 1)), l4(PC("Snatch", 5, 2, "sn")), t(MX("Snatch", "sn")), f(LP("Snatch pull", 3, 3)), p(PC("Snatch pull", 4, 3, "sn", 1.1)), f(LP("Barbell squat", 3, 5)), p(PC("Barbell squat", 4, 4, "bs")), RP("Back extension", 3, 10, 15)]),
+        p7Day("Day 2 · clean & jerk", [l1(LP("Clean and jerk", 5, 1)), l2(LP("Clean and jerk", 6, 1)), l3(LP("Clean and jerk", 6, 1)), l4(PC("Clean and jerk", 5, 1, "cj")), t(MX("Clean and jerk", "cj")), f(LP("Clean pull", 3, 3)), p(PC("Clean pull", 4, 3, "cj", 1.1)), f(LP("Front squat", 3, 5)), p(PC("Front squat", 4, 3, "fs")), TP("Plank", 3, 30, 60)]),
+        p7Day("Day 3 · power and overhead", [f(LP("Power snatch", 5, 2)), f(LP("Power clean", 5, 2)), f(LP("Push press", 3, 5)), l3(LP("Snatch balance", 3, 3)), p(PC("Power snatch", 4, 2, "sn", 0.8)), p(PC("Power clean", 4, 2, "cj", 0.8)), p(PC("Push jerk", 4, 2, "cj", 0.85)), RP("Hanging knee raise", 3, 10, 15)]),
+        p7Day("Day 4 · hang and squat", [f(LP("Hang snatch", 4, 2)), f(LP("Hang clean", 4, 2)), f(LP("Split jerk", 4, 2)), l2(LP("Overhead squat", 3, 3)), p(PC("Hang snatch", 4, 2, "sn", 0.85)), p(PC("Split jerk", 4, 2, "cj", 0.9)), p(PC("Barbell squat", 3, 3, "bs", 1.05)), f(LP("Barbell squat", 3, 3))])
+      ];
+    } };
+  P.aita8 = { name: "Aita-style 8-Week Beginner", cat: "ol",
+    I: [0.45, 0.50, 0.55, 0.62, 0.68, 0.75, 0.80, 0.85],
+    ph: [[1, 2, "Positions and receiving"], [3, 4, "Explosion and hang"], [5, 6, "Full lifts and load"], [7, 8, "Heavy singles and max test"]],
+    days: () => {
+      const w = (a, b) => e => p7W(e, a, b);
+      return [
+        p7Day("Monday · snatch", [w(1, 2)(PC("Overhead squat", 3, 5, "sn", 1.0)), w(1, 2)(PC("Snatch balance", 4, 3, "sn", 0.8)), w(1, 4)(PC("Hang snatch", 5, 3, "sn")), w(3, 6)(PC("Snatch pull", 4, 3, "sn", 1.15)), w(3, 6)(PC("Overhead squat", 3, 3, "sn", 1.05)), w(5, 6)(PC("Snatch", 5, 2, "sn")), w(7, 7)(PC("Snatch", 6, 1, "sn")), w(8, 8)(MX("Snatch", "sn")), w(7, 8)(PC("Snatch pull", 3, 3, "sn", 1.1)), PC("Barbell squat", 3, 5, "bs")]),
+        p7Day("Wednesday · clean", [w(1, 4)(PC("Hang clean", 5, 3, "cj")), w(1, 2)(PC("Front squat", 3, 5, "fs")), w(3, 6)(PC("Clean pull", 4, 3, "cj", 1.15)), w(3, 4)(PC("Push press", 3, 3, "cj", 0.75)), w(3, 8)(PC("Front squat", 4, 3, "fs", 1.05)), w(5, 6)(PC("Clean and jerk", 5, 1, "cj")), w(7, 7)(PC("Clean and jerk", 6, 1, "cj")), w(8, 8)(MX("Clean and jerk", "cj"))]),
+        p7Day("Friday · jerk", [w(1, 4)(PC("Push press", 3, 5, "cj", 0.7)), w(1, 4)(PC("Split jerk", 5, 2, "cj", 0.9)), w(5, 6)(PC("Split jerk", 5, 2, "cj", 1.0)), w(5, 8)(PC("Push press", 4, 3, "cj", 0.75)), w(7, 8)(PC("Split jerk", 5, 1, "cj", 1.0)), TP("Plank", 3, 30, 60)])
+      ];
+    } };
+  P.torok6 = { name: "Torokhtiy-style 6-Week Transition", cat: "ol",
+    I: [1, 1, 1, 1, 1, 1],
+    ph: [[1, 2, "Base: learn the positions"], [3, 4, "Volume"], [5, 6, "Intensity"]],
+    days: () => {
+      const v = (a, b) => e => p7W(e, a, b);
+      return [
+        p7Day("Day 1 · snatch", [RP("Back extension", 2, 15, 20), LP("Muscle snatch", 3, 4), LP("Overhead squat", 3, 4), v(1, 4)(LP("Power snatch", 4, 3)), v(5, 6)(LP("Power snatch", 5, 2)), LP("Snatch balance", 3, 3), LP("Snatch pull", 3, 5), v(1, 4)(LP("Barbell squat", 3, 6)), v(5, 6)(LP("Barbell squat", 4, 4))]),
+        p7Day("Day 2 · strength and athletic", [TP("Superman hold", 2, 20, 40), LP("Thruster", 3, 6), LP("Good morning", 3, 6), RP("Box jump", 4, 5, 8), RP("Hanging leg raise", 3, 10, 15)]),
+        p7Day("Day 3 · clean", [RP("Back extension", 2, 15, 20), v(1, 4)(LP("Power clean", 4, 3)), v(5, 6)(LP("Power clean", 5, 2)), LP("Push press", 4, 3), LP("Deficit deadlift", 3, 6), LP("Shrug", 3, 8), v(1, 4)(LP("Front squat", 3, 5)), v(5, 6)(LP("Front squat", 4, 3))])
+      ];
+    } };
+  P.catalysti = { name: "Catalyst-style Intermediate Cycle", cat: "ol",
+    I: [0.70, 0.73, 0.76, 0.68, 0.75, 0.78, 0.82, 0.70, 0.85, 0.88, 0.92, 0.70],
+    ph: [[1, 3, "Accumulation"], [4, 4, "Deload"], [5, 7, "Transmutation"], [8, 8, "Deload"], [9, 11, "Realization"], [12, 12, "Test week"]],
+    days: () => {
+      const nt = e => p7W(e, 1, 11), t = e => p7W(e, 12, 12);
+      return [
+        p7Day("Day 1 · snatch, C&J, front squat", [PC("Snatch", 5, 2, "sn"), PC("Clean and jerk", 4, 1, "cj"), PC("Front squat", 4, 3, "fs")]),
+        p7Day("Day 2 · pulls and jerk", [PC("Snatch pull", 4, 3, "sn", 1.1), PC("Clean pull", 4, 3, "cj", 1.1), PC("Push press", 3, 3, "cj", 0.75), RP("Back extension", 3, 10, 15)]),
+        p7Day("Day 3 · power lifts, back squat", [PC("Power snatch", 4, 2, "sn", 0.8), PC("Power clean", 4, 2, "cj", 0.8), PC("Push jerk", 3, 2, "cj", 0.85), PC("Barbell squat", 4, 4, "bs")]),
+        p7Day("Day 4 · technique", [PC("Hang snatch", 4, 2, "sn", 0.85), PC("Hang clean", 4, 2, "cj", 0.85), PC("Overhead squat", 3, 3, "sn", 1.0), RP("Hanging leg raise", 3, 10, 15)]),
+        p7Day("Day 5 · heavy day", [nt(PC("Snatch", 5, 1, "sn", 1.05)), nt(PC("Clean and jerk", 5, 1, "cj", 1.05)), t(MX("Snatch", "sn")), t(MX("Clean and jerk", "cj")), nt(PC("Barbell squat", 3, 2, "bs", 1.05))])
+      ];
+    } };
+  P.slog12 = { name: "StrengthLog-style 12-Week Intermediate", cat: "ol",
+    I: [0.72, 0.74, 0.76, 0.65, 0.76, 0.78, 0.80, 0.67, 0.84, 0.87, 0.90, 0.70],
+    ph: [[1, 3, "Build (~2% a week)"], [4, 4, "Deload"], [5, 7, "Build, a little heavier"], [8, 8, "Deload"], [9, 11, "Heavier singles"], [12, 12, "Taper and test"]],
+    days: () => {
+      const vol = e => p7W(e, 1, 8), hv = e => p7W(e, 9, 11), t = e => p7W(e, 12, 12), n12 = e => p7W(e, 1, 11);
+      return [
+        p7Day("Workout 1 · snatch, pull, front squat", [vol(PC("Snatch", 4, 2, "sn")), hv(PC("Snatch", 5, 1, "sn")), t(PC("Snatch", 3, 1, "sn")), PC("Snatch pull", 4, 3, "sn", 1.1), PC("Front squat", 4, 3, "fs"), DP("Push press", 3, 3, 5)]),
+        p7Day("Workout 2 · clean & jerk, pull, squat", [n12(PC("Clean and jerk", 4, 1, "cj")), t(PC("Clean and jerk", 3, 1, "cj")), PC("Clean pull", 4, 3, "cj", 1.1), PC("Barbell squat", 4, 4, "bs", 0.95), RP("Hanging leg raise", 3, 8, 15)]),
+        p7Day("Workout 3 · hang snatch, jerk, front squat", [PC("Hang snatch", 6, 1, "sn", 0.9), PC("Split jerk", 3, 3, "cj", 0.85), PC("Front squat", 3, 4, "fs", 0.9), DP("Romanian deadlift", 3, 6, 8)]),
+        p7Day("Workout 4 · snatch, C&J, squat", [n12(PC("Snatch", 3, 2, "sn")), n12(PC("Clean and jerk", 3, 1, "cj")), t(MX("Snatch", "sn")), t(MX("Clean and jerk", "cj")), PC("Barbell squat", 4, 3, "bs"), RP("Pullup", 3, 5, 8)])
+      ];
+    } };
+  P.pendlay6 = { name: "Pendlay-style 6-Day Intermediate", cat: "ol",
+    I: [0.75, 0.78, 0.80, 0.72, 0.82, 0.85, 0.88, 0.70],
+    ph: [[1, 3, "Build"], [4, 4, "Back-off week"], [5, 7, "Peak"], [8, 8, "Meet week"]],
+    days: () => {
+      const nt = e => p7W(e, 1, 7), t = e => p7W(e, 8, 8);
+      return [
+        p7Day("Monday · heavy", [PC("Snatch", 5, 2, "sn"), PC("Clean and jerk", 5, 1, "cj"), PC("Barbell squat", 4, 5, "bs", 0.9)]),
+        p7Day("Tuesday · power and press", [PC("Power snatch", 5, 2, "sn", 0.8), PC("Power clean", 5, 2, "cj", 0.8), PC("Push press", 4, 3, "cj", 0.75)]),
+        p7Day("Wednesday · moderate", [PC("Snatch", 4, 2, "sn", 0.9), PC("Clean and jerk", 4, 1, "cj", 0.9), PC("Front squat", 4, 3, "fs")]),
+        p7Day("Thursday · pulls", [PC("Snatch pull", 4, 3, "sn", 1.1), PC("Clean pull", 4, 3, "cj", 1.1), RP("Back extension", 3, 10, 15)]),
+        p7Day("Friday · heavy", [PC("Snatch", 6, 1, "sn", 1.03), PC("Clean and jerk", 5, 1, "cj", 1.03), PC("Barbell squat", 3, 3, "bs", 1.0)]),
+        p7Day("Saturday · max out", [nt(PC("Snatch", 3, 1, "sn", 1.07)), nt(PC("Clean and jerk", 3, 1, "cj", 1.07)), t(MX("Snatch", "sn")), t(MX("Clean and jerk", "cj")), nt(PC("Front squat", 3, 2, "fs", 1.05))])
+      ];
+    } };
+  /* ---------- Bodyweight / calisthenics ---------- */
+  P.calis = { name: "Calisthenics Skills", cat: "bw", opts: [3, 4], def: 3, days: n => {
+    const d = [
+      p7Day("Pull and front lever", [SK("pull", 3), SK("fl", 3), SK("lsit", 3), RP("Hanging leg raise", 3, 6, 12)]),
+      p7Day("Push and handstand", [SK("hs", 3), SK("dip", 3), SK("pl", 3), TP("Hollow hold", 3, 20, 45)]),
+      p7Day("Rings, back lever and legs", [SK("ring", 3), SK("bl", 3), RP("Pistol squat", 3, 3, 8), SK("pull", 3)])
+    ];
+    if (n === 4) d.push(p7Day("Legs and core", [RP("Pistol squat", 3, 3, 8), RP("Nordic curl", 3, 3, 8), SK("lsit", 3), TP("Superman hold", 3, 20, 45), RP("Ab wheel rollout", 3, 6, 12)]));
+    return d;
+  } };
+  /* ---------- Kettlebell ---------- */
+  P.kbbasics = { name: "Kettlebell Basics", cat: "kb", days: () => [
+    p7Day("Day A · swing, squat, press", [KB("Kettlebell swing", 5, 10, 15), KB("Goblet squat", 3, 8, 12), KB("Kettlebell press", 3, 5, 8), KB("Turkish get-up", 3, 1, 3)]),
+    p7Day("Day B · swing, clean, clean & press", [KB("Kettlebell swing", 5, 10, 15), KB("Kettlebell clean", 3, 5, 8), KB("Kettlebell clean and press", 3, 5, 8), KB("Kettlebell row", 3, 8, 12)]),
+    p7Day("Day C · swings and get-ups", [KB("Kettlebell swing", 8, 10, 15), KB("Goblet squat", 3, 8, 12), KB("Turkish get-up", 5, 1, 3), TP("Plank", 2, 30, 60)])
+  ] };
+  /* ---------- Conditioning / HIIT ---------- */
+  P.hiit = { name: "HIIT Circuits", cat: "hi", opts: [3, 4], def: 3, days: n => {
+    const d = [
+      p7Day("Tabata intervals · about 20 min", [FT("Jump rope", 8, 20, { rest: 10 }), RP("Burpee", 4, 8, 12, { rest: 30 }), RP("Mountain climber", 4, 20, 30, { rest: 30 }), FT("High knees", 8, 20, { rest: 10 }), TP("Plank", 2, 30, 60)]),
+      p7Day("EMOM · 15 min", [KB("Kettlebell swing", 5, 15, 20, { rest: 30 }), RP("Burpee", 5, 6, 10, { rest: 30 }), RP("Jump squat", 5, 10, 15, { rest: 30 })]),
+      p7Day("Machine intervals · about 25 min", [FT("Rowing machine", 6, 60, { rest: 60 }), FT("Assault bike", 6, 30, { rest: 60 }), RP("Pushup", 4, 10, 20, { rest: 45 }), RP("Box jump", 4, 6, 10, { rest: 45 })])
+    ];
+    if (n === 4) d.push(p7Day("Ladder · about 15 min", [FT("Battle ropes", 6, 30, { rest: 30 }), RP("Mountain climber", 4, 20, 30, { rest: 30 }), FT("Jump rope", 6, 45, { rest: 15 }), RP("Burpee", 4, 8, 12, { rest: 30 })]));
+    return d;
+  } };
+  /* ---------- Mobility ---------- */
+  P.mobflow = { name: "Mobility Flow", cat: "mo", opts: [3, 4, 5], def: 3, days: n => {
+    const d = [
+      p7Day("Hips and ankles · ATG-style, about 30 min", [RP("ATG split squat", 3, 6, 12), RP("Tibialis raise", 3, 15, 25), RP("90/90 hip switch", 2, 10, 16), TP("Couch stretch", 2, 60, 120), TP("Pigeon stretch", 2, 60, 120), TP("Deep squat hold", 3, 60, 120), TP("Calf stretch", 2, 45, 90)]),
+      p7Day("Spine and shoulders · about 25 min", [RP("Cat-cow", 2, 10, 15), TP("Thread the needle", 2, 45, 90), RP("Shoulder dislocates", 3, 10, 15), RP("Wall slides", 3, 10, 15), TP("Sleeper stretch", 2, 45, 90), TP("Downward dog", 2, 45, 90), FT("Child's pose", 1, 60)]),
+      p7Day("Hamstrings and full flow · about 35 min", [RP("Jefferson curl", 3, 6, 10), TP("Pancake stretch", 2, 60, 120), TP("Seated hamstring stretch", 2, 60, 120), RP("Elephant walk", 2, 10, 20), RP("Sun salutation", 3, 3, 6), TP("Frog stretch", 2, 60, 120), TP("Butterfly stretch", 2, 60, 120)])
+    ];
+    if (n >= 4) d.push(p7Day("Yoga-style flow · about 25 min", [RP("Sun salutation", 3, 5, 8), RP("World's greatest stretch", 2, 5, 8), TP("Cobra stretch", 2, 30, 60), TP("Downward dog", 2, 45, 90), TP("Pigeon stretch", 2, 60, 120), FT("Child's pose", 1, 90), FT("Box breathing", 1, 120)]));
+    if (n >= 5) d.push(p7Day("Knees and strength range · about 20 min", [RP("Nordic curl", 3, 3, 8), RP("ATG split squat", 3, 6, 12), RP("Tibialis raise", 3, 15, 25), RP("Elephant walk", 2, 10, 20), TP("Couch stretch", 2, 60, 120), TP("Deep squat hold", 2, 60, 120)]));
+    return d;
+  } };
+  return P;
+})();
+const P7_IDS = Object.keys(P7_PROG);
+
+/* ---- 1.07 wiring into the 2.07 engine layer ---- */
+function p7Build(id, n) { const d = P7_PROG[id]; const days = d.days(n || d.def); return JSON.parse(JSON.stringify(days)); }
+function p7NewPlan(id) { const d = P7_PROG[id]; const o = { id, name: d.name, next: 0, v207: true, p107: true, days: p7Build(id, d.def) }; if (d.opts) o.p7d = d.def; return o; }
+const plans207_106 = plans207;
+plans207 = function () { return plans207_106().concat(P7_IDS.filter(id => id !== "ppl").map(p7NewPlan)); };
+const ids207_106 = ids207;
+ids207 = function () { return ids207_106().concat(P7_IDS.filter(id => id !== "ppl")); };
+const eng207_106 = eng207;
+eng207 = function (c) { return p7Plan(c) ? "p7" : eng207_106(c); };
+const items207_106 = items207;
+items207 = function (c, day) { return p7Plan(c) ? p7Items(c, day) : items207_106(c, day); };
+const text207_106 = text207;
+text207 = function (c, day, ex) { return p7Plan(c) ? p7Text(c, day, ex) : text207_106(c, day, ex); };
+const progress207_106 = progress207;
+progress207 = function (c, ev) { return p7Plan(c) ? p7Progress(c, ev) : progress207_106(c, ev); };
+const dayExercises_106 = dayExercises;
+dayExercises = function (c, day) { const list = dayExercises_106(c, day); return p7Plan(c) ? list.filter(ex => p7In(ex, c)) : list; };
+const customAdvance_106 = customAdvance;
+customAdvance = function (c) {
+  if (!p7Plan(c) || !c.days || !c.days.length) return customAdvance_106(c);
+  const last = c.next % c.days.length === c.days.length - 1;
+  customAdvance_106(c);
+  if (last) p7EndWeek(c);
+};
+const customPerWeek_106 = customPerWeek;
+customPerWeek = function (c) { return p7Plan(c) ? 1 : customPerWeek_106(c); };
+const customDayTag_106 = customDayTag;
+customDayTag = function (c) {
+  if (!p7Plan(c)) return customDayTag_106(c);
+  const n = c.next % c.days.length + 1, W = p7Weeks(c), ph = p7Phase(c);
+  return (W > 1 ? "Week " + (p7Week(c) + 1) + " of " + W + (ph ? " · " + ph : "") + " · " : "") + "Day " + n + " of " + c.days.length;
+};
+const needsStart_106 = needsStart;
+needsStart = function (c) { return p7Plan(c) ? p7Needs(c) : needsStart_106(c); };
+const overviewBody_106 = overviewBody;
+overviewBody = function (id) { const k = String(id || "").replace(/^c:/, ""); return (P7_PROG[k] ? p7Overview(k) : "") || overviewBody_106(id); };
+/* Simple PPL replaces the plain 1.0 Push Pull Legs in place (same id "ppl", so its log and history stay) */
+function p7MigratePpl() {
+  const c = (state.customs || []).find(x => x && x.id === "ppl");
+  if (!c || c.p107) return;
+  const legacy = {};
+  if (c.started) (c.days || []).forEach(d => (d.exercises || []).forEach(ex => { if (ex && ex.kind === "weight" && Number(ex.weight) > 0) legacy[ex.name] = Number(ex.weight); }));
+  c.name = "Simple PPL"; c.p107 = true; c.v207 = true; c.p7d = 3; c.p7legacy = legacy;
+  c.days = p7Build("ppl", 3);
+  c.next = (Number(c.next) || 0) % c.days.length;
+}
+/* also on every render, so the very first screen after an update already shows Simple PPL */
+const render_106 = render;
+render = function () { try { p7MigratePpl(); } catch (e) {} return render_106.apply(this, arguments); };
+const ensureBuiltins_106 = ensureBuiltins;
+ensureBuiltins = function () { ensureBuiltins_106.apply(this, arguments); try { p7MigratePpl(); } catch (e) {} };
+/* day-count choice: rebuild the week, keep all weights and progress */
+function p7SetDays(c, n) {
+  const d = p7Def(c); if (!d || !d.opts || d.opts.indexOf(n) < 0 || c.p7d === n) return;
+  c.p7d = n; c.days = p7Build(c.id, n); c.next = 0; save();
+}
+function p7OptCard(c) {
+  const d = p7Def(c); if (!d) return "";
+  const W = p7Weeks(c), ph = p7Phase(c);
+  const opts = d.opts ? `<div class="chips219" role="group" aria-label="Days per week">${d.opts.map(n => `<button class="btn ${c.p7d === n ? "primary" : "ghost"} chip219" data-p7d="${n}" aria-pressed="${c.p7d === n}">${n} days</button>`).join("")}</div>` : "";
+  const wk = W > 1 ? `<p class="note">Week ${p7Week(c) + 1} of ${W}${ph ? " · " + esc(ph) : ""}${p7Lifts(c).length ? " · cycle " + (p7St(c).cyc || 1) : ""}</p>` : "";
+  const tms = p7Lifts(c).length && c.started ? `<p class="note">Maxes: ${p7Lifts(c).map(L => esc(P7_TMNAME[L]) + " " + showWeight(p7Tm(c, L)) + " " + weightUnit()).join(" · ")}</p>` : "";
+  if (!opts && !wk && !tms) return "";
+  return `<div class="card" id="p7opt"><div class="tag">${d.opts ? "Days per week" : "This cycle"}</div>${opts}${wk}${tms}</div>`;
+}
+function p7WireOpt(c) {
+  document.querySelectorAll("[data-p7d]").forEach(b => b.onclick = () => {
+    const n = Number(b.getAttribute("data-p7d"));
+    if (session) return;
+    p7SetDays(c, n); render();
+  });
+}
+const renderCustomToday_106 = renderCustomToday;
+renderCustomToday = function () {
+  renderCustomToday_106.apply(this, arguments);
+  const c = customPlan();
+  if (!p7Plan(c) || document.getElementById("p7opt")) return;
+  const html = p7OptCard(c); if (!html) return;
+  const first = document.querySelector("#app .card"); if (first) first.insertAdjacentHTML("beforebegin", html); else return;
+  p7WireOpt(c);
+};
+/* intake: 1-rep maxes for % programs, starting weights for the rest, all prefilled with sensible imperial defaults */
+const renderCustomIntake_106 = renderCustomIntake;
+renderCustomIntake = function () {
+  const c = customPlan();
+  if (!p7Plan(c)) return renderCustomIntake_106.apply(this, arguments);
+  const L = p7Lifts(c), W = p7Weighted(c), u = weightUnit();
+  const val = lb => String(showWeight(lb));
+  const tmF = L.map(k => `<label for="p7tm-${k}">${esc(P7_TMNAME[k])} · 1-rep max (${u})</label><input id="p7tm-${k}" type="number" min="0" step="0.5" inputmode="decimal" value="${val(p7Start(c, "1RM " + k, P7_TMDEF[k]))}" />`).join("");
+  const wF = W.map((ex, i) => { const kb = ex.p7.t === "kb"; const lab = kb ? "kettlebell (" + u + ", rounded to a standard bell)" : (ex.p7.t === "lp" ? "working weight for " + ex.sets + "×" + ex.reps : "weight for " + ex.reps + "–" + ex.p7.hi + " reps") + " (" + u + ")"; return `<label for="p7w-${i}">${esc(ex.name)} · ${lab}</label><input id="p7w-${i}" type="number" min="0" step="0.5" inputmode="decimal" value="${val(p7Start(c, ex.name, p7DefW(ex.name, ex)))}" />`; }).join("");
+  const d = p7Def(c);
+  $(`
+    <div class="top">
+      <button class="iconbtn" id="menu" aria-label="Plans">${ICON_PLANS}</button>
+      <div style="flex:1"><div class="kicker">${esc(c.name)}</div><h1 class="title">Today</h1></div>
+      <button class="iconbtn" id="cog" aria-label="Form guide">${ICON_FORM}</button>
+    </div>
+    ${p7OptCard(c)}
+    <div class="card">
+      <div class="tag">Starting numbers</div>
+      <p class="note">${L.length ? "Percentages work from your 1-rep max in each lift. Not sure? Keep the suggestion or use a recent best single; tested maxes replace it at the end of the cycle. " : ""}${W.length ? "Starting weights are prefilled with light defaults. Change any you know." : ""}</p>
+      ${tmF ? `<h2 style="margin-top:10px;font-size:18px">1-rep maxes</h2>${tmF}` : ""}
+      ${wF ? `<h2 style="margin-top:10px;font-size:18px">Starting weights</h2>${wF}` : ""}
+      <p class="note" id="startWarn" style="margin-top:8px"></p>
+      <div class="btn-row"><button class="btn primary" id="makeCustom">Start ${esc(c.name)}</button></div>
+    </div>
+  `);
+  document.getElementById("menu").onclick = () => { screen = "plans"; render(); };
+  document.getElementById("cog").onclick = () => { formFrom = screen; screen = "form"; render(); };
+  p7WireOpt(c);
+  document.getElementById("makeCustom").onclick = () => {
+    const starts = {}; let ok = true;
+    const rd = id => { const raw = String((document.getElementById(id) || {}).value || "").trim(); const n = Number(raw); if (raw === "" || !Number.isFinite(n) || n < 0 || n > 1500) { ok = false; return 0; } return readWeight(raw, 0); };
+    L.forEach(k => { starts["1RM " + k] = rd("p7tm-" + k); });
+    W.forEach((ex, i) => { starts[ex.name] = rd("p7w-" + i); });
+    if (!ok) { const n = document.getElementById("startWarn"); if (n) n.textContent = "Enter a number for every field. Weights go from 0 to 1500."; return; }
+    c.starts = starts; c.started = true; c.next = 0; delete c.p7legacy;
+    const st = p7St(c); st.tm = {}; st.lp = {}; st.dp = {}; st.kb = {}; st.f = {}; st.wk = 0; st.cyc = 1; st.miss = {}; st.tested = {};
+    L.forEach(k => p7Tm(c, k));
+    save(); screen = "today"; render();
+  };
+};
+
+/* ---- 1.07 overviews (original wording; coach-style programs are adaptations, credited) ---- */
+const P7_OV = {
+  redditppl: ["A 6-day push/pull/legs powerbuilding split in the style of the popular r/Fitness PPL: one heavy compound each day, then higher-rep accessories for size.",
+    ["Order: Pull A, Push A, Legs, Pull B, Push B, Legs, then a rest day.", "Main lifts (deadlift, bench, squat, row, press) are 5×5 or 3×5 with the last set as many reps as you can (+).", "Accessories are 3–5 sets in a rep range."],
+    ["Main lifts: add 5 lb (10 lb for squat and deadlift) every time you finish all sets. Miss three sessions in a row and the weight drops 10%.", "Accessories: add a rep each session until every set reaches the top of the range, then add weight and start again at the bottom."],
+    "Reddit-style PPL, adapted from the linear PPL outline shared on r/Fitness. An HTFU adaptation, not the original post.", []],
+  phul: ["Power Hypertrophy Upper Lower: 4 days a week, two heavy power days and two higher-rep hypertrophy days.",
+    ["Upper power, lower power, rest, upper hypertrophy, lower hypertrophy.", "Power days: heavy compounds for 3–5 reps. Hypertrophy days: 8–15 reps."],
+    ["Heavy main lifts add weight every time you finish all sets.", "Everything else uses a rep range: reps first, then weight."],
+    "PHUL-style program, based on the publicly described PHUL split. An HTFU adaptation.", []],
+  phat: ["Power Hypertrophy Adaptive Training style: 5 days, two power days and three hypertrophy days, in the style of Layne Norton's PHAT.",
+    ["Upper power, lower power, rest, back & shoulders, lower, chest & arms.", "Hypertrophy days open with 6 fast triples (speed work) at a moderate weight."],
+    ["Power-day main lifts add weight when all sets are done; speed sets and accessories progress by reps, then weight."],
+    "Layne Norton-style PHAT, built from the publicly described outline. An HTFU adaptation.", []],
+  ppl: ["A straightforward push/pull/legs plan for muscle size, without the powerbuilding extras. Run it 3 days a week (once through) or 6 (twice, with A and B days).",
+    ["3 days: Push, Pull, Legs.", "6 days: Push A, Pull A, Legs A, Push B, Pull B, Legs B.", "Most work is 3–4 sets of 6–15 reps."],
+    ["Every exercise has a rep range. Add a rep each session; when every set hits the top, add 5 lb (10 lb for legs) and start at the bottom again."],
+    "This replaces the earlier Push Pull Legs plan; your log and weights carry over.", []],
+  brosplit: ["The classic bodybuilding split: one muscle group a day, 5 days a week, with an optional sixth day for abs and calves.",
+    ["Chest, back, legs, shoulders, arms (and abs & calves on 6 days).", "Each muscle gets lots of sets once a week."],
+    ["Rep ranges for everything: reps first, then weight."], "", []],
+  glutes: ["A glute and posterior-chain plan in the Strong Curves style: hip thrusts, hinges, split squats and glute-dominant accessories, 3 or 4 days a week.",
+    ["Each day has a main thrust or hinge, a single-leg lift and lighter glute work.", "Banded walks, frog pumps and clamshells finish the session."],
+    ["Weighted moves use a rep range then add weight; bodyweight moves add reps up to a cap."], "Strong Curves-style (Bret Contreras) structure. An HTFU adaptation, not the book's program.", []],
+  ppower: ["A periodized powerlifting cycle in the Sheiko style: squat, bench and deadlift several times a week at moderate percentages, many sets of few reps, then a peak and a test.",
+    ["12 weeks: accumulation (1–4), intensification (5–8), peaking (9–11), test week (12). Week 4 and 8 are lighter.", "Bench three or four times a week; squat twice; deadlift once or twice.", "3 or 4 days a week."],
+    ["All main work is a percentage of your 1-rep max. In week 12 you work up to new maxes; they become the numbers for the next cycle. A lift you don't test goes up 5–10 lb if you made all its sets."],
+    "Sheiko-style periodization, built from public descriptions. An HTFU adaptation, not a Sheiko program.", []],
+  olybeg: ["HTFU's own beginner weightlifting plan: technique first. Hang lifts and positions before pulls and power lifts from the floor, and full lifts last.",
+    ["Weeks 1–4: positions and hang lifts. Weeks 5–8: pulls and power lifts from the floor. Weeks 9–12: full snatch and clean & jerk.", "3 or 4 days a week, every day with a squat."],
+    ["Pick a weight you can lift with good technique. Add 5 lb when every rep was clean; squats add 10 lb."],
+    "Generic HTFU program. For coach-designed versions see the Pendlay-, Catalyst-, Aita- and Torokhtiy-style programs.", []],
+  olyint: ["A simple percentage cycle for lifters who can already snatch and clean & jerk: snatch, clean & jerk, pulls and squats, 3, 4 or 5 days a week.",
+    ["8 weeks: build (1–3), deload (4), heavier (5–7), test (8).", "3 days: snatch, clean & jerk, heavy singles. 4 days adds power lifts and overhead squats. 5 days adds hang lifts and pulls."],
+    ["Work is a percentage of your 1-rep maxes (snatch, clean & jerk, front and back squat). Week 8 tests the snatch and clean & jerk; untested lifts go up if you made all their sets."],
+    "Generic HTFU program, the simple 3–5 day percentage cycle.", []],
+  pendlay3: ["A 3-day beginner Olympic plan in the style of Glenn Pendlay: every session has a snatch, a clean & jerk exercise and a squat, then a short complex.",
+    ["Six workouts over two alternating weeks (A and B).", "Competition lifts alternate with hang and pull variations.", "Back squats twice as often as front squats."],
+    ["Squats and presses add weight every session you finish. Snatches and clean & jerks: about 7–8 good reps out of 10; add 5 lb when all reps are clean."],
+    "Pendlay-style program built from Glenn Pendlay's publicly described 3-day beginner outline. An HTFU adaptation.", [["Glenn Pendlay: How to write an Olympic weightlifting program", "https://glennpendlay.wordpress.com/2012/11/13/how-to-write-an-olympic-weightlifting-program-part-ii/"]]],
+  catalystl: ["A Learn-the-Lifts-style path in four levels, in the style of Catalyst Athletics (Greg Everett): from your first weeks with the lifts to a percentage-based cycle with a max test.",
+    ["Level 1 (weeks 1–4) and 2 (5–12): low then moderate volume, loading by feel.", "Level 3 (13–20): more volume, snatch balance and overhead squats.", "Level 4 (21–32): percentage-based, ending with a max snatch and clean & jerk.", "4 days a week (Catalyst's Level 4 is 5 days; HTFU keeps 4)."],
+    ["Levels 1–3: add 5 lb when every rep is clean. Level 4: percentages of your 1-rep maxes, tested in week 32."],
+    "Catalyst Athletics-style progression, built from the publicly described Learn the Lifts and Level 1–4 outlines. An HTFU adaptation, not Catalyst's programs.", [["Catalyst Athletics: program selection guide", "https://www.catalystathletics.com/article/2252/Guide-to-Catalyst-Athletics-Training-Program-Selection/"]]],
+  aita8: ["An 8-week beginner plan in the style of Max Aita (Team Aita): Monday snatch, Wednesday clean, Friday jerk, learning the end of each lift before the start.",
+    ["Weeks 1–2: receiving positions. 3–4: explosion and hang. 5–6: full lifts. 7–8: heavy singles and a max test.", "Loads climb from about 45% to 85% of your maxes."],
+    ["Percentages of your 1-rep maxes. Week 8 tests the snatch and clean & jerk."],
+    "Team Aita-style program, built from Max Aita's publicly described beginner outline. An HTFU adaptation.", [["Team Aita: beginner weightlifting program", "https://www.teamaita.com/blog/beginner-olympic-weightlifting-program"]]],
+  torok6: ["A 6-week introduction for strong gym-goers moving to weightlifting, in the style of Oleksiy Torokhtiy's Transition program: three days a week of snatch, clean and general strength work.",
+    ["Day 1 snatch work (muscle snatch, power snatch, snatch balance, pulls), day 2 strength and athletic work, day 3 clean work.", "Weeks 1–2 base, 3–4 more volume, 5–6 heavier with fewer reps."],
+    ["Add 5 lb when every rep was clean (10 lb on squats and deadlifts)."],
+    "Torokhtiy-style program, built from the publicly described outline. An HTFU adaptation.", [["Torokhtiy: training programs guide", "https://torokhtiy.com/torokhtiy-training-programs-guide"]]],
+  catalysti: ["An intermediate 12-week cycle in the style of Catalyst Athletics: 5 days a week, percentage-based, ending with max snatch and clean & jerk.",
+    ["Accumulation (1–3), deload (4), transmutation (5–7), deload (8), realization (9–11), test (12)."],
+    ["Percentages of your 1-rep maxes; week 12 sets new ones."],
+    "Catalyst Athletics-style intermediate cycle, built from public descriptions. An HTFU adaptation.", []],
+  slog12: ["A 12-week intermediate program in the style of StrengthLog's: 4 days a week, about 2% heavier each week, deloads in weeks 4 and 8, and PR attempts in week 12.",
+    ["Workout 1: snatch, snatch pull, front squat, press. 2: clean & jerk, clean pull, squat, core. 3: hang snatch, split jerk, front squat, RDL. 4: snatch, clean & jerk, squat, pull-ups.", "Weeks 9–11 move to heavier singles."],
+    ["Percentages of your 1-rep maxes; week 12 tests the snatch and clean & jerk."],
+    "StrengthLog-style program, built from StrengthLog's published outline. An HTFU adaptation.", [["StrengthLog: intermediate Olympic weightlifting program", "https://www.strengthlog.com/intermediate-olympic-weightlifting-program/"]]],
+  pendlay6: ["An 8-week, 6-day intermediate peaking cycle in the style of Glenn Pendlay: frequent snatches and clean & jerks, heavy and light days, and a max-out at the end.",
+    ["Monday and Friday heavy, Tuesday power lifts, Wednesday moderate, Thursday pulls, Saturday max singles.", "Week 4 backs off; week 8 is meet week."],
+    ["Percentages of your 1-rep maxes; the Saturday of week 8 sets new ones."],
+    "Pendlay-style program, built from public descriptions of his 6-day intermediate cycle. An HTFU adaptation.", []],
+  calis: ["A bodyweight skill ladder beyond rep plans: pull-up to muscle-up, dips, handstand, L-sit, planche, front and back lever, and rings.",
+    ["Each slot is a ladder of steps, from easier to harder (for example tuck front lever, advanced tuck, full front lever).", "3 or 4 days a week."],
+    ["When you hit the top of the range on every set, you move to the next step. Holds go up 5 seconds at a time, reps 1 at a time."], "", []],
+  kbbasics: ["A 3-day beginner kettlebell plan: swing, goblet squat, clean, press, clean & press and Turkish get-up.",
+    ["Day A: swing, goblet squat, press, get-up. Day B: swing, clean, clean & press, row. Day C: swings and get-ups."],
+    ["Every move has a rep range. Add reps until every set reaches the top, then go to the next bell (4 kg steps)."],
+    "When this feels easy, Simple & Sinister is the next step.", []],
+  hiit: ["Short conditioning sessions, 15–25 minutes: Tabata-style intervals, an EMOM, machine intervals and (on 4 days) a ladder.",
+    ["Timed intervals use the timer; rests are short.", "Use any machine you have for the rower or bike intervals."],
+    ["Rep-based moves add a rep each time you finish every round, up to a cap. Intervals stay fixed; push the pace."], "", []],
+  mobflow: ["Longer mobility sessions, 20–40 minutes: ATG-style knee and ankle work, spine and shoulder flows, hamstring and hip opening and a yoga-style flow.",
+    ["3, 4 or 5 days a week. Daily Mobility stays the short daily routine; this is the full session."],
+    ["Holds go up 5 seconds each session until the cap; reps go up by 1."], "ATG-style (knees-over-toes) moves are an adaptation of publicly shown exercises.", []]
+};
+function p7Overview(id) {
+  const o = P7_OV[id], d = P7_PROG[id]; if (!o || !d) return "";
+  const card = (t, b) => `<div class="card"><div class="tag">${esc(t)}</div>${b}</div>`;
+  const ul = a => `<ul class="tips">${a.map(i => `<li>${esc(i)}</li>`).join("")}</ul>`;
+  const days = d.days(d.def);
+  const W = d.I ? d.I.length : 1;
+  const lens = d.opts ? d.opts.slice(0, -1).join(", ") + " or " + d.opts[d.opts.length - 1] + " days a week (you choose)" : d.perWk ? d.perWk + " days a week · " + days.length + " workouts in rotation" : days.length + " days a week";
+  const weeks = W > 1 ? " · " + W + "-week cycle" : "";
+  const wk1 = e => !(e.p7 && e.p7.w) || e.p7.w[0] <= 1;
+  const sched = days.map(x => `<li><b>${esc(x.name)}</b>: ${esc(Array.from(new Set(x.exercises.filter(wk1).map(e => e.p7 && e.p7.t === "sk" ? P7_SK[e.p7.k].label : e.name))).join(", "))}</li>`).join("");
+  return `<div class="card"><p class="sub">${esc(o[0])}</p><p class="note" style="margin-top:6px">${esc(lens + weeks)}</p></div>`
+    + card("How it works", ul(o[1])) + card("Progression", ul(o[2]))
+    + card(W > 1 && d.days(d.def).some(x => x.exercises.some(e => e.p7 && e.p7.w)) ? "Week 1 (later weeks change as above)" : "The week", `<ul class="tips">${sched}</ul>`)
+    + (o[3] || o[4].length ? card(o[4].length || /adapt|-style/i.test(o[3]) ? "Source" : "Note", (o[3] ? `<p class="note">${esc(o[3])}</p>` : "") + (o[4].length ? srcList209(o[4].map(s => srcLink209(s[0], s[1]))) : "")) : "");
+}
+
+/* ---- 1.07 Add a program: grouped by training type, A–Z inside each group, filter chips and search ---- */
+const P7_GROUPS = [["st", "Strength"], ["pb", "Powerbuilding"], ["bb", "Bodybuilding / hypertrophy"], ["ol", "Olympic weightlifting"], ["bw", "Bodyweight / calisthenics"], ["kb", "Kettlebell"], ["hi", "Conditioning / HIIT"], ["ru", "Running / cardio"], ["mo", "Mobility"], ["te", "Fitness tests & job prep"], ["my", "Your custom plans"]];
+const P7_CAT = { sl: "st", ss: "st", "531": "st", nsuns: "st", gslp: "st", phrak: "st", gzclp: "st", texas: "st", madcow: "st", full: "st",
+  boonstra: "pb", yolo: "pb", ul: "bb", slawson: "bb", push: "bw", pull: "bw", squat: "bw", rr: "bw", rrbwf: "bw",
+  sns: "kb", swingladder: "kb", wod: "hi", mix: "hi", c25k: "ru", b210k: "ru", halfnov: "ru", mobility: "mo", cooldown: "mo",
+  aft: "te", usmcpft: "te", navyprt: "te", afpt: "te", baror: "te", idfcft: "te", expres: "te", pin: "te", beep: "te", prep: "te", ofai: "te", murph: "te", prepfit: "te", fireprep: "te" };
+const P7_ALIAS = { sl: ["5x5"], ss: ["SS"], "531": ["Wendler"], c25k: ["5K", "running"], halfnov: ["Hal Higdon", "half marathon"], murph: ["hero WOD", "challenge"], beep: ["shuttle", "PACER"], sns: ["S&S", "Pavel"] };
+function p7Cat(id) {
+  const k = String(id).replace(/^c:/, "");
+  if (P7_PROG[k]) return P7_PROG[k].cat;
+  if (P7_CAT[k]) return P7_CAT[k];
+  if (/^c:/.test(id) && !isBuiltin(k)) return "my";
+  return "te";
+}
+function p7Hay(id) { const k = String(id).replace(/^c:/, ""); const g = P7_GROUPS.find(x => x[0] === p7Cat(id)); return [planLabel(id)].concat((P7_PROG[k] && P7_PROG[k].alias) || P7_ALIAS[k] || []).concat(g ? [g[1]] : []).join(" | ").toLowerCase(); }
+let p7Q = "", p7G = "", p7Shut = {};
+function p7Row(id) {
+  const on = homePlans().indexOf(id) >= 0;
+  return `<div class="top p7row" data-hay="${esc(p7Hay(id))}" style="gap:8px;margin-top:10px;align-items:center"><button class="menu-item" data-pick="${id}">${esc(planLabel(id))}</button><button class="iconbtn" data-ov="${id}" aria-label="Overview of ${esc(planLabel(id))}">ⓘ</button><button class="btn ${on ? "primary" : "ghost"}" data-pin="${id}" style="width:auto;margin:0">${on ? "Added" : "Add"}</button></div>`;
+}
+function p7Picker() {
+  const ids = allPlanIds();
+  const by = {};
+  ids.forEach(id => { (by[p7Cat(id)] = by[p7Cat(id)] || []).push(id); });
+  const groups = P7_GROUPS.filter(g => (by[g[0]] || []).length);
+  const chips = [["", "All", ids.length]].concat(groups.map(g => [g[0], g[1], by[g[0]].length])).map(([k, t, n]) => `<button class="btn ${p7G === k ? "primary" : "ghost"} chip219" data-p7g="${k}" aria-pressed="${p7G === k}">${esc(t)} <span class="n219">${n}</span></button>`).join("");
+  return `<label for="p7q" class="note" style="display:block;margin-top:10px">Search programs</label><input id="p7q" type="text" inputmode="search" enterkeyhint="search" autocomplete="off" spellcheck="false" placeholder="Name or type, e.g. PPL, Olympic" value="${esc(p7Q)}" />
+    <div class="chips219" role="group" aria-label="Program types">${chips}</div><p class="note" id="p7hint" aria-live="polite"></p>`
+    + groups.map(g => `<details class="p7grp" data-grp="${g[0]}"${p7Shut[g[0]] ? "" : " open"}><summary style="margin-top:12px;min-height:44px;display:flex;align-items:center;gap:8px;cursor:pointer"><b>${esc(g[1])}</b><span class="note p7cnt">${by[g[0]].length}</span></summary>${by[g[0]].slice().sort((a, b) => planLabel(a).localeCompare(planLabel(b))).map(p7Row).join("")}</details>`).join("");
+}
+function p7Filter() {
+  const q = p7Q.trim().toLowerCase();
+  let shown = 0;
+  document.querySelectorAll("details.p7grp").forEach(d => {
+    const gOk = !p7G || d.getAttribute("data-grp") === p7G;
+    let n = 0;
+    d.querySelectorAll(".p7row").forEach(r => { const ok = gOk && (!q || r.getAttribute("data-hay").indexOf(q) >= 0); r.style.display = ok ? "" : "none"; if (ok) n++; });
+    d.style.display = n ? "" : "none";
+    const cnt = d.querySelector(".p7cnt"); if (cnt) cnt.textContent = String(n);
+    if (q && n) d.open = true;
+    shown += n;
+  });
+  const h = document.getElementById("p7hint");
+  if (h) h.textContent = q || p7G ? (shown ? shown + " program" + (shown === 1 ? "" : "s") : "No program matches. Try another word, or create a custom workout.") : "";
+}
+const renderPlans_106 = renderPlans;
+renderPlans = function () {
+  renderPlans_106.apply(this, arguments);
+  const q = document.getElementById("p7q");
+  if (!q) return;
+  q.oninput = () => { p7Q = q.value; p7Filter(); };
+  document.querySelectorAll("[data-p7g]").forEach(b => b.onclick = () => { p7G = b.getAttribute("data-p7g"); document.querySelectorAll("[data-p7g]").forEach(x => { const on = x === b; x.className = "btn " + (on ? "primary" : "ghost") + " chip219"; x.setAttribute("aria-pressed", String(on)); }); p7Filter(); });
+  document.querySelectorAll("details.p7grp").forEach(d => d.addEventListener("toggle", () => { p7Shut[d.getAttribute("data-grp")] = !d.open; }));
+  p7Filter();
+};
+/* ---- 1.07 achievements: kettlebell firsts (free weights) and calisthenics skills (bodyweight) ---- */
+const AC_P7 = [
+  ["fw", "a7_tgu", "First Turkish get-up", "Log a Turkish get-up with a kettlebell", s => s.name === "Turkish get-up" && s.w > 0 && s.reps >= 1],
+  ["fw", "a7_kbcp", "First kettlebell clean & press", "Log a kettlebell clean and press", s => s.name === "Kettlebell clean and press" && s.w > 0 && s.reps >= 1],
+  ["fw", "a7_kbsn", "First kettlebell snatch", "Log a kettlebell snatch", s => s.name === "Kettlebell snatch" && s.w > 0 && s.reps >= 1],
+  ["fw", "a7_sw100", "100 kettlebell swings in a workout", "Swings across all sets of one workout", null],
+  ["bw", "a7_hspu", "First handstand push-up", "One full handstand push-up", s => s.name === "Handstand pushup" && s.reps >= 1],
+  ["bw", "a7_pistol", "First pistol squat", "One pistol squat (each leg)", s => s.name === "Pistol squat" && s.reps >= 1],
+  ["bw", "a7_lsit10", "L-sit: 10 seconds", "Hold a full L-sit for 10 seconds", s => s.name === "L-sit" && s.reps >= 10],
+  ["bw", "a7_hs30", "Handstand: 30 seconds", "Hold a handstand for 30 seconds", s => s.name === "Handstand hold" && s.reps >= 30],
+  ["bw", "a7_tfl10", "Tuck front lever: 10 seconds", "Hold a tuck front lever for 10 seconds", s => /front lever$/i.test(s.name) && s.reps >= 10],
+  ["bw", "a7_fl5", "Front lever: 5 seconds", "Hold a full front lever for 5 seconds", s => s.name === "Front lever" && s.reps >= 5],
+  ["bw", "a7_bl5", "Back lever: 5 seconds", "Hold a full back lever for 5 seconds", s => s.name === "Back lever" && s.reps >= 5],
+  ["bw", "a7_tpl5", "Tuck planche: 5 seconds", "Hold a tuck planche for 5 seconds", s => s.name === "Tuck planche" && s.reps >= 5]
+];
+const acDefs106 = msDefs217;
+msDefs217 = function () {
+  const out = acDefs106();
+  AC_P7.forEach(([sec, id, title, sub]) => out.push({ sec, group: acSecName105(sec), id, title, sub, fam: "", goal: 0, unit: "" }));
+  return out;
+};
+const acCompute106 = msCompute217;
+msCompute217 = function () {
+  const got = acCompute106();
+  const hit = (id, t) => { if (t && (!got[id] || t < got[id])) got[id] = t; };
+  logsWithPlan217().forEach(({ l, id }) => {
+    if (!l || !l.t) return;
+    let sets = []; try { sets = exSets217(l, id); } catch (e) { sets = []; }
+    let sw = 0;
+    sets.forEach(s0 => {
+      const s = { name: s0.name, w: Number(s0.w) || 0, reps: Number(s0.reps) || 0 };
+      AC_P7.forEach(a => { if (a[4] && a[4](s)) hit(a[1], l.t); });
+      if (s.name === "Kettlebell swing") sw += s.reps;
+    });
+    if (sw >= 100) hit("a7_sw100", l.t);
+  });
+  return got;
+};
+
 
 /* ---------- wiring ---------- */
 (function () {

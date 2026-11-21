@@ -1,0 +1,3 @@
+- 19 new programs: Reddit PPL, PHUL, PHAT, Bro Split, Glute Focus, Periodized Powerlifting, Calisthenics Skills, Kettlebell Basics, HIIT Circuits, Mobility Flow, Olympic Beginner and Intermediate, and 7 coach-style Olympic programs. Push Pull Legs is now Simple PPL (3 or 6 days); your log carries over.
+- Add a program: grouped by training type, with filter chips and search.
+- 31 new exercises and 12 new achievements.
