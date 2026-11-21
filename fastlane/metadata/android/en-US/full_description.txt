@@ -22,7 +22,7 @@ Training
 Progress
 - Charts for every lift, personal bests, streaks and a calendar
 - Body weight and measurements with optional progress photos (stored only on your phone)
-- Achievements in sections (powerlifting, free weights, bodyweight, consistency, volume, running, programs), with a celebration when you earn one
+- Achievements in sections (powerlifting, Olympic lifting, free weights, bodyweight, consistency, volume, running, programs), with a celebration when you earn one
 
 Reminders and widget
 - Workout-day reminders at the time you choose, re-armed after a reboot

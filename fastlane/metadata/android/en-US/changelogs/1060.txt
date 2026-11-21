@@ -1,0 +1,3 @@
+- Olympic lifts in custom workouts: hang power clean, power snatch, hang snatch, clean pull and snatch pull join the cleans, jerks, clean and jerk, snatch, push press and overhead squat, with plate math and sensible sets x reps.
+- New Olympic lifting achievements: weight tiers, bodyweight multiples, firsts, total, reps and workouts.
+- Curl and dumbbell achievement tiers are now round numbers. Anything you earned carries over.
