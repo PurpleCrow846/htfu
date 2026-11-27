@@ -1,0 +1,4 @@
+- New: WYCWYC (What You Can When You Can). No fixed plan: type any exercise, log a set, then + Add set or Next exercise, and finish when you like.
+- Offered at first run next to Beginner and Experienced, and from Today on any plan without changing the plan.
+- Recent picks, last-time pre-fill, rest timer, auto-save with Resume, Repeat last.
+- Counts for streaks, calories, records and achievements.

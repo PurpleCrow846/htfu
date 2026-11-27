@@ -14,6 +14,9 @@ New to training? Tell HTFU your goals and it suggests plans to start with. Or fo
 - Mobility and cooldown routines, Mobility Flow
 - Custom plans with your own exercises, sets, reps, weights, times and distances, with supersets and circuits
 
+No plan? WYCWYC
+WYCWYC (What You Can When You Can) is for days when life is crazy. No fixed plan: type any exercise, log a set, then add another set or move to the next exercise, and finish whenever you like. It remembers your last weights and recent exercises, saves as you go and counts for streaks, calories and records. Pick it at the start or use it any day alongside your plan.
+
 Training
 - Automatic progression: weights go up after a full session and deload after repeated misses
 - Big tap targets for logging sets, a rest timer that keeps running in a notification, and optional voice cues
